@@ -71,3 +71,14 @@ console.log(
   (bundle.length / 1024).toFixed(1) + " KB \u00B7 standalone: " +
   (fs.statSync(out).size / 1024).toFixed(1) + " KB"
 );
+
+const dist = path.join(__dirname, "dist");
+
+if (!fs.existsSync(dist)) {
+    fs.mkdirSync(dist);
+}
+
+fs.copyFileSync(
+    path.join(__dirname, "storied-standalone.html"),
+    path.join(dist, "index.html")
+);
