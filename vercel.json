@@ -1,4 +1,6 @@
 {
+  "buildCommand": "node build.js",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
