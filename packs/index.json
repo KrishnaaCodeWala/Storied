@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "strangerthings",
+      "label": "Stranger Things",
+      "color": "#ff4554",
+      "cta": "Enter Hawkins",
+      "prompt": "Who said it?",
+      "blurb": "Hawkins, Indiana. One quote at a time. Name the character who said it.",
+      "tags": [
+        "tv",
+        "sci-fi",
+        "horror"
+      ],
+      "quoteCount": 12,
+      "loreCount": 0
+    },
+    {
+      "id": "bloodborne",
+      "label": "Bloodborne",
+      "color": "#c9184a",
+      "cta": "Begin the hunt",
+      "prompt": "Who said it?",
+      "blurb": "Yharnam on the night of the hunt. Name who said the line, good hunter.",
+      "tags": [
+        "games",
+        "rpg",
+        "horror"
+      ],
+      "quoteCount": 10,
+      "loreCount": 0
+    },
+    {
+      "id": "cyberpunk",
+      "label": "Cyberpunk 2077",
+      "color": "#fcee0a",
+      "cta": "Jack into Night City",
+      "prompt": "Who said it?",
+      "blurb": "Night City, 2077. Mercs, rockerboys and fixers — name who said the line.",
+      "tags": [
+        "games",
+        "rpg",
+        "sci-fi"
+      ],
+      "quoteCount": 9,
+      "loreCount": 0
+    },
+    {
+      "id": "dragonball",
+      "label": "Dragon Ball",
+      "color": "#ffa028",
+      "cta": "Power up",
+      "prompt": "Who said it?",
+      "blurb": "From the Saiyan saga to the Cell Games. Name who said the line.",
+      "tags": [
+        "anime",
+        "action"
+      ],
+      "quoteCount": 9,
+      "loreCount": 9
+    },
+    {
+      "id": "godofwar",
+      "label": "God of War",
+      "color": "#e05038",
+      "cta": "Ready the axe",
+      "prompt": "Who said it?",
+      "blurb": "The Norse saga of Kratos and Atreus. Name who said the line.",
+      "tags": [
+        "games",
+        "action",
+        "mythology"
+      ],
+      "quoteCount": 10,
+      "loreCount": 10
+    },
+    {
+      "id": "jumpstreet",
+      "label": "Jump Street",
+      "color": "#4d7cfe",
+      "cta": "Report for duty",
+      "prompt": "Who said it?",
+      "blurb": "21 AND 22 Jump Street. Undercover, again. Name who said the line.",
+      "tags": [
+        "movies",
+        "comedy"
+      ],
+      "quoteCount": 9,
+      "loreCount": 0
+    },
+    {
+      "id": "witcher",
+      "label": "The Witcher",
+      "color": "#b9c6d2",
+      "cta": "Walk the Path",
+      "prompt": "Who said it?",
+      "blurb": "The Continent, monsters and all. Quotes from the games, lore from the saga.",
+      "tags": [
+        "games",
+        "rpg",
+        "fantasy"
+      ],
+      "quoteCount": 8,
+      "loreCount": 12
+    }
+  ]
+}

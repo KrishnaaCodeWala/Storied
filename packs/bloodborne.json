@@ -1,0 +1,122 @@
+{
+  "id": "bloodborne",
+  "tags": [
+    "games",
+    "rpg",
+    "horror"
+  ],
+  "label": "Bloodborne",
+  "color": "#c9184a",
+  "cta": "Begin the hunt",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "Yharnam on the night of the hunt. Name who said the line, good hunter.",
+  "roster": [
+    "Gehrman",
+    "The Doll",
+    "Eileen the Crow",
+    "Father Gascoigne",
+    "Micolash",
+    "Provost Willem",
+    "Gilbert",
+    "Alfred",
+    "Djura",
+    "Iosefka",
+    "Lady Maria",
+    "Ludwig"
+  ],
+  "motifs": [
+    "saw",
+    "lantern",
+    "moon",
+    "eye"
+  ],
+  "quotes": [
+    {
+      "q": "Fear the old blood.",
+      "a": "Provost Willem",
+      "alt": [
+        "Willem",
+        "Master Willem"
+      ],
+      "hint": "The warning from Byrgenwerth"
+    },
+    {
+      "q": "Tonight, Gehrman joins the hunt.",
+      "a": "Gehrman",
+      "alt": [
+        "The First Hunter"
+      ],
+      "hint": "Announced in third person, scythe in hand"
+    },
+    {
+      "q": "A hunter is a hunter, even in a dream.",
+      "a": "Gehrman",
+      "alt": [
+        "The First Hunter"
+      ],
+      "hint": "The old advisor of the Hunter's Dream"
+    },
+    {
+      "q": "The night, and the dream, were long.",
+      "a": "Gehrman",
+      "alt": [
+        "The First Hunter"
+      ],
+      "hint": "Said at dawn, if you accept his mercy"
+    },
+    {
+      "q": "Welcome home, good hunter. What is it you desire?",
+      "a": "The Doll",
+      "alt": [
+        "Doll",
+        "Plain Doll"
+      ],
+      "hint": "She waits by the workshop steps"
+    },
+    {
+      "q": "May you find your worth in the waking world.",
+      "a": "The Doll",
+      "alt": [
+        "Doll",
+        "Plain Doll"
+      ],
+      "hint": "Her blessing as you leave the dream"
+    },
+    {
+      "q": "Ahh, Kos, or some say Kosm... do you hear our prayers?",
+      "a": "Micolash",
+      "alt": [
+        "Micolash, Host of the Nightmare",
+        "Host of the Nightmare"
+      ],
+      "hint": "Ranted mid-chase through the nightmare of Mensis"
+    },
+    {
+      "q": "Grant us eyes! Grant us eyes!",
+      "a": "Micolash",
+      "alt": [
+        "Micolash, Host of the Nightmare",
+        "Host of the Nightmare"
+      ],
+      "hint": "A scholar's plea to line the brain"
+    },
+    {
+      "q": "What's that smell? The sweet blood, oh, it sings to me.",
+      "a": "Father Gascoigne",
+      "alt": [
+        "Gascoigne"
+      ],
+      "hint": "A fellow hunter, too far gone, in Central Yharnam"
+    },
+    {
+      "q": "Leave the hunting of hunters to me.",
+      "a": "Eileen the Crow",
+      "alt": [
+        "Eileen",
+        "The Crow"
+      ],
+      "hint": "The crow-feathered specialist's whole job description"
+    }
+  ]
+}

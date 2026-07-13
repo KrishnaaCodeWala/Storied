@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12151c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>STORIED — the fandom knowledge game</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage">
+
+  <!-- ===================== START SCREEN ===================== -->
+  <section id="screen-start" class="screen active" aria-label="Game setup">
+    <header class="masthead">
+      <div class="masthead-mark" aria-hidden="true">&ldquo;</div>
+      <h1>STORIED</h1>
+      <p class="tagline">Every line came from somewhere. Prove you know where.</p>
+      <button class="btn-ghost stats-link" id="btn-stats">Stats &amp; streaks</button>
+    </header>
+
+    <nav class="mode-tabs" role="tablist" aria-label="Game mode">
+      <button class="mode-tab selected" data-mode="classic" role="tab" aria-selected="true">Classic</button>
+      <button class="mode-tab" data-mode="daily" role="tab" aria-selected="false">Daily</button>
+      <button class="mode-tab" data-mode="rush" role="tab" aria-selected="false">Rush</button>
+      <button class="mode-tab" data-mode="fandom" role="tab" aria-selected="false">Fandom</button>
+      <button class="mode-tab" data-mode="study" role="tab" aria-selected="false">Study</button>
+      <button class="mode-tab" data-mode="studio" role="tab" aria-selected="false">Studio</button>
+    </nav>
+
+    <!-- CLASSIC -->
+    <div class="setup-panel mode-panel" id="panel-classic">
+      <h2 class="panel-label">Choose your difficulty</h2>
+      <div class="diff-grid" role="radiogroup" aria-label="Difficulty">
+        <button class="diff-card selected" data-diff="easy" role="radio" aria-checked="true">
+          <span class="diff-name">Curator</span>
+          <span class="diff-desc">Category and hint shown. Pick from 4 titles.</span>
+          <span class="diff-pts">100 pts / quote</span>
+          <span class="diff-best" data-best="easy" hidden></span>
+        </button>
+        <button class="diff-card" data-diff="medium" role="radio" aria-checked="false">
+          <span class="diff-name">Buff</span>
+          <span class="diff-desc">No hints, category hidden. Pick from 6 titles.</span>
+          <span class="diff-pts">150 pts / quote</span>
+          <span class="diff-best" data-best="medium" hidden></span>
+        </button>
+        <button class="diff-card" data-diff="hard" role="radio" aria-checked="false">
+          <span class="diff-name">Archivist</span>
+          <span class="diff-desc">No choices at all. Type the title yourself.</span>
+          <span class="diff-pts">200 pts / quote</span>
+          <span class="diff-best" data-best="hard" hidden></span>
+        </button>
+      </div>
+
+      <h2 class="panel-label">Pick your shelves</h2>
+      <div class="cat-grid" id="cat-grid" aria-label="Categories"></div>
+
+      <button id="btn-start" class="btn-primary">Start &middot; 10 quotes</button>
+      <p class="setup-note">Streaks multiply your score. Hints cost 40 points on Buff and Archivist.</p>
+    </div>
+
+    <!-- DAILY -->
+    <div class="setup-panel mode-panel" id="panel-daily" hidden>
+      <h2 class="panel-label">The daily ten</h2>
+      <p class="mode-blurb">Same ten quotes for every player, reshuffled at midnight. Mixed shelves,
+        Buff rules, one score on the board per day.</p>
+      <div class="daily-status" id="daily-status"></div>
+      <div class="daily-board" id="daily-board" hidden></div>
+      <button id="btn-daily-start" class="btn-primary">Play today's ten</button>
+      <p class="setup-note" id="daily-date"></p>
+    </div>
+
+    <!-- RUSH -->
+    <div class="setup-panel mode-panel" id="panel-rush" hidden>
+      <h2 class="panel-label">Sixty seconds</h2>
+      <p class="mode-blurb">Rapid-fire quotes with four choices each, auto-advancing. Streaks stack
+        fast &mdash; wrong answers just cost time. Built for one train stop.</p>
+      <div class="daily-status" id="rush-best"></div>
+      <button id="btn-rush-start" class="btn-primary">Start the clock</button>
+      <p class="setup-note">Every shelf is in play. Answers lock the moment you tap.</p>
+    </div>
+
+    <!-- FANDOM -->
+    <div class="setup-panel mode-panel" id="panel-fandom" hidden>
+      <h2 class="panel-label">Pick your obsession</h2>
+      <div class="pack-browser">
+        <input type="search" id="pack-search" class="pack-search" placeholder="Search packs&hellip;" aria-label="Search packs" autocomplete="off">
+        <div class="tag-row" id="pack-tags" aria-label="Filter by tag"></div>
+        <div class="pack-list" id="fandom-grid" aria-label="Fandom packs"></div>
+        <p class="pack-more" id="pack-more" hidden></p>
+      </div>
+      <p class="mode-blurb" id="fandom-blurb"></p>
+      <h2 class="panel-label">What kind of questions</h2>
+      <div class="study-diff" role="radiogroup" aria-label="Question type" id="fandom-mode-row">
+        <button class="chip selected" data-fandommode="quotes" role="radio" aria-checked="true">Quotes</button>
+        <button class="chip" data-fandommode="lore" role="radio" aria-checked="false">Lore</button>
+        <button class="chip" data-fandommode="mixed" role="radio" aria-checked="false">Mixed</button>
+      </div>
+      <h2 class="panel-label">How hard</h2>
+      <div class="study-diff" role="radiogroup" aria-label="Fandom question style">
+        <button class="chip selected" data-fandomdiff="easy" role="radio" aria-checked="true">4 choices + hint</button>
+        <button class="chip" data-fandomdiff="medium" role="radio" aria-checked="false">6 choices</button>
+        <button class="chip" data-fandomdiff="hard" role="radio" aria-checked="false">Type the name</button>
+      </div>
+      <div class="daily-status" id="fandom-best"></div>
+      <button id="btn-fandom-start" class="btn-primary">Enter Hawkins</button>
+      <p class="setup-note">Same scoring as Classic. Wrong options come from that world&#39;s own cast.</p>
+    </div>
+
+    <!-- STUDY -->
+    <div class="setup-panel mode-panel" id="panel-study" hidden>
+      <h2 class="panel-label">Quiz your own material</h2>
+      <p class="mode-blurb">Drop in lecture notes, an article, a chapter &mdash; anything. QUOTED finds
+        the key names, numbers and terms and turns them into fill-in-the-blank questions with
+        distractors drawn from your own text. Nothing leaves your device.</p>
+
+      <div class="dropzone" id="dropzone" tabindex="0" role="button"
+           aria-label="Upload a text, markdown or HTML file">
+        <span class="dropzone-icon" aria-hidden="true">&#8681;</span>
+        <span>Drop a <strong>.txt / .md / .html</strong> file here or tap to browse</span>
+        <input type="file" id="file-input" accept=".txt,.md,.markdown,.html,.htm,text/plain" hidden>
+      </div>
+
+      <p class="or-rule"><span>or paste text</span></p>
+
+      <textarea id="paste-area" class="paste-area" rows="5"
+        placeholder="Paste study notes, a wiki article, meeting minutes, a short story..."></textarea>
+      <div class="deck-create-row">
+        <input type="text" id="deck-name" class="deck-name-input" maxlength="40" placeholder="Name this deck">
+        <button id="btn-make-deck" class="btn-guess">Build deck</button>
+      </div>
+      <p class="deck-msg" id="deck-msg" role="status"></p>
+
+      <h2 class="panel-label">Your decks</h2>
+      <div class="deck-list" id="deck-list"></div>
+
+      <h2 class="panel-label">Question style</h2>
+      <div class="study-diff" role="radiogroup" aria-label="Study question style">
+        <button class="chip selected" data-studydiff="easy" role="radio" aria-checked="true">4 choices</button>
+        <button class="chip" data-studydiff="medium" role="radio" aria-checked="false">6 choices</button>
+        <button class="chip" data-studydiff="hard" role="radio" aria-checked="false">Type it</button>
+      </div>
+    </div>
+
+    <footer class="credits">
+      <p class="disclaimer">Unofficial fan trivia &mdash; not affiliated with or endorsed by any franchise.</p>Open <code>quotes.js</code> to add quotes &middot; <code>motifs.js</code> for the art &middot; decks stay on this device.</footer>
+  </section>
+
+    <!-- STUDIO -->
+    <div class="setup-panel mode-panel" id="panel-studio" hidden>
+      <h2 class="panel-label">Pack Studio</h2>
+      <p class="mode-blurb">Build your own pack &mdash; it lives on this device, shows up in the
+        pack browser badged <strong>local</strong>, and exports as JSON to share.</p>
+
+      <div class="acct-row st-load-row" hidden>
+        <select id="st-load" class="pack-search" aria-label="Load a local pack"></select>
+        <button class="btn-ghost st-mini" id="st-delete">Delete</button>
+      </div>
+
+      <h3 class="panel-label stats-label">The pack</h3>
+      <input id="st-name" class="pack-search" placeholder="Pack name (e.g. The Witcher)" aria-label="Pack name">
+      <div class="st-color-row" id="st-colors" aria-label="Pack color"></div>
+      <input id="st-prompt" class="pack-search" placeholder="Question prompt (default: Who said it?)" aria-label="Prompt">
+      <input id="st-blurb" class="pack-search" placeholder="One-line blurb" aria-label="Blurb">
+
+      <h3 class="panel-label stats-label">Cast roster &mdash; one name per line, 6 minimum</h3>
+      <textarea id="st-roster" class="pack-search st-area" rows="5" aria-label="Roster"></textarea>
+
+      <h3 class="panel-label stats-label">Quotes</h3>
+      <div class="st-entry-list" id="st-quote-list"></div>
+      <input id="st-q" class="pack-search" placeholder="The quote (under 15 words)" aria-label="Quote">
+      <div class="acct-row">
+        <input id="st-qa" class="pack-search" placeholder="Who said it (from the roster)" aria-label="Quote answer">
+        <input id="st-qh" class="pack-search" placeholder="Hint" aria-label="Quote hint">
+        <button class="btn-guess" id="st-add-quote">Add</button>
+      </div>
+      <p class="st-err" id="st-q-err"></p>
+
+      <h3 class="panel-label stats-label">Lore</h3>
+      <div class="st-entry-list" id="st-lore-list"></div>
+      <input id="st-lq" class="pack-search" placeholder="The question (under 20 words, don't include the answer!)" aria-label="Lore question">
+      <div class="acct-row">
+        <input id="st-la" class="pack-search" placeholder="Answer" aria-label="Lore answer">
+        <input id="st-lh" class="pack-search" placeholder="Hint" aria-label="Lore hint">
+      </div>
+      <input id="st-lpool" class="pack-search" placeholder="Five wrong answers, comma-separated" aria-label="Wrong answers">
+      <div class="acct-row">
+        <input id="st-lsrc" class="pack-search" placeholder="Source URL (required if from a wiki)" aria-label="Source URL">
+        <button class="btn-guess" id="st-add-lore">Add</button>
+      </div>
+      <p class="st-err" id="st-l-err"></p>
+
+      <h3 class="panel-label stats-label">Celebration motifs (up to 5)</h3>
+      <div class="st-motif-grid" id="st-motifs"></div>
+      <button class="btn-ghost st-mini" id="st-preview">Preview the burst</button>
+
+      <p class="st-status" id="st-status"></p>
+
+      <h3 class="panel-label stats-label">Before you share it</h3>
+      <div class="st-checks" id="st-checks">
+        <label><input type="checkbox"> Every quote is under 15 words and hand-verified</label>
+        <label><input type="checkbox"> No song lyrics anywhere in the pack</label>
+        <label><input type="checkbox"> Wiki-derived lore carries a source link</label>
+        <label><input type="checkbox"> Nothing hateful, explicit, or about real private people</label>
+      </div>
+
+      <div class="end-actions st-actions">
+        <button class="btn-primary" id="st-save">Save to my packs</button>
+        <button class="btn-ghost" id="st-export" disabled>Export JSON</button>
+      </div>
+
+      <h3 class="panel-label stats-label">Import a pack</h3>
+      <textarea id="st-import" class="pack-search st-area" rows="3" placeholder="Paste pack JSON here" aria-label="Import JSON"></textarea>
+      <button class="btn-ghost st-mini" id="st-import-btn">Import</button>
+    </div>
+
+  <!-- ===================== GAME SCREEN ===================== -->
+  <section id="screen-game" class="screen" aria-label="Round in progress">
+    <div class="hud">
+      <div class="hud-item"><span class="hud-label" id="hud-round-label">Quote</span><span class="hud-value" id="hud-round">1/10</span></div>
+      <div class="hud-item"><span class="hud-label">Score</span><span class="hud-value" id="hud-score">0</span></div>
+      <div class="hud-item"><span class="hud-label">Streak</span><span class="hud-value" id="hud-streak">&times;0</span></div>
+    </div>
+    <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+
+    <article class="quote-card" id="quote-card">
+      <span class="card-spine" id="card-spine" aria-hidden="true"></span>
+      <div class="cat-tab" id="cat-tab">?</div>
+      <div class="qmark" aria-hidden="true">&ldquo;</div>
+      <p class="prompt-line" id="prompt-line" hidden></p>
+      <blockquote class="quote-text" id="quote-text"></blockquote>
+      <p class="hint-line" id="hint-line" hidden></p>
+      <p class="source-line" id="source-line" hidden></p>
+    </article>
+
+    <div class="answer-area" id="answer-area"></div>
+
+    <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+
+    <div class="round-actions">
+      <button class="btn-ghost" id="btn-hint">Reveal hint &minus;40</button>
+      <button class="btn-ghost" id="btn-skip">Give up</button>
+      <button class="btn-ghost" id="btn-quit">Quit</button>
+      <button class="btn-primary" id="btn-next" hidden>Next quote &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ===================== END SCREEN ===================== -->
+  <section id="screen-end" class="screen" aria-label="Results">
+    <div class="end-panel">
+      <p class="end-eyebrow" id="end-eyebrow">Round complete</p>
+      <h2 class="end-rank" id="end-rank">Curator</h2>
+      <div class="end-score" id="end-score">0</div>
+      <p class="end-best" id="end-best" hidden>New personal best!</p>
+      <div class="end-stats">
+        <div class="end-stat"><span class="hud-label">Correct</span><span class="hud-value" id="end-correct">0/10</span></div>
+        <div class="end-stat"><span class="hud-label">Best streak</span><span class="hud-value" id="end-streak">&times;0</span></div>
+        <div class="end-stat"><span class="hud-label">Hints used</span><span class="hud-value" id="end-hints">0</span></div>
+      </div>
+      <p class="end-ach" id="end-ach" hidden></p>
+      <div class="end-actions">
+        <button class="btn-primary" id="btn-again">Play again</button>
+        <button class="btn-ghost" id="btn-share">Share result</button>
+        <button class="btn-ghost" id="btn-settings">Change setup</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS SCREEN ===================== -->
+  <section id="screen-stats" class="screen" aria-label="Stats and streaks">
+    <div class="end-panel stats-panel">
+      <p class="end-eyebrow">Your record</p>
+      <h2 class="end-rank">The Story So Far</h2>
+      <div class="end-stats" id="stats-totals"></div>
+      <h3 class="panel-label stats-label">Daily calendar &mdash; <span id="cal-month"></span></h3>
+      <div class="cal-grid" id="cal-grid" aria-label="Daily challenge calendar"></div>
+      <h3 class="panel-label stats-label">Accuracy by shelf</h3>
+      <div class="stat-bars" id="stats-cats"></div>
+      <h3 class="panel-label stats-label">Achievements</h3>
+      <div class="ach-grid" id="ach-grid"></div>
+      <h3 class="panel-label stats-label" id="account-label" hidden>Account &amp; sync</h3>
+      <div class="account-box" id="account-box" hidden></div>
+      <div class="end-actions">
+        <button class="btn-ghost" id="btn-stats-back">Back</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div id="motif-layer" aria-hidden="true"></div>
+<div id="confetti-layer" aria-hidden="true"></div>
+
+<script src="strings.js"></script>
+<script src="motifs.js"></script>
+<script src="packcheck.js"></script>
+<script src="packstore.js"></script>
+<script src="online.js"></script>
+<script src="achievements.js"></script>
+<script src="decks.js"></script>
+<script src="studio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+{
+  "id": "jumpstreet",
+  "tags": [
+    "movies",
+    "comedy"
+  ],
+  "label": "Jump Street",
+  "color": "#4d7cfe",
+  "cta": "Report for duty",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "21 AND 22 Jump Street. Undercover, again. Name who said the line.",
+  "roster": [
+    "Schmidt",
+    "Jenko",
+    "Captain Dickson",
+    "Deputy Chief Hardy",
+    "Eric Molson",
+    "Mr. Walters",
+    "Maya",
+    "Mercedes",
+    "Zook",
+    "Tom Hanson",
+    "Doug Penhall"
+  ],
+  "motifs": [
+    "badge",
+    "cuffs",
+    "donut",
+    "speech"
+  ],
+  "quotes": [
+    {
+      "q": "My name Jeff!",
+      "a": "Jenko",
+      "alt": [
+        "Greg Jenko",
+        "Brad McQuaid"
+      ],
+      "hint": "22 — squeaked out mid-drug-deal when asked his name"
+    },
+    {
+      "q": "You have the right to remain... an attorney.",
+      "a": "Jenko",
+      "alt": [
+        "Greg Jenko",
+        "Brad McQuaid"
+      ],
+      "hint": "21 — the Miranda rights, badly remembered"
+    },
+    {
+      "q": "Captain, Korean Jesus is right there!",
+      "a": "Jenko",
+      "alt": [
+        "Greg Jenko",
+        "Brad McQuaid"
+      ],
+      "hint": "22 — pointing across the new Vietnamese church"
+    },
+    {
+      "q": "I really thought this job would have more car chases and explosions.",
+      "a": "Jenko",
+      "alt": [
+        "Greg Jenko",
+        "Brad McQuaid"
+      ],
+      "hint": "21 — park-bicycle-patrol disillusionment"
+    },
+    {
+      "q": "You do have the right to be an attorney, if you want to...",
+      "a": "Schmidt",
+      "alt": [
+        "Morton Schmidt",
+        "Doug McQuaid"
+      ],
+      "hint": "21 — loyally backing up his partner's legal theory"
+    },
+    {
+      "q": "Slam poetry. Yelling! Angry! Waving my hands a lot!",
+      "a": "Schmidt",
+      "alt": [
+        "Morton Schmidt",
+        "Doug McQuaid"
+      ],
+      "hint": "22 — the Cynthia performance, described from within"
+    },
+    {
+      "q": "Infiltrate the dealers, find the supplier.",
+      "a": "Captain Dickson",
+      "alt": [
+        "Dickson"
+      ],
+      "hint": "Both films — the mission, slammed into the desk"
+    },
+    {
+      "q": "We're reviving a canceled undercover police program from the eighties.",
+      "a": "Captain Dickson",
+      "alt": [
+        "Dickson"
+      ],
+      "hint": "21 — because the guys in charge are out of ideas"
+    },
+    {
+      "q": "Do the same thing as last time. Everyone's happy.",
+      "a": "Deputy Chief Hardy",
+      "alt": [
+        "Hardy"
+      ],
+      "hint": "22 — the entire sequel's thesis, stated out loud"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "categorymembers": [
+      {
+        "pageid": 101,
+        "ns": 0,
+        "title": "Geralt of Rivia"
+      },
+      {
+        "pageid": 102,
+        "ns": 0,
+        "title": "Yennefer of Vengerberg"
+      },
+      {
+        "pageid": 103,
+        "ns": 0,
+        "title": "Ciri"
+      },
+      {
+        "pageid": 104,
+        "ns": 0,
+        "title": "Triss Merigold"
+      },
+      {
+        "pageid": 105,
+        "ns": 0,
+        "title": "Dandelion"
+      },
+      {
+        "pageid": 106,
+        "ns": 0,
+        "title": "Vesemir"
+      },
+      {
+        "pageid": 107,
+        "ns": 0,
+        "title": "Zoltan Chivay"
+      },
+      {
+        "pageid": 108,
+        "ns": 0,
+        "title": "Emhyr var Emreis"
+      },
+      {
+        "pageid": 109,
+        "ns": 0,
+        "title": "Philippa Eilhart"
+      },
+      {
+        "pageid": 110,
+        "ns": 0,
+        "title": "Regis"
+      },
+      {
+        "pageid": 111,
+        "ns": 0,
+        "title": "Lambert"
+      },
+      {
+        "pageid": 112,
+        "ns": 0,
+        "title": "Eskel"
+      }
+    ]
+  }
+}

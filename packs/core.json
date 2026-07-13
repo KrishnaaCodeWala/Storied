@@ -1,0 +1,783 @@
+{
+  "id": "core",
+  "categories": {
+    "books": {
+      "label": "Books",
+      "color": "#e8b44c"
+    },
+    "movies": {
+      "label": "Movies",
+      "color": "#ff6b5e"
+    },
+    "games": {
+      "label": "Video Games",
+      "color": "#5ed89a"
+    },
+    "tv": {
+      "label": "TV Series",
+      "color": "#a78bff"
+    }
+  },
+  "quotes": [
+    {
+      "q": "Call me Ishmael.",
+      "a": "Moby-Dick",
+      "alt": [
+        "Moby Dick"
+      ],
+      "cat": "books",
+      "hint": "Novel by Herman Melville, 1851"
+    },
+    {
+      "q": "It was the best of times, it was the worst of times.",
+      "a": "A Tale of Two Cities",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Charles Dickens, 1859"
+    },
+    {
+      "q": "Big Brother is watching you.",
+      "a": "1984",
+      "alt": [
+        "Nineteen Eighty-Four"
+      ],
+      "cat": "books",
+      "hint": "Dystopian novel by George Orwell, 1949",
+      "franchise": "orwell"
+    },
+    {
+      "q": "All animals are equal, but some animals are more equal than others.",
+      "a": "Animal Farm",
+      "alt": [],
+      "cat": "books",
+      "hint": "Allegorical novella by George Orwell, 1945",
+      "franchise": "orwell"
+    },
+    {
+      "q": "Not all those who wander are lost.",
+      "a": "The Lord of the Rings",
+      "alt": [
+        "The Fellowship of the Ring",
+        "Lord of the Rings",
+        "LOTR"
+      ],
+      "cat": "books",
+      "hint": "Epic fantasy by J.R.R. Tolkien, 1954",
+      "franchise": "tolkien"
+    },
+    {
+      "q": "In a hole in the ground there lived a hobbit.",
+      "a": "The Hobbit",
+      "alt": [
+        "Hobbit"
+      ],
+      "cat": "books",
+      "hint": "Fantasy novel by J.R.R. Tolkien, 1937",
+      "franchise": "tolkien"
+    },
+    {
+      "q": "\u201cAfter all this time?\u201d \u2014 \u201cAlways.\u201d",
+      "a": "Harry Potter and the Deathly Hallows",
+      "alt": [
+        "Harry Potter",
+        "Deathly Hallows",
+        "HP7"
+      ],
+      "cat": "books",
+      "hint": "Seventh book of a series by J.K. Rowling, 2007",
+      "franchise": "potter"
+    },
+    {
+      "q": "It does not do to dwell on dreams and forget to live.",
+      "a": "Harry Potter and the Sorcerer's Stone",
+      "alt": [
+        "Harry Potter and the Philosopher's Stone",
+        "Harry Potter",
+        "Sorcerer's Stone",
+        "Philosopher's Stone",
+        "HP1"
+      ],
+      "cat": "books",
+      "hint": "First book of a series by J.K. Rowling, 1997",
+      "franchise": "potter"
+    },
+    {
+      "q": "Fear is the mind-killer.",
+      "a": "Dune",
+      "alt": [],
+      "cat": "books",
+      "hint": "Science-fiction novel by Frank Herbert, 1965"
+    },
+    {
+      "q": "So it goes.",
+      "a": "Slaughterhouse-Five",
+      "alt": [
+        "Slaughterhouse Five"
+      ],
+      "cat": "books",
+      "hint": "Novel by Kurt Vonnegut, 1969"
+    },
+    {
+      "q": "Winter is coming.",
+      "a": "A Game of Thrones",
+      "alt": [
+        "Game of Thrones",
+        "A Song of Ice and Fire",
+        "GoT"
+      ],
+      "cat": "books",
+      "hint": "First novel of a saga by George R.R. Martin, 1996"
+    },
+    {
+      "q": "The man in black fled across the desert, and the gunslinger followed.",
+      "a": "The Gunslinger",
+      "alt": [
+        "The Dark Tower",
+        "The Dark Tower: The Gunslinger"
+      ],
+      "cat": "books",
+      "hint": "Opening of a series by Stephen King, 1982"
+    },
+    {
+      "q": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "a": "Pride and Prejudice",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Jane Austen, 1813",
+      "pd": true
+    },
+    {
+      "q": "The game is afoot!",
+      "a": "Sherlock Holmes",
+      "alt": [
+        "The Adventure of the Abbey Grange",
+        "The Return of Sherlock Holmes"
+      ],
+      "cat": "books",
+      "hint": "Detective stories by Arthur Conan Doyle"
+    },
+    {
+      "q": "Miss Jean Louise, stand up. Your father's passin'.",
+      "a": "To Kill a Mockingbird",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Harper Lee, 1960"
+    },
+    {
+      "q": "So we beat on, boats against the current, borne back ceaselessly into the past.",
+      "a": "The Great Gatsby",
+      "alt": [
+        "Gatsby"
+      ],
+      "cat": "books",
+      "hint": "Novel by F. Scott Fitzgerald, 1925"
+    },
+    {
+      "q": "Happy families are all alike; every unhappy family is unhappy in its own way.",
+      "a": "Anna Karenina",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Leo Tolstoy, 1878"
+    },
+    {
+      "q": "I am no bird; and no net ensnares me.",
+      "a": "Jane Eyre",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Charlotte Bront\u00eb, 1847"
+    },
+    {
+      "q": "Whatever our souls are made of, his and mine are the same.",
+      "a": "Wuthering Heights",
+      "alt": [],
+      "cat": "books",
+      "hint": "Novel by Emily Bront\u00eb, 1847"
+    },
+    {
+      "q": "Beware; for I am fearless, and therefore powerful.",
+      "a": "Frankenstein",
+      "alt": [
+        "Frankenstein; or, The Modern Prometheus"
+      ],
+      "cat": "books",
+      "hint": "Gothic novel by Mary Shelley, 1818"
+    },
+    {
+      "q": "May the Force be with you.",
+      "a": "Star Wars",
+      "alt": [
+        "Star Wars: A New Hope",
+        "A New Hope",
+        "Star Wars: Episode IV"
+      ],
+      "cat": "movies",
+      "hint": "Space opera directed by George Lucas, 1977",
+      "franchise": "starwars"
+    },
+    {
+      "q": "No, I am your father.",
+      "a": "The Empire Strikes Back",
+      "alt": [
+        "Star Wars: The Empire Strikes Back",
+        "Star Wars: Episode V",
+        "Empire Strikes Back",
+        "Star Wars"
+      ],
+      "cat": "movies",
+      "hint": "The second Star Wars film released, 1980",
+      "franchise": "starwars"
+    },
+    {
+      "q": "I'm gonna make him an offer he can't refuse.",
+      "a": "The Godfather",
+      "alt": [
+        "Godfather"
+      ],
+      "cat": "movies",
+      "hint": "Crime saga directed by Francis Ford Coppola, 1972",
+      "franchise": "godfather"
+    },
+    {
+      "q": "Keep your friends close, but your enemies closer.",
+      "a": "The Godfather Part II",
+      "alt": [
+        "The Godfather 2",
+        "Godfather Part II",
+        "The Godfather"
+      ],
+      "cat": "movies",
+      "hint": "Oscar-winning 1974 sequel",
+      "franchise": "godfather"
+    },
+    {
+      "q": "Here's looking at you, kid.",
+      "a": "Casablanca",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Wartime romance starring Humphrey Bogart, 1942"
+    },
+    {
+      "q": "I'll be back.",
+      "a": "The Terminator",
+      "alt": [
+        "Terminator"
+      ],
+      "cat": "movies",
+      "hint": "Sci-fi thriller directed by James Cameron, 1984",
+      "franchise": "terminator"
+    },
+    {
+      "q": "Hasta la vista, baby.",
+      "a": "Terminator 2: Judgment Day",
+      "alt": [
+        "Terminator 2",
+        "T2",
+        "The Terminator"
+      ],
+      "cat": "movies",
+      "hint": "1991 sequel starring Arnold Schwarzenegger",
+      "franchise": "terminator"
+    },
+    {
+      "q": "Why so serious?",
+      "a": "The Dark Knight",
+      "alt": [
+        "Dark Knight",
+        "Batman: The Dark Knight"
+      ],
+      "cat": "movies",
+      "hint": "Superhero film directed by Christopher Nolan, 2008"
+    },
+    {
+      "q": "To infinity and beyond!",
+      "a": "Toy Story",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Pixar's first feature film, 1995"
+    },
+    {
+      "q": "Houston, we have a problem.",
+      "a": "Apollo 13",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Space docudrama starring Tom Hanks, 1995"
+    },
+    {
+      "q": "You can't handle the truth!",
+      "a": "A Few Good Men",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Courtroom drama starring Jack Nicholson, 1992"
+    },
+    {
+      "q": "I see dead people.",
+      "a": "The Sixth Sense",
+      "alt": [
+        "Sixth Sense"
+      ],
+      "cat": "movies",
+      "hint": "Supernatural thriller by M. Night Shyamalan, 1999"
+    },
+    {
+      "q": "Just keep swimming.",
+      "a": "Finding Nemo",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Pixar film set on the Great Barrier Reef, 2003"
+    },
+    {
+      "q": "Say hello to my little friend!",
+      "a": "Scarface",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Crime drama starring Al Pacino, 1983"
+    },
+    {
+      "q": "Roads? Where we're going, we don't need roads.",
+      "a": "Back to the Future",
+      "alt": [
+        "BTTF"
+      ],
+      "cat": "movies",
+      "hint": "Time-travel classic directed by Robert Zemeckis, 1985"
+    },
+    {
+      "q": "Mama always said life was like a box of chocolates.",
+      "a": "Forrest Gump",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Drama starring Tom Hanks, 1994"
+    },
+    {
+      "q": "You shall not pass!",
+      "a": "The Lord of the Rings: The Fellowship of the Ring",
+      "alt": [
+        "The Fellowship of the Ring",
+        "Fellowship of the Ring",
+        "The Lord of the Rings",
+        "Lord of the Rings",
+        "LOTR"
+      ],
+      "cat": "movies",
+      "hint": "First film of Peter Jackson's trilogy, 2001"
+    },
+    {
+      "q": "There's no place like home.",
+      "a": "The Wizard of Oz",
+      "alt": [
+        "Wizard of Oz"
+      ],
+      "cat": "movies",
+      "hint": "Musical fantasy starring Judy Garland, 1939"
+    },
+    {
+      "q": "Frankly, my dear, I don't give a damn.",
+      "a": "Gone with the Wind",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Epic starring Clark Gable and Vivien Leigh, 1939"
+    },
+    {
+      "q": "You're gonna need a bigger boat.",
+      "a": "Jaws",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Thriller directed by Steven Spielberg, 1975"
+    },
+    {
+      "q": "I'm the king of the world!",
+      "a": "Titanic",
+      "alt": [],
+      "cat": "movies",
+      "hint": "Romance-disaster epic by James Cameron, 1997"
+    },
+    {
+      "q": "It's dangerous to go alone! Take this.",
+      "a": "The Legend of Zelda",
+      "alt": [
+        "Legend of Zelda",
+        "Zelda"
+      ],
+      "cat": "games",
+      "hint": "Nintendo's original adventure on the NES, 1986",
+      "franchise": "zelda"
+    },
+    {
+      "q": "Hey! Listen!",
+      "a": "The Legend of Zelda: Ocarina of Time",
+      "alt": [
+        "Ocarina of Time",
+        "The Legend of Zelda",
+        "Legend of Zelda",
+        "Zelda"
+      ],
+      "cat": "games",
+      "hint": "N64 classic starring a fairy named Navi, 1998",
+      "franchise": "zelda"
+    },
+    {
+      "q": "The cake is a lie.",
+      "a": "Portal",
+      "alt": [],
+      "cat": "games",
+      "hint": "Valve's physics-puzzle game, 2007"
+    },
+    {
+      "q": "War. War never changes.",
+      "a": "Fallout",
+      "alt": [
+        "Fallout series"
+      ],
+      "cat": "games",
+      "hint": "Post-apocalyptic RPG series, first released 1997"
+    },
+    {
+      "q": "A man chooses; a slave obeys.",
+      "a": "BioShock",
+      "alt": [
+        "Bioshock"
+      ],
+      "cat": "games",
+      "hint": "Shooter set in the underwater city of Rapture, 2007",
+      "franchise": "bioshock"
+    },
+    {
+      "q": "Would you kindly?",
+      "a": "BioShock",
+      "alt": [
+        "Bioshock"
+      ],
+      "cat": "games",
+      "hint": "This 2007 game's most famous three words",
+      "franchise": "bioshock"
+    },
+    {
+      "q": "Praise the sun!",
+      "a": "Dark Souls",
+      "alt": [],
+      "cat": "games",
+      "hint": "Notoriously difficult FromSoftware RPG, 2011"
+    },
+    {
+      "q": "Do a barrel roll!",
+      "a": "Star Fox 64",
+      "alt": [
+        "Starfox 64",
+        "Star Fox",
+        "Lylat Wars"
+      ],
+      "cat": "games",
+      "hint": "Nintendo 64 rail shooter, 1997"
+    },
+    {
+      "q": "Finish him!",
+      "a": "Mortal Kombat",
+      "alt": [],
+      "cat": "games",
+      "hint": "Arcade fighting game, 1992"
+    },
+    {
+      "q": "Thank you Mario! But our princess is in another castle!",
+      "a": "Super Mario Bros.",
+      "alt": [
+        "Super Mario Bros",
+        "Super Mario Brothers",
+        "Mario"
+      ],
+      "cat": "games",
+      "hint": "NES platformer, 1985",
+      "franchise": "mario"
+    },
+    {
+      "q": "It's-a me, Mario!",
+      "a": "Super Mario 64",
+      "alt": [
+        "Mario 64",
+        "Mario"
+      ],
+      "cat": "games",
+      "hint": "The plumber's first 3D outing, 1996",
+      "franchise": "mario"
+    },
+    {
+      "q": "Stay awhile and listen.",
+      "a": "Diablo",
+      "alt": [
+        "Diablo II",
+        "Diablo 2"
+      ],
+      "cat": "games",
+      "hint": "Blizzard's dark action-RPG, 1996"
+    },
+    {
+      "q": "Nothing is true; everything is permitted.",
+      "a": "Assassin's Creed",
+      "alt": [
+        "Assassins Creed",
+        "AC"
+      ],
+      "cat": "games",
+      "hint": "Ubisoft's historical stealth series, 2007"
+    },
+    {
+      "q": "Wake up, Mr. Freeman. Wake up and smell the ashes.",
+      "a": "Half-Life 2",
+      "alt": [
+        "Half Life 2",
+        "HL2"
+      ],
+      "cat": "games",
+      "hint": "Valve's landmark shooter sequel, 2004"
+    },
+    {
+      "q": "Kept you waiting, huh?",
+      "a": "Metal Gear Solid",
+      "alt": [
+        "Metal Gear Solid V",
+        "Metal Gear Solid V: The Phantom Pain",
+        "Metal Gear",
+        "MGS"
+      ],
+      "cat": "games",
+      "hint": "Hideo Kojima's stealth series"
+    },
+    {
+      "q": "Then I took an arrow in the knee.",
+      "a": "The Elder Scrolls V: Skyrim",
+      "alt": [
+        "Skyrim",
+        "Elder Scrolls V",
+        "The Elder Scrolls"
+      ],
+      "cat": "games",
+      "hint": "Bethesda's open-world RPG, 2011"
+    },
+    {
+      "q": "You have died of dysentery.",
+      "a": "The Oregon Trail",
+      "alt": [
+        "Oregon Trail"
+      ],
+      "cat": "games",
+      "hint": "Educational pioneer-wagon game, 1971"
+    },
+    {
+      "q": "Objection!",
+      "a": "Ace Attorney",
+      "alt": [
+        "Phoenix Wright",
+        "Phoenix Wright: Ace Attorney"
+      ],
+      "cat": "games",
+      "hint": "Courtroom visual-novel series by Capcom, 2001"
+    },
+    {
+      "q": "All your base are belong to us.",
+      "a": "Zero Wing",
+      "alt": [],
+      "cat": "games",
+      "hint": "Infamously translated arcade shooter, 1989"
+    },
+    {
+      "q": "You must construct additional pylons.",
+      "a": "StarCraft",
+      "alt": [
+        "Starcraft"
+      ],
+      "cat": "games",
+      "hint": "Blizzard's sci-fi strategy game, 1998"
+    },
+    {
+      "q": "Endure and survive.",
+      "a": "The Last of Us",
+      "alt": [
+        "Last of Us",
+        "TLOU"
+      ],
+      "cat": "games",
+      "hint": "Naughty Dog's post-pandemic drama, 2013"
+    },
+    {
+      "q": "I am the one who knocks.",
+      "a": "Breaking Bad",
+      "alt": [],
+      "cat": "tv",
+      "hint": "AMC drama about a chemistry teacher, 2008\u20132013",
+      "franchise": "bb"
+    },
+    {
+      "q": "Say my name.",
+      "a": "Breaking Bad",
+      "alt": [],
+      "cat": "tv",
+      "hint": "Heisenberg's series, 2008\u20132013",
+      "franchise": "bb"
+    },
+    {
+      "q": "How you doin'?",
+      "a": "Friends",
+      "alt": [],
+      "cat": "tv",
+      "hint": "NBC sitcom set in Manhattan, 1994\u20132004",
+      "franchise": "friends"
+    },
+    {
+      "q": "We were on a break!",
+      "a": "Friends",
+      "alt": [],
+      "cat": "tv",
+      "hint": "Ross's eternal defense, 1994\u20132004",
+      "franchise": "friends"
+    },
+    {
+      "q": "That's what she said.",
+      "a": "The Office",
+      "alt": [
+        "The Office (US)",
+        "Office"
+      ],
+      "cat": "tv",
+      "hint": "Mockumentary set at a paper company, 2005\u20132013",
+      "franchise": "office"
+    },
+    {
+      "q": "Bears. Beets. Battlestar Galactica.",
+      "a": "The Office",
+      "alt": [
+        "The Office (US)",
+        "Office"
+      ],
+      "cat": "tv",
+      "hint": "Jim's impression of Dwight, 2005\u20132013",
+      "franchise": "office"
+    },
+    {
+      "q": "Bazinga!",
+      "a": "The Big Bang Theory",
+      "alt": [
+        "Big Bang Theory",
+        "TBBT"
+      ],
+      "cat": "tv",
+      "hint": "CBS sitcom about physicists, 2007\u20132019"
+    },
+    {
+      "q": "You come at the king, you best not miss.",
+      "a": "The Wire",
+      "alt": [
+        "Wire"
+      ],
+      "cat": "tv",
+      "hint": "HBO crime drama set in Baltimore, 2002\u20132008"
+    },
+    {
+      "q": "D'oh!",
+      "a": "The Simpsons",
+      "alt": [
+        "Simpsons"
+      ],
+      "cat": "tv",
+      "hint": "Animated family from Springfield, 1989\u2013present"
+    },
+    {
+      "q": "This is the way.",
+      "a": "The Mandalorian",
+      "alt": [
+        "Mandalorian"
+      ],
+      "cat": "tv",
+      "hint": "Star Wars series on Disney+, 2019"
+    },
+    {
+      "q": "I've made a huge mistake.",
+      "a": "Arrested Development",
+      "alt": [],
+      "cat": "tv",
+      "hint": "Cult comedy about the Bluth family, 2003"
+    },
+    {
+      "q": "Live long and prosper.",
+      "a": "Star Trek",
+      "alt": [
+        "Star Trek: The Original Series",
+        "Star Trek TOS"
+      ],
+      "cat": "tv",
+      "hint": "Sci-fi series aboard the USS Enterprise, 1966"
+    },
+    {
+      "q": "Wibbly wobbly, timey wimey.",
+      "a": "Doctor Who",
+      "alt": [
+        "Dr Who",
+        "Dr. Who"
+      ],
+      "cat": "tv",
+      "hint": "British sci-fi about a time-travelling alien, 1963"
+    },
+    {
+      "q": "Clear eyes, full hearts, can't lose.",
+      "a": "Friday Night Lights",
+      "alt": [
+        "FNL"
+      ],
+      "cat": "tv",
+      "hint": "Drama about Texas high-school football, 2006"
+    },
+    {
+      "q": "Legen \u2014 wait for it \u2014 dary!",
+      "a": "How I Met Your Mother",
+      "alt": [
+        "HIMYM"
+      ],
+      "cat": "tv",
+      "hint": "CBS sitcom narrated from the year 2030, 2005"
+    },
+    {
+      "q": "You know nothing, Jon Snow.",
+      "a": "Game of Thrones",
+      "alt": [
+        "GoT",
+        "A Game of Thrones"
+      ],
+      "cat": "tv",
+      "hint": "HBO fantasy epic, 2011\u20132019"
+    },
+    {
+      "q": "Friends don't lie.",
+      "a": "Stranger Things",
+      "alt": [],
+      "cat": "tv",
+      "hint": "Netflix sci-fi set in Hawkins, Indiana, 2016"
+    },
+    {
+      "q": "Cool. Cool cool cool.",
+      "a": "Brooklyn Nine-Nine",
+      "alt": [
+        "Brooklyn 99",
+        "B99"
+      ],
+      "cat": "tv",
+      "hint": "Sitcom set in an NYPD precinct, 2013"
+    },
+    {
+      "q": "Treat yo' self!",
+      "a": "Parks and Recreation",
+      "alt": [
+        "Parks and Rec"
+      ],
+      "cat": "tv",
+      "hint": "Mockumentary set in Pawnee, Indiana, 2009"
+    },
+    {
+      "q": "I'm not a psychopath, I'm a high-functioning sociopath.",
+      "a": "Sherlock",
+      "alt": [
+        "Sherlock (BBC)",
+        "BBC Sherlock"
+      ],
+      "cat": "tv",
+      "hint": "BBC's modern-day detective series, 2010"
+    }
+  ]
+}

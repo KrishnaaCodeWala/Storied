@@ -1,0 +1,16 @@
+{
+  "name": "storied",
+  "version": "3.0.0",
+  "description": "STORIED — the fandom knowledge game. Quotes, lore, and deep cuts from your favorite worlds.",
+  "private": true,
+  "scripts": {
+    "test": "node test-game.js",
+    "build": "node build.js",
+    "check": "node build.js && node standalone-check.js && node harvest.js --validate packs",
+    "harvest": "node harvest.js",
+    "validate": "node harvest.js --validate packs"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

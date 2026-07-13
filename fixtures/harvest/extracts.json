@@ -1,0 +1,79 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "101": {
+        "pageid": 101,
+        "ns": 0,
+        "title": "Geralt of Rivia",
+        "extract": "Geralt of Rivia, known as the White Wolf, is a witcher: a mutated, professionally trained monster slayer for hire. Geralt carries two swords, silver for monsters and steel for men."
+      },
+      "102": {
+        "pageid": 102,
+        "ns": 0,
+        "title": "Yennefer of Vengerberg",
+        "extract": "Yennefer of Vengerberg is a powerful sorceress born on Belleteyn. Yennefer is famed for her raven-black hair, lilac eyes, and her stormy bond with a certain witcher."
+      },
+      "103": {
+        "pageid": 103,
+        "ns": 0,
+        "title": "Ciri",
+        "extract": "Ciri, princess of Cintra, is the Lady of Time and Space, carrier of the Elder Blood. Ciri was raised at Kaer Morhen and trained by witchers."
+      },
+      "104": {
+        "pageid": 104,
+        "ns": 0,
+        "title": "Triss Merigold",
+        "extract": "Triss Merigold of Maribor is a sorceress and healer known as the Fourteenth of the Hill. Triss is a close friend of the witchers of Kaer Morhen."
+      },
+      "105": {
+        "pageid": 105,
+        "ns": 0,
+        "title": "Dandelion",
+        "extract": "Dandelion is a celebrated bard, poet, and professor whose ballads chronicle the adventures of his best friend, a famous witcher."
+      },
+      "106": {
+        "pageid": 106,
+        "ns": 0,
+        "title": "Vesemir",
+        "extract": "Vesemir is the oldest and most experienced witcher of the Wolf School, serving as fencing instructor and father figure at Kaer Morhen."
+      },
+      "107": {
+        "pageid": 107,
+        "ns": 0,
+        "title": "Zoltan Chivay",
+        "extract": "Zoltan Chivay is a dwarven warrior and trader, a loyal drinking companion famed for his colorful parrot and generous heart."
+      },
+      "108": {
+        "pageid": 108,
+        "ns": 0,
+        "title": "Emhyr var Emreis",
+        "extract": "Emhyr var Emreis is the Emperor of Nilfgaard, called the White Flame Dancing on the Barrows of his Enemies."
+      },
+      "109": {
+        "pageid": 109,
+        "ns": 0,
+        "title": "Philippa Eilhart",
+        "extract": "Philippa Eilhart is an ambitious sorceress and advisor to kings, a founding member of the Lodge of Sorceresses who can take owl form."
+      },
+      "110": {
+        "pageid": 110,
+        "ns": 0,
+        "title": "Regis",
+        "extract": "Regis is a higher vampire and barber-surgeon, an erudite and gentle soul with a fondness for mandrake hooch."
+      },
+      "111": {
+        "pageid": 111,
+        "ns": 0,
+        "title": "Lambert",
+        "extract": "Lambert is a sharp-tongued witcher of the Wolf School, the youngest of the Kaer Morhen witchers and famously bad at politeness."
+      },
+      "112": {
+        "pageid": 112,
+        "ns": 0,
+        "title": "Eskel",
+        "extract": "Eskel is a calm and dependable witcher of the Wolf School, bearing a facial scar and a reputation for level-headedness."
+      }
+    }
+  }
+}

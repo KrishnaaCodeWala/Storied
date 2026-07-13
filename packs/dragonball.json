@@ -1,0 +1,258 @@
+{
+  "id": "dragonball",
+  "tags": [
+    "anime",
+    "action"
+  ],
+  "label": "Dragon Ball",
+  "color": "#ffa028",
+  "cta": "Power up",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character\u2026",
+  "blurb": "From the Saiyan saga to the Cell Games. Name who said the line.",
+  "roster": [
+    "Goku",
+    "Vegeta",
+    "Gohan",
+    "Piccolo",
+    "Krillin",
+    "Frieza",
+    "Cell",
+    "Trunks",
+    "Bulma",
+    "Master Roshi",
+    "Nappa",
+    "Android 18",
+    "Beerus",
+    "Dende",
+    "Mr. Satan"
+  ],
+  "motifs": [
+    "dball",
+    "cloud",
+    "flame",
+    "star"
+  ],
+  "quotes": [
+    {
+      "q": "Vegeta, what does the scouter say about his power level?",
+      "a": "Nappa",
+      "alt": [],
+      "hint": "The setup to the most famous line in anime dubbing"
+    },
+    {
+      "q": "It's over 9000!",
+      "a": "Vegeta",
+      "alt": [
+        "Prince Vegeta",
+        "Prince of all Saiyans"
+      ],
+      "hint": "Scouter crushed immediately afterward"
+    },
+    {
+      "q": "There is one thing a Saiyan always keeps... his pride!",
+      "a": "Vegeta",
+      "alt": [
+        "Prince Vegeta",
+        "Prince of all Saiyans"
+      ],
+      "hint": "Shouted while shaking off Babidi's mind control"
+    },
+    {
+      "q": "I am the hope of the universe.",
+      "a": "Goku",
+      "alt": [
+        "Kakarot",
+        "Son Goku"
+      ],
+      "hint": "The Super Saiyan declaration on Namek"
+    },
+    {
+      "q": "Ally to good! Nightmare to you!",
+      "a": "Goku",
+      "alt": [
+        "Kakarot",
+        "Son Goku"
+      ],
+      "hint": "How the same Namek speech ends"
+    },
+    {
+      "q": "I'm sorry, but this isn't even my final form.",
+      "a": "Frieza",
+      "alt": [
+        "Freeza"
+      ],
+      "hint": "The galactic emperor kept transforming"
+    },
+    {
+      "q": "There're three things I refuse to tolerate: cowardice, bad haircuts, and military insurrection.",
+      "a": "Frieza",
+      "alt": [
+        "Freeza"
+      ],
+      "hint": "Tyranny with a sense of style"
+    },
+    {
+      "q": "Gohan, you were the first friend I ever had.",
+      "a": "Piccolo",
+      "alt": [],
+      "hint": "The demon king turned mentor, shielding his student"
+    },
+    {
+      "q": "Eternal Dragon, by your name, I summon you forth, Shenron.",
+      "a": "Dende",
+      "alt": [],
+      "hint": "The young Namekian's summoning words"
+    }
+  ],
+  "lore": [
+    {
+      "question": "How many Dragon Balls summon Shenron?",
+      "a": "Seven",
+      "alt": [
+        "7"
+      ],
+      "pool": [
+        "Five",
+        "Six",
+        "Eight",
+        "Nine",
+        "Twelve"
+      ],
+      "hint": "Scattered across the Earth after each wish",
+      "source": "https://dragonball.fandom.com/wiki/Dragon_Ball_(object)"
+    },
+    {
+      "question": "What is Goku\u2019s Saiyan birth name?",
+      "a": "Kakarot",
+      "alt": [
+        "Kakarrot",
+        "Kakarotto"
+      ],
+      "pool": [
+        "Raditz",
+        "Bardock",
+        "Broly",
+        "Turles",
+        "Nappa"
+      ],
+      "hint": "Vegeta refuses to call him anything else",
+      "source": "https://dragonball.fandom.com/wiki/Goku"
+    },
+    {
+      "question": "Who is Goku\u2019s Saiyan father?",
+      "a": "Bardock",
+      "alt": [],
+      "pool": [
+        "Raditz",
+        "King Vegeta",
+        "Nappa",
+        "Turles",
+        "Paragus"
+      ],
+      "hint": "A low-class warrior who saw Frieza\u2019s betrayal coming",
+      "source": "https://dragonball.fandom.com/wiki/Bardock"
+    },
+    {
+      "question": "The Namekian Dragon Balls summon which dragon?",
+      "a": "Porunga",
+      "alt": [],
+      "pool": [
+        "Shenron",
+        "Super Shenron",
+        "Zalama",
+        "Icarus",
+        "King Kai"
+      ],
+      "hint": "He grants three wishes, not one",
+      "source": "https://dragonball.fandom.com/wiki/Porunga"
+    },
+    {
+      "question": "Which technique lets Goku teleport by sensing ki?",
+      "a": "Instant Transmission",
+      "alt": [
+        "Instantaneous Movement"
+      ],
+      "pool": [
+        "Kamehameha",
+        "Solar Flare",
+        "Kaio-ken",
+        "Spirit Bomb",
+        "Destructo Disc"
+      ],
+      "hint": "Learned on Planet Yardrat, two fingers to the forehead",
+      "source": "https://dragonball.fandom.com/wiki/Instant_Transmission"
+    },
+    {
+      "question": "Who created the Androids and Cell?",
+      "a": "Dr. Gero",
+      "alt": [
+        "Doctor Gero",
+        "Gero",
+        "Android 20"
+      ],
+      "pool": [
+        "Dr. Briefs",
+        "Dr. Wheelo",
+        "Babidi",
+        "Frieza",
+        "Dr. Myuu"
+      ],
+      "hint": "The Red Ribbon Army\u2019s vengeful scientist",
+      "source": "https://dragonball.fandom.com/wiki/Dr._Gero"
+    },
+    {
+      "question": "With a tail intact, a Saiyan under a full moon becomes what?",
+      "a": "Great Ape",
+      "alt": [
+        "Oozaru",
+        "An Oozaru"
+      ],
+      "pool": [
+        "Super Saiyan",
+        "Legendary Saiyan",
+        "Giant Namekian",
+        "Majin",
+        "Golden Wolf"
+      ],
+      "hint": "Ten times the power, none of the self-control",
+      "source": "https://dragonball.fandom.com/wiki/Great_Ape"
+    },
+    {
+      "question": "Krillin marries which former enemy?",
+      "a": "Android 18",
+      "alt": [
+        "18",
+        "Lazuli"
+      ],
+      "pool": [
+        "Android 17",
+        "Launch",
+        "Videl",
+        "Chi-Chi",
+        "Zangya"
+      ],
+      "hint": "He wished the bomb out of her chest first",
+      "source": "https://dragonball.fandom.com/wiki/Android_18"
+    },
+    {
+      "question": "What is the name of the golden cloud Goku rides?",
+      "a": "Nimbus",
+      "alt": [
+        "Flying Nimbus",
+        "Kinto'un",
+        "Kintoun",
+        "The Nimbus"
+      ],
+      "pool": [
+        "Icarus",
+        "Shenron",
+        "Capsule Corp Jet",
+        "Baba\u2019s Crystal Ball",
+        "Kami\u2019s Lookout"
+      ],
+      "hint": "Only the pure of heart can ride it",
+      "source": "https://dragonball.fandom.com/wiki/Flying_Nimbus"
+    }
+  ]
+}

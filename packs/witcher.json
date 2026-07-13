@@ -1,0 +1,312 @@
+{
+  "id": "witcher",
+  "tags": [
+    "games",
+    "rpg",
+    "fantasy"
+  ],
+  "label": "The Witcher",
+  "color": "#b9c6d2",
+  "cta": "Walk the Path",
+  "prompt": "Who said it?",
+  "placeholder": "Type the name…",
+  "blurb": "The Continent, monsters and all. Quotes from the games, lore from the saga.",
+  "roster": [
+    "Geralt of Rivia",
+    "Yennefer of Vengerberg",
+    "Ciri",
+    "Triss Merigold",
+    "Dandelion",
+    "Vesemir",
+    "Zoltan Chivay",
+    "Emhyr var Emreis",
+    "Philippa Eilhart",
+    "Regis",
+    "Lambert",
+    "Eskel"
+  ],
+  "motifs": [
+    "sword",
+    "potion",
+    "moon"
+  ],
+  "quotes": [
+    {
+      "q": "Wind's howling.",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "hint": "The weather report, delivered a thousand times on the Path"
+    },
+    {
+      "q": "Damn, you're ugly.",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "hint": "Said to roughly half the bestiary"
+    },
+    {
+      "q": "Evil is evil. Lesser, greater, middling, makes no difference.",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "hint": "His whole moral philosophy in nine words"
+    },
+    {
+      "q": "No witcher's ever died in his own bed.",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "hint": "Cold comfort for Ciri after the siege of Kaer Morhen"
+    },
+    {
+      "q": "There's nothing behind me. I'm a witcher, I'd have heard it.",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "hint": "To a bandit trying the oldest trick there is"
+    },
+    {
+      "q": "You were always an unruly child. I adored that about you. Now fly!",
+      "a": "Vesemir",
+      "alt": [],
+      "hint": "An old master’s final words during the siege"
+    },
+    {
+      "q": "Kings die, realms fall, but magic endures.",
+      "a": "Philippa Eilhart",
+      "alt": [
+        "Philippa"
+      ],
+      "hint": "The Lodge of Sorceresses’ worldview in seven words"
+    },
+    {
+      "q": "If he thinks he can buy me, he is sorely mistaken.",
+      "a": "Ciri",
+      "alt": [
+        "Cirilla",
+        "Zireael",
+        "Cirilla Fiona Elen Riannon"
+      ],
+      "hint": "Storming out of a meeting with a certain Emperor"
+    }
+  ],
+  "lore": [
+    {
+      "question": "Who is this? “___ of ___ , known as the White Wolf, is a witcher: a mutated, professionally…”",
+      "a": "Geralt of Rivia",
+      "alt": [
+        "Geralt",
+        "White Wolf",
+        "Gwynbleidd"
+      ],
+      "pool": [
+        "Yennefer of Vengerberg",
+        "Ciri",
+        "Triss Merigold",
+        "Dandelion",
+        "Vesemir"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Geralt_of_Rivia",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ of ___ is a powerful sorceress born on Belleteyn. ___ is famed for her…”",
+      "a": "Yennefer of Vengerberg",
+      "alt": [
+        "Yennefer",
+        "Yen"
+      ],
+      "pool": [
+        "Ciri",
+        "Triss Merigold",
+        "Dandelion",
+        "Vesemir",
+        "Zoltan Chivay"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Yennefer_of_Vengerberg",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ , princess of Cintra, is the Lady of Time and Space, carrier of the…”",
+      "a": "Ciri",
+      "alt": [
+        "Cirilla",
+        "Zireael"
+      ],
+      "pool": [
+        "Triss Merigold",
+        "Dandelion",
+        "Vesemir",
+        "Zoltan Chivay",
+        "Emhyr var Emreis"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Ciri",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ of Maribor is a sorceress and healer known as the Fourteenth of the Hill.…”",
+      "a": "Triss Merigold",
+      "alt": [
+        "Triss"
+      ],
+      "pool": [
+        "Dandelion",
+        "Vesemir",
+        "Zoltan Chivay",
+        "Emhyr var Emreis",
+        "Philippa Eilhart"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Triss_Merigold",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is a celebrated bard, poet, and professor whose ballads chronicle the adventures of his…”",
+      "a": "Dandelion",
+      "alt": [
+        "Jaskier"
+      ],
+      "pool": [
+        "Vesemir",
+        "Zoltan Chivay",
+        "Emhyr var Emreis",
+        "Philippa Eilhart",
+        "Regis"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Dandelion",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is the oldest and most experienced witcher of the Wolf School, serving as fencing…”",
+      "a": "Vesemir",
+      "alt": [],
+      "pool": [
+        "Zoltan Chivay",
+        "Emhyr var Emreis",
+        "Philippa Eilhart",
+        "Regis",
+        "Lambert"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Vesemir",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is a dwarven warrior and trader, a loyal drinking companion famed for his colorful…”",
+      "a": "Zoltan Chivay",
+      "alt": [
+        "Zoltan"
+      ],
+      "pool": [
+        "Emhyr var Emreis",
+        "Philippa Eilhart",
+        "Regis",
+        "Lambert",
+        "Eskel"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Zoltan_Chivay",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ var ___ is the Emperor of Nilfgaard, called the White Flame Dancing on the…”",
+      "a": "Emhyr var Emreis",
+      "alt": [
+        "Emhyr",
+        "The White Flame"
+      ],
+      "pool": [
+        "Philippa Eilhart",
+        "Regis",
+        "Lambert",
+        "Eskel",
+        "Geralt of Rivia"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Emhyr_var_Emreis",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is an ambitious sorceress and advisor to kings, a founding member of the Lodge…”",
+      "a": "Philippa Eilhart",
+      "alt": [
+        "Philippa"
+      ],
+      "pool": [
+        "Regis",
+        "Lambert",
+        "Eskel",
+        "Geralt of Rivia",
+        "Yennefer of Vengerberg"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Philippa_Eilhart",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is a higher vampire and barber-surgeon, an erudite and gentle soul with a fondness…”",
+      "a": "Regis",
+      "alt": [],
+      "pool": [
+        "Lambert",
+        "Eskel",
+        "Geralt of Rivia",
+        "Yennefer of Vengerberg",
+        "Ciri"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Regis",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is a sharp-tongued witcher of the Wolf School, the youngest of the Kaer Morhen…”",
+      "a": "Lambert",
+      "alt": [],
+      "pool": [
+        "Eskel",
+        "Geralt of Rivia",
+        "Yennefer of Vengerberg",
+        "Ciri",
+        "Triss Merigold"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Lambert",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Who is this? “___ is a calm and dependable witcher of the Wolf School, bearing a facial scar…”",
+      "a": "Eskel",
+      "alt": [],
+      "pool": [
+        "Geralt of Rivia",
+        "Yennefer of Vengerberg",
+        "Ciri",
+        "Triss Merigold",
+        "Dandelion"
+      ],
+      "hint": "A wiki profile with the name blanked out",
+      "source": "https://witcher.fandom.com/wiki/Eskel",
+      "license": "CC BY-SA"
+    }
+  ]
+}

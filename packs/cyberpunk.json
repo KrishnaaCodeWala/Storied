@@ -1,0 +1,115 @@
+{
+  "id": "cyberpunk",
+  "tags": [
+    "games",
+    "rpg",
+    "sci-fi"
+  ],
+  "label": "Cyberpunk 2077",
+  "color": "#fcee0a",
+  "cta": "Jack into Night City",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "Night City, 2077. Mercs, rockerboys and fixers — name who said the line.",
+  "roster": [
+    "V",
+    "Johnny Silverhand",
+    "Jackie Welles",
+    "Judy Alvarez",
+    "Panam Palmer",
+    "Viktor Vektor",
+    "Misty Olszewski",
+    "Dexter DeShawn",
+    "Rogue Amendiares",
+    "Goro Takemura",
+    "Adam Smasher",
+    "River Ward",
+    "Kerry Eurodyne",
+    "Alt Cunningham"
+  ],
+  "motifs": [
+    "chip",
+    "city",
+    "bolt",
+    "saber"
+  ],
+  "quotes": [
+    {
+      "q": "Wake up, Samurai. We have a city to burn.",
+      "a": "Johnny Silverhand",
+      "alt": [
+        "Johnny",
+        "Silverhand"
+      ],
+      "hint": "The line that revealed Keanu Reeves at E3 2019"
+    },
+    {
+      "q": "Goodbye, V. And never stop fighting.",
+      "a": "Johnny Silverhand",
+      "alt": [
+        "Johnny",
+        "Silverhand"
+      ],
+      "hint": "His last words crossing the bridge with Alt"
+    },
+    {
+      "q": "Here, for folks like us? Wrong city, wrong people.",
+      "a": "Johnny Silverhand",
+      "alt": [
+        "Johnny",
+        "Silverhand"
+      ],
+      "hint": "His verdict on happy endings in Night City"
+    },
+    {
+      "q": "Gonna miss you, V. You were the only one who ever gave a damn.",
+      "a": "Jackie Welles",
+      "alt": [
+        "Jackie"
+      ],
+      "hint": "Final words in the Delamain cab after the heist"
+    },
+    {
+      "q": "See, V? I told you. We're gonna be legends.",
+      "a": "Jackie Welles",
+      "alt": [
+        "Jackie"
+      ],
+      "hint": "Said mid-heist, moments before it all goes wrong"
+    },
+    {
+      "q": "Or go down for all times in a blaze of glory?",
+      "a": "Dexter DeShawn",
+      "alt": [
+        "Dex",
+        "Dexter"
+      ],
+      "hint": "The fixer's question at the Afterlife bar"
+    },
+    {
+      "q": "I'm sorry, V. I'm just... I'm just a girl from the Badlands.",
+      "a": "Panam Palmer",
+      "alt": [
+        "Panam"
+      ],
+      "hint": "A Nomad's confession in Queen of the Highway"
+    },
+    {
+      "q": "The wider the smile, the bigger the lies.",
+      "a": "Goro Takemura",
+      "alt": [
+        "Takemura",
+        "Goro"
+      ],
+      "hint": "The corporate samurai on Yorinobu's press conferences"
+    },
+    {
+      "q": "Every choice you make, every lie you tell... it all adds up.",
+      "a": "Judy Alvarez",
+      "alt": [
+        "Judy"
+      ],
+      "hint": "Said during Pyramid Song, out on the water"
+    }
+  ]
+}

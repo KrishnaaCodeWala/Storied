@@ -1,0 +1,290 @@
+{
+  "id": "godofwar",
+  "tags": [
+    "games",
+    "action",
+    "mythology"
+  ],
+  "label": "God of War",
+  "color": "#e05038",
+  "cta": "Ready the axe",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character\u2026",
+  "blurb": "The Norse saga of Kratos and Atreus. Name who said the line.",
+  "roster": [
+    "Kratos",
+    "Atreus",
+    "Mimir",
+    "Freya",
+    "Baldur",
+    "Brok",
+    "Sindri",
+    "Thor",
+    "Odin",
+    "Zeus",
+    "Athena",
+    "Faye",
+    "Tyr",
+    "Angrboda"
+  ],
+  "motifs": [
+    "axe",
+    "rune",
+    "mountain",
+    "snowflake"
+  ],
+  "quotes": [
+    {
+      "q": "Boy.",
+      "a": "Kratos",
+      "alt": [
+        "The Ghost of Sparta"
+      ],
+      "hint": "One word, said a thousand times, meme immortality"
+    },
+    {
+      "q": "Do not be sorry. Be better.",
+      "a": "Kratos",
+      "alt": [
+        "The Ghost of Sparta"
+      ],
+      "hint": "Fatherly advice after the hunt goes wrong"
+    },
+    {
+      "q": "We will be the gods we choose to be. Not those who have been.",
+      "a": "Kratos",
+      "alt": [
+        "The Ghost of Sparta"
+      ],
+      "hint": "Said after breaking the cycle at journey's end"
+    },
+    {
+      "q": "Keep your expectations low, boy, and you will never be disappointed.",
+      "a": "Kratos",
+      "alt": [
+        "The Ghost of Sparta"
+      ],
+      "hint": "Spartan wisdom about stupid pots and no treasure"
+    },
+    {
+      "q": "Fate is another lie told by the gods.",
+      "a": "Kratos",
+      "alt": [
+        "The Ghost of Sparta"
+      ],
+      "hint": "His standing opinion on prophecy"
+    },
+    {
+      "q": "I thought you'd be bigger... but you're definitely the one.",
+      "a": "Baldur",
+      "alt": [
+        "The Stranger"
+      ],
+      "hint": "The tattooed stranger knocking on the door"
+    },
+    {
+      "q": "I'm dangling from the hip of the bloody Ghost of Sparta!",
+      "a": "Mimir",
+      "alt": [
+        "The Head",
+        "Smartest Man Alive"
+      ],
+      "hint": "The moment he realizes whose belt he's on"
+    },
+    {
+      "q": "Well... guess we're the bad guys now.",
+      "a": "Mimir",
+      "alt": [
+        "The Head",
+        "Smartest Man Alive"
+      ],
+      "hint": "Muttered as Freya carries her son away"
+    },
+    {
+      "q": "My father doesn't like people either.",
+      "a": "Atreus",
+      "alt": [
+        "Loki",
+        "Boy"
+      ],
+      "hint": "Bonding with the Witch of the Woods"
+    },
+    {
+      "q": "If we can't bring him back to life... can I keep the head?",
+      "a": "Atreus",
+      "alt": [
+        "Loki",
+        "Boy"
+      ],
+      "hint": "A very practical question about Mimir"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What is the name of Kratos\u2019 frost axe?",
+      "a": "Leviathan",
+      "alt": [
+        "Leviathan Axe",
+        "The Leviathan Axe",
+        "The Leviathan"
+      ],
+      "pool": [
+        "Mj\u00f6lnir",
+        "Blades of Chaos",
+        "Gungnir",
+        "Draupnir Spear",
+        "Blade of Olympus"
+      ],
+      "hint": "Forged by dwarven brothers as the answer to Thor\u2019s hammer",
+      "source": "https://godofwar.fandom.com/wiki/Leviathan_Axe"
+    },
+    {
+      "question": "Among the giants, Atreus is known by what other name?",
+      "a": "Loki",
+      "alt": [],
+      "pool": [
+        "Baldur",
+        "T\u00fdr",
+        "Fenrir",
+        "V\u00e1li",
+        "H\u00f6\u00f0r"
+      ],
+      "hint": "Revealed at the very end of the 2018 game",
+      "source": "https://godofwar.fandom.com/wiki/Atreus"
+    },
+    {
+      "question": "Which two brothers forged the Leviathan Axe?",
+      "a": "Brok and Sindri",
+      "alt": [
+        "Brok & Sindri",
+        "The Huldra Brothers",
+        "Huldra Brothers",
+        "Sindri and Brok"
+      ],
+      "pool": [
+        "Odin and Thor",
+        "Mimir and T\u00fdr",
+        "Modi and Magni",
+        "Fafnir and Regin",
+        "Baldur and Freya"
+      ],
+      "hint": "They also forged a certain hammer they regret",
+      "source": "https://godofwar.fandom.com/wiki/Huldra_Brothers"
+    },
+    {
+      "question": "What is the name of Atreus\u2019 mother, whose ashes start the journey?",
+      "a": "Faye",
+      "alt": [
+        "Laufey",
+        "Laufey the Just"
+      ],
+      "pool": [
+        "Freya",
+        "Sif",
+        "Frigg",
+        "Angrboda",
+        "Gr\u00f3a"
+      ],
+      "hint": "A giant who chose to live in Midgard",
+      "source": "https://godofwar.fandom.com/wiki/Faye"
+    },
+    {
+      "question": "To which realm do Kratos and Atreus carry Faye\u2019s ashes?",
+      "a": "J\u00f6tunheim",
+      "alt": [
+        "Jotunheim",
+        "The realm of the giants"
+      ],
+      "pool": [
+        "Asgard",
+        "Helheim",
+        "Alfheim",
+        "Niflheim",
+        "Muspelheim"
+      ],
+      "hint": "The realm of the giants, sealed off from travelers",
+      "source": "https://godofwar.fandom.com/wiki/J%C3%B6tunheim"
+    },
+    {
+      "question": "Baldur is the son of which goddess?",
+      "a": "Freya",
+      "alt": [],
+      "pool": [
+        "Frigg",
+        "Sif",
+        "Hel",
+        "Ska\u00f0i",
+        "Gr\u00f3a"
+      ],
+      "hint": "The Witch of the Woods herself",
+      "source": "https://godofwar.fandom.com/wiki/Freya"
+    },
+    {
+      "question": "The one thing that can pierce Baldur\u2019s invulnerability is what?",
+      "a": "Mistletoe",
+      "alt": [
+        "A mistletoe arrow",
+        "Mistletoe arrow"
+      ],
+      "pool": [
+        "Iron",
+        "Silver",
+        "Fire",
+        "Oak",
+        "His mother\u2019s magic"
+      ],
+      "hint": "Atreus carries arrows fletched with it",
+      "source": "https://godofwar.fandom.com/wiki/Baldur"
+    },
+    {
+      "question": "What is the World Serpent\u2019s name?",
+      "a": "J\u00f6rmungandr",
+      "alt": [
+        "Jormungandr",
+        "The World Serpent"
+      ],
+      "pool": [
+        "Fenrir",
+        "Fafnir",
+        "Nidhogg",
+        "Sleipnir",
+        "Garm"
+      ],
+      "hint": "He circles all of Midgard and speaks in rumbles",
+      "source": "https://godofwar.fandom.com/wiki/J%C3%B6rmungandr"
+    },
+    {
+      "question": "Which chained weapons from his Greek past does Kratos keep hidden?",
+      "a": "Blades of Chaos",
+      "alt": [
+        "The Blades",
+        "Blades of Athena"
+      ],
+      "pool": [
+        "Leviathan Axe",
+        "Blade of Olympus",
+        "Nemean Cestus",
+        "Bow of Apollo",
+        "Claws of Hades"
+      ],
+      "hint": "Retrieved from beneath the house when Helheim\u2019s cold demands fire",
+      "source": "https://godofwar.fandom.com/wiki/Blades_of_Chaos"
+    },
+    {
+      "question": "Who revives Mimir after Kratos frees his head?",
+      "a": "Freya",
+      "alt": [
+        "The Witch of the Woods"
+      ],
+      "pool": [
+        "Sindri",
+        "Odin",
+        "The Norns",
+        "Gr\u00f3a",
+        "Brok"
+      ],
+      "hint": "She is not thrilled about what he is",
+      "source": "https://godofwar.fandom.com/wiki/Mimir"
+    }
+  ]
+}

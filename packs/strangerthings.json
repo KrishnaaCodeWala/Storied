@@ -1,0 +1,194 @@
+{
+  "id": "strangerthings",
+  "tags": [
+    "tv",
+    "sci-fi",
+    "horror"
+  ],
+  "label": "Stranger Things",
+  "color": "#ff4554",
+  "cta": "Enter Hawkins",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "Hawkins, Indiana. One quote at a time. Name the character who said it.",
+  "roster": [
+    "Eleven",
+    "Mike Wheeler",
+    "Will Byers",
+    "Dustin Henderson",
+    "Lucas Sinclair",
+    "Max Mayfield",
+    "Jim Hopper",
+    "Joyce Byers",
+    "Steve Harrington",
+    "Nancy Wheeler",
+    "Jonathan Byers",
+    "Robin Buckley",
+    "Erica Sinclair",
+    "Eddie Munson",
+    "Murray Bauman"
+  ],
+  "motifs": [
+    "lights",
+    "bike",
+    "radio",
+    "waffle",
+    "portal"
+  ],
+  "quotes": [
+    {
+      "q": "Friends don't lie.",
+      "a": "Eleven",
+      "alt": [
+        "El",
+        "Jane Hopper",
+        "Jane"
+      ],
+      "hint": "Season 1 — a rule she holds Mike to",
+      "motifs": [
+        "waffle",
+        "lights"
+      ]
+    },
+    {
+      "q": "Mouth-breather.",
+      "a": "Eleven",
+      "alt": [
+        "El",
+        "Jane Hopper",
+        "Jane"
+      ],
+      "hint": "Season 1 — her favorite insult, learned from the boys",
+      "motifs": [
+        "waffle",
+        "lights"
+      ]
+    },
+    {
+      "q": "Bitchin'.",
+      "a": "Eleven",
+      "alt": [
+        "El",
+        "Jane Hopper",
+        "Jane"
+      ],
+      "hint": "Season 2 — said to her own reflection, new look",
+      "motifs": [
+        "waffle",
+        "bolt"
+      ]
+    },
+    {
+      "q": "Mornings are for coffee and contemplation.",
+      "a": "Jim Hopper",
+      "alt": [
+        "Hopper",
+        "Chief Hopper",
+        "Jim"
+      ],
+      "hint": "Season 1 — the chief's house rule at the station",
+      "motifs": [
+        "coffee",
+        "radio"
+      ]
+    },
+    {
+      "q": "She's our friend and she's crazy!",
+      "a": "Dustin Henderson",
+      "alt": [
+        "Dustin"
+      ],
+      "hint": "Season 1 — shouted mid-chase about a certain friend",
+      "motifs": [
+        "radio",
+        "bike"
+      ]
+    },
+    {
+      "q": "Why are you keeping this curiosity door locked?",
+      "a": "Dustin Henderson",
+      "alt": [
+        "Dustin"
+      ],
+      "hint": "Season 2 — pestering a scientist for answers",
+      "motifs": [
+        "radio",
+        "bike"
+      ]
+    },
+    {
+      "q": "We never would've upset you if we knew you had superpowers.",
+      "a": "Dustin Henderson",
+      "alt": [
+        "Dustin"
+      ],
+      "hint": "Season 1 — a very practical apology",
+      "motifs": [
+        "radio",
+        "bike"
+      ]
+    },
+    {
+      "q": "There's more to life than stupid boys, you know.",
+      "a": "Max Mayfield",
+      "alt": [
+        "Max",
+        "Mad Max"
+      ],
+      "hint": "Season 3 — advice dispensed at the mall",
+      "motifs": [
+        "lights",
+        "bike"
+      ]
+    },
+    {
+      "q": "If we're both going crazy, then we'll go crazy together.",
+      "a": "Mike Wheeler",
+      "alt": [
+        "Mike"
+      ],
+      "hint": "Season 1 — a promise made over a walkie-talkie",
+      "motifs": [
+        "radio",
+        "lights"
+      ]
+    },
+    {
+      "q": "You can't spell America without Erica.",
+      "a": "Erica Sinclair",
+      "alt": [
+        "Erica"
+      ],
+      "hint": "Season 3 — negotiating her fee in free ice cream",
+      "motifs": [
+        "star",
+        "lights"
+      ]
+    },
+    {
+      "q": "You shouldn't like things because people tell you you're supposed to.",
+      "a": "Jonathan Byers",
+      "alt": [
+        "Jonathan"
+      ],
+      "hint": "Season 1 — big-brother advice about fitting in",
+      "motifs": [
+        "lights",
+        "leaf"
+      ]
+    },
+    {
+      "q": "Fabergé Organics. Use the shampoo and conditioner.",
+      "a": "Steve Harrington",
+      "alt": [
+        "Steve",
+        "King Steve"
+      ],
+      "hint": "Season 2 — the hair secret, finally revealed",
+      "motifs": [
+        "potion",
+        "star"
+      ]
+    }
+  ]
+}
