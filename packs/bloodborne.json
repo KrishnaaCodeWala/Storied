@@ -117,6 +117,151 @@
         "The Crow"
       ],
       "hint": "The crow-feathered specialist's whole job description"
+    },
+    {
+      "q": "Beasts all over the shop. You'll be one of them, sooner or later.",
+      "a": "Gilbert",
+      "alt": [],
+      "hint": "The helpful voice behind the first friendly window"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What plague-cure turned Yharnam's faithful into monsters?",
+      "a": "The old blood",
+      "alt": [
+        "Blood ministration",
+        "The blood",
+        "Healing blood"
+      ],
+      "pool": [
+        "Ashen water",
+        "Quicksilver",
+        "The pale moon",
+        "Kin serum",
+        "Incense"
+      ],
+      "hint": "The Healing Church served it by the vial"
+    },
+    {
+      "question": "Where do hunters wake between hunts?",
+      "a": "The Hunter's Dream",
+      "alt": [
+        "Hunter's Dream",
+        "The Dream"
+      ],
+      "pool": [
+        "The Nightmare Frontier",
+        "Oedon Chapel",
+        "Byrgenwerth",
+        "The Lecture Hall",
+        "Cathedral Ward"
+      ],
+      "hint": "A workshop, a doll, and endless flowers"
+    },
+    {
+      "question": "Which hidden stat opens your eyes to hidden horrors?",
+      "a": "Insight",
+      "alt": [],
+      "pool": [
+        "Arcane",
+        "Discovery",
+        "Beasthood",
+        "Frenzy",
+        "Bloodtinge"
+      ],
+      "hint": "The more you have, the worse the sky looks"
+    },
+    {
+      "question": "What are the cosmic entities behind the nightmare called?",
+      "a": "Great Ones",
+      "alt": [
+        "The Great Ones",
+        "Kin of the cosmos"
+      ],
+      "pool": [
+        "Old Gods",
+        "The Kin",
+        "Elder Beasts",
+        "The Choir",
+        "Outer Gods"
+      ],
+      "hint": "Every one of them seems to want a child"
+    },
+    {
+      "question": "What currency do hunters spend on everything?",
+      "a": "Blood echoes",
+      "alt": [
+        "Echoes"
+      ],
+      "pool": [
+        "Souls",
+        "Insight",
+        "Quicksilver bullets",
+        "Vials",
+        "Marks"
+      ],
+      "hint": "Dropped where you died, naturally"
+    },
+    {
+      "question": "Which scholar's spider-form veils the moon's secrets?",
+      "a": "Rom",
+      "alt": [
+        "Rom, the Vacuous Spider",
+        "Rom the Vacuous"
+      ],
+      "pool": [
+        "Micolash",
+        "Willem",
+        "Kos",
+        "Amygdala",
+        "Ebrietas"
+      ],
+      "hint": "Vacuous, allegedly — and hiding a red moon"
+    },
+    {
+      "question": "At which lakeside college did the blood research begin?",
+      "a": "Byrgenwerth",
+      "alt": [],
+      "pool": [
+        "The Healing Church",
+        "Cainhurst",
+        "The Choir",
+        "Yahar'gul",
+        "The Lecture Building"
+      ],
+      "hint": "Fear the old blood, its provost warned"
+    },
+    {
+      "question": "What is special about hunters' transforming armaments?",
+      "a": "Trick weapons",
+      "alt": [
+        "They transform",
+        "Trick weapon"
+      ],
+      "pool": [
+        "They're cursed",
+        "They drink blood",
+        "They're silver",
+        "They're dreams",
+        "They're kin-made"
+      ],
+      "hint": "A cane that becomes a whip, a saw that unfolds"
+    },
+    {
+      "question": "Which surname belongs to the workshop's first hunter?",
+      "a": "Gehrman",
+      "alt": [
+        "Gehrman, the First Hunter"
+      ],
+      "pool": [
+        "Ludwig",
+        "Djura",
+        "Gascoigne",
+        "Henryk",
+        "Izzy"
+      ],
+      "hint": "He waits in the dream, wheelchair and scythe"
     }
   ]
 }

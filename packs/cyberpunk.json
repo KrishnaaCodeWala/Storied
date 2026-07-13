@@ -111,5 +111,144 @@
       ],
       "hint": "Said during Pyramid Song, out on the water"
     }
+  ],
+  "lore": [
+    {
+      "question": "Johnny Silverhand fronted which legendary band?",
+      "a": "Samurai",
+      "alt": [],
+      "pool": [
+        "Us Cracks",
+        "The Cartesian Duelists",
+        "Kerry's solo act",
+        "The Bakkers",
+        "Lizzy Wizzy"
+      ],
+      "hint": "Their bootlegs still sell out"
+    },
+    {
+      "question": "Which megacorp is Arasaka's eternal military rival?",
+      "a": "Militech",
+      "alt": [],
+      "pool": [
+        "Kang Tao",
+        "Biotechnica",
+        "Zetatech",
+        "Petrochem",
+        "Trauma Team"
+      ],
+      "hint": "American iron versus Japanese steel"
+    },
+    {
+      "question": "What does the stolen Relic chip actually contain?",
+      "a": "An engram",
+      "alt": [
+        "Johnny's engram",
+        "A digitized mind",
+        "Johnny Silverhand's engram"
+      ],
+      "pool": [
+        "A virus",
+        "Corporate blackmail",
+        "Eddies",
+        "Blueprints",
+        "An AI core"
+      ],
+      "hint": "A dead rockerboy, saved as a file"
+    },
+    {
+      "question": "What do you call a back-alley cybernetics surgeon?",
+      "a": "A ripperdoc",
+      "alt": [
+        "Ripperdoc",
+        "Ripper"
+      ],
+      "pool": [
+        "A netrunner",
+        "A fixer",
+        "A techie",
+        "A medtech",
+        "A solo"
+      ],
+      "hint": "Vik is the best one in Night City"
+    },
+    {
+      "question": "Panam rides with which nomad clan?",
+      "a": "The Aldecaldos",
+      "alt": [
+        "Aldecaldos"
+      ],
+      "pool": [
+        "The Wraiths",
+        "The Raffen Shiv",
+        "The Bakkers",
+        "The Jodes",
+        "The Snake Nation"
+      ],
+      "hint": "Family means the whole camp"
+    },
+    {
+      "question": "Which AI runs Night City's strangest cab company?",
+      "a": "Delamain",
+      "alt": [],
+      "pool": [
+        "Alt",
+        "Skippy",
+        "Brendan",
+        "SPDR",
+        "Nibbles"
+      ],
+      "hint": "Its cars keep developing personalities"
+    },
+    {
+      "question": "What tech lets you relive other people's recorded experiences?",
+      "a": "Braindance",
+      "alt": [
+        "BD",
+        "Braindances"
+      ],
+      "pool": [
+        "The Relic",
+        "Netrunning",
+        "Kiroshi optics",
+        "Cyberspace",
+        "Soulkiller"
+      ],
+      "hint": "Judy edits them for a living"
+    },
+    {
+      "question": "Adam Smasher is infamous for being almost entirely what?",
+      "a": "Chrome",
+      "alt": [
+        "Machine",
+        "Cyborg",
+        "Full-borg",
+        "Metal"
+      ],
+      "pool": [
+        "Clone",
+        "Hologram",
+        "Engram",
+        "Vat-grown",
+        "AI-controlled"
+      ],
+      "hint": "Whatever was human got upgraded away"
+    },
+    {
+      "question": "V wakes up each day in a megabuilding numbered what?",
+      "a": "H10",
+      "alt": [
+        "Megabuilding H10",
+        "10"
+      ],
+      "pool": [
+        "H4",
+        "H7",
+        "H2",
+        "H21",
+        "H8"
+      ],
+      "hint": "Watson district, questionable elevator"
+    }
   ]
 }

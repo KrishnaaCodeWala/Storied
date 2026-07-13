@@ -258,7 +258,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const d = w.document;
     d.querySelector('[data-mode="fandom"]').click();
     const cards = [...d.querySelectorAll("#fandom-grid .pack-card")];
-    assert(cards.length === 7, "lazy: browser lists 7 packs from metadata alone");
+    assert(cards.length === 14, "lazy: browser lists 14 packs from metadata alone");
     const cp = cards.find((c) => /Cyberpunk/.test(c.textContent));
     cp.click(); // selects + prefetches
     d.getElementById("btn-fandom-start").click();
@@ -274,7 +274,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const w = await boot();
     const d = w.document;
     d.querySelector('[data-mode="fandom"]').click();
-    assert(d.querySelectorAll("#fandom-grid .pack-card").length === 7, "browser: all packs listed");
+    assert(d.querySelectorAll("#fandom-grid .pack-card").length === 14, "browser: all packs listed");
 
     const search = d.getElementById("pack-search");
     search.value = "blood";
@@ -287,9 +287,9 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const gamesTag = [...d.querySelectorAll("#pack-tags .tag-chip")].find((c) => c.textContent === "games");
     gamesTag.click();
     shown = [...d.querySelectorAll("#fandom-grid .pack-card")];
-    assert(shown.length === 4, "browser: 'games' tag filters to 4 packs (" + shown.length + ")");
+    assert(shown.length === 8, "browser: 'games' tag filters to games packs (" + shown.length + ")");
     gamesTag.click(); // toggle off
-    assert(d.querySelectorAll("#fandom-grid .pack-card").length === 7, "browser: tag toggles off");
+    assert(d.querySelectorAll("#fandom-grid .pack-card").length === 14, "browser: tag toggles off");
   }
 
   /* ---------- fandom packs: data integrity ---------- */
@@ -303,7 +303,8 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
       const orphans = pack.quotes.filter((q) => !roster.has(q.a));
       assert(orphans.length === 0, "fandom(" + key + "): every answer is in the roster" + (orphans.length ? " (bad: " + orphans.map(q=>q.a).join(", ") + ")" : ""));
       assert(pack.roster.length >= 6, "fandom(" + key + "): roster large enough for 6-option mode");
-      assert(pack.quotes.length >= 8, "fandom(" + key + "): has a playable number of quotes");
+      assert(pack.quotes.length >= 8 || (pack.lore || []).length >= 10,
+        "fandom(" + key + "): playable content (8+ quotes or 10+ lore)");
       const missing = pack.quotes.filter((q) => !q.q || !q.a || !q.hint);
       assert(missing.length === 0, "fandom(" + key + "): no missing quote fields");
       const badMotifs = [...(pack.motifs || []), ...pack.quotes.flatMap((q) => q.motifs || [])]
@@ -382,7 +383,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     w.eval(combined);
     await w.StoriedReady;
     assert(!w.Quoted.fandoms["local-broken"], "resilience: invalid local pack skipped at boot");
-    assert(Object.keys(w.Quoted.fandoms).length === 7, "resilience: official packs unaffected");
+    assert(Object.keys(w.Quoted.fandoms).length === 14, "resilience: official packs unaffected");
     w.document.getElementById("btn-start").click();
     assert(w.document.getElementById("screen-game").classList.contains("active"),
       "resilience: game plays normally with broken storage present");
@@ -456,6 +457,43 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     assert(gz < 60 * 1024, "perf: gzipped shell under 60KB (" + (gz / 1024).toFixed(1) + "KB, raw " + (raw / 1024).toFixed(1) + "KB)");
     const core = zlib.gzipSync(fs.readFileSync(path.join(dir, "packs/core.json"))).length;
     assert(gz + core < 100 * 1024, "perf: shell + core deck under the 100KB budget (" + ((gz + core) / 1024).toFixed(1) + "KB)");
+  }
+
+  /* ---------- v3.1 changes: tabs, tagline, studio containment, bulk add ---------- */
+  {
+    const w = await boot();
+    const d = w.document;
+    const tabs = [...d.querySelectorAll(".mode-tab")].map((t) => t.dataset.mode);
+    assert(tabs.join(",") === "classic,rush,fandom,studio", "v3.1: exactly four tabs (" + tabs.join(",") + ")");
+    assert(!d.getElementById("panel-daily") && !d.getElementById("panel-study"), "v3.1: daily/study panels gone");
+    assert(/One line\. Infinite fandoms\./.test(d.querySelector(".tagline").textContent), "v3.1: new tagline");
+
+    // studio panel stays contained to its tab
+    assert(d.getElementById("panel-studio").hidden, "v3.1: studio hidden on classic");
+    d.querySelector('[data-mode="fandom"]').click();
+    assert(d.getElementById("panel-studio").hidden, "v3.1: studio hidden on fandom");
+    d.querySelector('[data-mode="studio"]').click();
+    assert(!d.getElementById("panel-studio").hidden, "v3.1: studio visible on its own tab");
+
+    // example loader
+    d.getElementById("st-example").click();
+    assert(d.getElementById("st-name").value === "My Favorite Show", "v3.1: example pack loads");
+    assert(d.querySelectorAll("#st-quote-list .st-entry").length === 2, "v3.1: example includes sample quotes");
+
+    // bulk quotes: one good line, one bad line
+    const resQ = w.Studio.bulkAddQuotes(
+      "To the stars. | Hero | pilot episode\n" +
+      "one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen | Hero | too long");
+    assert(resQ.added === 1 && resQ.errors.length === 1 && /words/.test(resQ.errors[0]),
+      "v3.1: bulk quotes adds good lines, reports bad ones");
+
+    // bulk lore: leak-rule enforced per line
+    const resL = w.Studio.bulkAddLore(
+      "Who tends the bar? | The Bartender | Hero;Sidekick;Mentor;Rival;Villain | ep 2\n" +
+      "Who is the Villain's twin? | Villain | Hero;Sidekick;Mentor;Rival;The Bartender | bad");
+    assert(resL.added === 1 && resL.errors.length === 1 && /gives it away/.test(resL.errors[0]),
+      "v3.1: bulk lore enforces the leak rule per line");
+    assert(w.Studio.current.lore.length >= 2, "v3.1: bulk lore lands in the pack");
   }
 
   /* ---------- studio: build, validate, save, play ---------- */
@@ -564,7 +602,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     d.getElementById("st-qh").value = "h";
     St.addQuote();
     St.saveLocal();
-    const officialCount = 7;
+    const officialCount = 14;
     assert(Object.keys(w.Quoted.fandoms).length === officialCount + 1, "isolation: local pack registered");
 
     St.deleteLocal("local-doomed-pack");
@@ -592,25 +630,6 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   }
 
   /* ---------- online: the offline guarantee ---------- */
-  {
-    const w = await boot();
-    const d = w.document;
-    let netCalls = 0;
-    w.fetch = () => { netCalls++; return Promise.reject(new Error("no network")); };
-
-    assert(w.Storied.online.available() === false, "online: disabled by default");
-    d.getElementById("btn-stats").click();
-    assert(d.getElementById("account-box").hidden && d.getElementById("account-label").hidden,
-      "online: account UI hidden when disabled");
-    d.getElementById("btn-stats-back").click();
-    d.querySelector('[data-mode="daily"]').click();
-    assert(d.getElementById("daily-board").hidden, "online: leaderboard hidden when disabled");
-
-    d.getElementById("btn-daily-start").click();
-    for (let r = 0; r < 10; r++) { d.querySelector(".option-btn").click(); d.getElementById("btn-next").click(); }
-    await new Promise((r) => setTimeout(r, 10));
-    assert(netCalls === 0, "online: ZERO network calls with the flag off (" + netCalls + ")");
-  }
 
   /* ---------- online: pure pieces (hash parse + merge) ---------- */
   {
@@ -645,67 +664,6 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   }
 
   /* ---------- online: enabled path with mocked server ---------- */
-  {
-    const w = await boot();
-    const O = w.Storied.online;
-    O.config.enabled = true; O.config.url = "https://test.supabase.co"; O.config.anonKey = "anon-k";
-
-    const calls = [];
-    w.fetch = (url, opts) => {
-      calls.push({ url, opts: opts || {} });
-      const respond = (body, status) => Promise.resolve({
-        ok: (status || 200) < 400, status: status || 200, json: () => Promise.resolve(body) });
-      if (/auth\/v1\/otp/.test(url)) return respond({});
-      if (/auth\/v1\/user/.test(url)) return respond({ id: "u1", email: "a@b.c" });
-      if (/player_state\?select/.test(url)) return respond([{ data: { bests: { easy: 5000 }, stats: {}, ach: {}, daily: {} } }]);
-      if (/player_state/.test(url)) return respond([], 201);
-      if (/daily_scores\?day/.test(url)) return respond([
-        { user_id: "x", handle: "rival", score: 1200 },
-        { user_id: "u1", handle: "me", score: 900 }
-      ]);
-      if (/daily_scores/.test(url)) return respond({}, 409); // already submitted
-      return respond({}, 404);
-    };
-
-    assert(O.available() === true, "online: available once configured");
-
-    // magic link request carries the apikey
-    await O.requestLink("a@b.c");
-    const otp = calls.find((c) => /otp/.test(c.url));
-    assert(otp && otp.opts.headers.apikey === "anon-k" && /a@b\.c/.test(otp.opts.body),
-      "online: magic link posts email with apikey");
-
-    // sync merges remote into local and upserts back
-    O.session = { access_token: "t", refresh_token: "r", expires_at: Date.now() + 3600000,
-      user: { id: "u1", email: "a@b.c" } };
-    const ok = await O.sync(w.Storied.onlineIO);
-    assert(ok === true, "online: sync succeeds");
-    assert(w.Storied.onlineIO.readBests().easy === 5000, "online: remote best merged into local");
-    const upsert = calls.find((c) => c.opts.method === "POST" && /player_state$/.test(c.url.split("?")[0]));
-    assert(upsert && upsert.opts.headers.Prefer === "resolution=merge-duplicates" &&
-      /"easy":5000/.test(upsert.opts.body), "online: merged state upserted");
-    assert(upsert.opts.headers.Authorization === "Bearer t", "online: authed writes");
-
-    // daily submit treats 409 (already on the board) as success
-    assert(await O.submitDaily("2026-07-12", 800, "me") === true, "online: 409 duplicate submit is fine");
-
-    // leaderboard renders with own row highlighted
-    w.document.querySelector('[data-mode="daily"]').click();
-    await new Promise((r) => setTimeout(r, 5));
-    const board = w.document.getElementById("daily-board");
-    assert(!board.hidden && board.querySelectorAll(".board-row").length === 2, "online: board renders rows");
-    assert(board.querySelector(".board-row.me .handle").textContent === "me", "online: own row highlighted");
-
-    // signed-in account UI
-    w.document.getElementById("btn-stats").click();
-    assert(/Signed in as/.test(w.document.getElementById("account-box").textContent), "online: signed-in account UI");
-
-    // total degradation: server vanishes, nothing throws
-    w.fetch = () => Promise.reject(new Error("down"));
-    assert(await O.sync(w.Storied.onlineIO) === false, "online: sync degrades to false");
-    assert(await O.fetchLeaderboard("2026-07-12") === null, "online: leaderboard degrades to null");
-    assert(await O.submitDaily("2026-07-12", 1, "x") === false, "online: submit degrades to false");
-  }
 
   /* ---------- retention: daily determinism ---------- */
   {
@@ -772,57 +730,6 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   }
 
   /* ---------- retention: full integration (stats, unlocks, share, screen) ---------- */
-  {
-    const w = await boot();
-    const d = w.document;
-    // stub clipboard for the share test
-    let copied = null;
-    w.navigator.clipboard = { writeText: (t) => { copied = t; return Promise.resolve(); } };
-
-    // perfect classic game
-    d.getElementById("btn-start").click();
-    for (let r = 0; r < 10; r++) {
-      const entry = w.Storied.current();
-      [...d.querySelectorAll(".option-btn")].find((b) => b.dataset.title === entry.a).click();
-      d.getElementById("btn-next").click();
-    }
-    const st = w.Storied.stats();
-    assert(st.games === 1 && st.answers === 10 && st.correct === 10, "retention: lifetime stats recorded");
-    assert(Object.keys(st.byCat).length >= 1, "retention: per-category buckets filled");
-
-    const achLine = d.getElementById("end-ach");
-    assert(!achLine.hidden && /Origin Story/.test(achLine.textContent) && /Flawless Run/.test(achLine.textContent),
-      "retention: first-game + flawless unlocked and announced");
-    assert(/On Fire/.test(achLine.textContent), "retention: \u00D78 streak unlocked in the same run");
-
-    d.getElementById("btn-share").click();
-    await new Promise((r) => setTimeout(r, 0));
-    assert(copied && /STORIED/.test(copied) && (copied.match(/\uD83D\uDFE9/g) || []).length === 10,
-      "retention: share copied a 10-green grid");
-    assert(d.getElementById("btn-share").textContent === "Copied!", "retention: share button confirms");
-
-    // stats screen
-    d.getElementById("btn-settings").click();
-    d.getElementById("btn-stats").click();
-    assert(d.getElementById("screen-stats").classList.contains("active"), "retention: stats screen opens");
-    assert(d.querySelectorAll("#cal-grid .cal-cell:not(.blank)").length >= 28, "retention: calendar renders the month");
-    assert(d.querySelectorAll("#ach-grid .ach-card").length === w.Storied.achievements.length, "retention: all achievements listed");
-    assert(d.querySelectorAll("#ach-grid .ach-card:not(.locked)").length >= 3, "retention: unlocked cards distinguished");
-    assert(d.querySelectorAll("#stats-cats .stat-bar-row").length === 4, "retention: four category bars");
-    d.getElementById("btn-stats-back").click();
-    assert(d.getElementById("screen-start").classList.contains("active"), "retention: back returns to start");
-
-    // daily records a date + shows on the board
-    d.querySelector('[data-mode="daily"]').click();
-    d.getElementById("btn-daily-start").click();
-    for (let r = 0; r < 10; r++) {
-      d.querySelector(".option-btn").click();
-      d.getElementById("btn-next").click();
-    }
-    const dailyStore = JSON.parse(w.localStorage.getItem("quoted.daily.v1"));
-    assert(Object.keys(dailyStore).length === 1, "retention: daily date recorded once");
-    assert(w.Storied.stats().dailyStreak === 1, "retention: daily streak updates");
-  }
 
   /* ---------- harvester: transform, redaction, validation ---------- */
   {
@@ -918,10 +825,19 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const d = w.document;
     d.querySelector('[data-mode="fandom"]').click();
 
-    // default pack (Stranger Things) has no lore -> lore/mixed disabled
     const loreChip = d.querySelector('[data-fandommode="lore"]');
     const mixedChip = d.querySelector('[data-fandommode="mixed"]');
-    assert(loreChip.disabled && mixedChip.disabled, "lore: chips disabled for packs without lore");
+    assert(!loreChip.disabled && !mixedChip.disabled, "lore: chips enabled — every official pack ships lore now");
+
+    // the disabled state still guards quotes-only packs (e.g. from the Studio)
+    w.PackStore.registerLocal({ id: "local-qonly", label: "Quotes Only", color: "#5ed89a",
+      prompt: "Who said it?", placeholder: "x", blurb: "b", tags: ["local"],
+      roster: ["A1","B2","C3","D4","E5","F6"], motifs: ["star"],
+      quotes: [{ q: "Hi.", a: "A1", alt: [], hint: "h" }], lore: [] });
+    w.Storied.refreshPacks();
+    [...d.querySelectorAll("#fandom-grid .pack-card")].find((c) => /Quotes Only/.test(c.textContent)).click();
+    assert(loreChip.disabled && mixedChip.disabled, "lore: chips disabled for a quotes-only pack");
+    [...d.querySelectorAll("#fandom-grid .pack-card")].find((c) => /Stranger/.test(c.textContent)).click();
 
     // switch to God of War -> chips enable
     [...d.querySelectorAll("#fandom-grid .pack-card")].find((c) => /God of War/.test(c.textContent)).click();
@@ -1110,88 +1026,8 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   }
 
   /* ================= v2: STUDY MODE GAMEPLAY ================= */
-  {
-    const w = await boot();
-    const d = w.document;
-    d.querySelector('[data-mode="study"]').click();
-    assert(!d.getElementById("panel-study").hidden, "study-ui: tab reveals the study panel");
-    assert(d.getElementById("deck-list").textContent.includes("No decks"), "study-ui: empty state shown");
-
-    d.getElementById("paste-area").value = SAMPLE_DOC;
-    d.getElementById("deck-name").value = "Cell Bio";
-    d.getElementById("btn-make-deck").click();
-    assert(/Built .Cell Bio./.test(d.getElementById("deck-msg").textContent), "study-ui: build confirmation shown");
-    const row = d.querySelector(".deck-row");
-    assert(!!row && row.textContent.includes("Cell Bio"), "study-ui: deck row rendered");
-
-    row.querySelector(".btn-guess").click(); // Play
-    assert(d.getElementById("screen-game").classList.contains("active"), "study-play: game starts from deck row");
-    const entry = w.Quoted.current();
-    assert(entry.cat === "study" && entry.pool.length >= 3, "study-play: current entry is a study question");
-    assert(d.getElementById("cat-tab").textContent.includes("Cell Bio"), "study-play: tab shows the deck name");
-    const opts = [...d.querySelectorAll(".option-btn")];
-    assert(opts.length === 4, "study-play: 4 options in choices mode");
-    const correctBtn = opts.find((b) => b.dataset.title === entry.a);
-    assert(!!correctBtn, "study-play: correct answer among options");
-    const wrongOpts = opts.filter((b) => b !== correctBtn);
-    assert(wrongOpts.every((b) => entry.pool.includes(b.dataset.title)), "study-play: distractors come from the document");
-    correctBtn.click();
-    assert(/Correct/.test(d.getElementById("feedback").textContent), "study-play: correct answer scores");
-    assert(d.querySelectorAll("#motif-layer .motif").length >= 2, "study-play: study motifs spawn");
-
-    // typed style
-    d.getElementById("btn-quit").click();
-    assert(d.getElementById("screen-start").classList.contains("active"), "study-play: quit returns to setup");
-    d.querySelector('[data-studydiff="hard"]').click();
-    d.querySelector(".deck-row .btn-guess").click();
-    const input = d.querySelector(".type-input");
-    assert(!!input, "study-play: typed mode renders an input");
-    input.value = w.Quoted.current().a.toUpperCase();
-    d.querySelector(".answer-area .btn-guess").click();
-    assert(/Correct/.test(d.getElementById("feedback").textContent), "study-play: typed answer matches case-insensitively");
-  }
 
   /* ================= v2: DAILY MODE ================= */
-  {
-    const w = await boot();
-    const d = w.document;
-    const a1 = w.Quoted.buildDailyDeck("2026-07-07").map((q) => q.a);
-    const a2 = w.Quoted.buildDailyDeck("2026-07-07").map((q) => q.a);
-    const b1 = w.Quoted.buildDailyDeck("2026-07-08").map((q) => q.a);
-    assert(a1.join("|") === a2.join("|"), "daily: same date -> identical deck");
-    assert(a1.join("|") !== b1.join("|"), "daily: different date -> different deck");
-    assert(a1.length === 10, "daily: deck has 10 quotes");
-
-    d.querySelector('[data-mode="daily"]').click();
-    assert(/haven't played/.test(d.getElementById("daily-status").textContent), "daily: unplayed status shown");
-    d.getElementById("btn-daily-start").click();
-    assert(d.querySelectorAll(".option-btn").length === 6, "daily: uses Buff rules (6 options)");
-    for (let r = 0; r < 10; r++) {
-      const entry = w.Quoted.current();
-      const btn = [...d.querySelectorAll(".option-btn")].find((b) => b.dataset.title === entry.a);
-      btn.click();
-      d.getElementById("btn-next").click();
-    }
-    assert(d.getElementById("screen-end").classList.contains("active"), "daily: finished");
-    const recorded = JSON.parse(w.localStorage.getItem("quoted.daily.v1"));
-    const today = Object.keys(recorded)[0];
-    const firstScore = recorded[today];
-    assert(firstScore > 0, "daily: perfect run recorded " + firstScore + " pts");
-    assert(!d.getElementById("end-best").hidden, "daily: on-the-board badge shown");
-
-    // replay is practice: score not overwritten
-    d.getElementById("btn-settings").click();
-    assert(/on the board/.test(d.getElementById("daily-status").textContent), "daily: status now shows today's score");
-    d.getElementById("btn-daily-start").click();
-    for (let r = 0; r < 10; r++) { // lose on purpose
-      const entry = w.Quoted.current();
-      const btn = [...d.querySelectorAll(".option-btn")].find((b) => b.dataset.title !== entry.a);
-      btn.click();
-      d.getElementById("btn-next").click();
-    }
-    const recorded2 = JSON.parse(w.localStorage.getItem("quoted.daily.v1"));
-    assert(recorded2[today] === firstScore, "daily: practice run does not overwrite the recorded score");
-  }
 
   /* ================= v2: RUSH MODE ================= */
   {

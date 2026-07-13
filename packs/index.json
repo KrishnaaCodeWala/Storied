@@ -13,8 +13,23 @@
         "sci-fi",
         "horror"
       ],
-      "quoteCount": 12,
-      "loreCount": 0
+      "quoteCount": 14,
+      "loreCount": 9
+    },
+    {
+      "id": "assassinscreed",
+      "label": "Assassin's Creed",
+      "color": "#d9d4c7",
+      "cta": "Take the leap",
+      "prompt": "Who said it?",
+      "blurb": "Altaïr through Arno — the classic era, up to Unity. Name who said it.",
+      "tags": [
+        "games",
+        "action",
+        "history"
+      ],
+      "quoteCount": 8,
+      "loreCount": 9
     },
     {
       "id": "bloodborne",
@@ -28,8 +43,8 @@
         "rpg",
         "horror"
       ],
-      "quoteCount": 10,
-      "loreCount": 0
+      "quoteCount": 11,
+      "loreCount": 9
     },
     {
       "id": "cyberpunk",
@@ -44,7 +59,22 @@
         "sci-fi"
       ],
       "quoteCount": 9,
-      "loreCount": 0
+      "loreCount": 9
+    },
+    {
+      "id": "darksouls",
+      "label": "Dark Souls",
+      "color": "#e0863a",
+      "cta": "Link the fire",
+      "prompt": "Who said it?",
+      "blurb": "Lordran to Lothric. Praise the sun, name the speaker, try not to go hollow.",
+      "tags": [
+        "games",
+        "rpg",
+        "fantasy"
+      ],
+      "quoteCount": 8,
+      "loreCount": 10
     },
     {
       "id": "dragonball",
@@ -76,6 +106,20 @@
       "loreCount": 10
     },
     {
+      "id": "gta",
+      "label": "Grand Theft Auto",
+      "color": "#66b04b",
+      "cta": "Start the mission",
+      "prompt": "Who said it?",
+      "blurb": "San Andreas to Liberty City. Name who said it — no cheat codes.",
+      "tags": [
+        "games",
+        "action"
+      ],
+      "quoteCount": 8,
+      "loreCount": 9
+    },
+    {
       "id": "jumpstreet",
       "label": "Jump Street",
       "color": "#4d7cfe",
@@ -87,7 +131,66 @@
         "comedy"
       ],
       "quoteCount": 9,
-      "loreCount": 0
+      "loreCount": 8
+    },
+    {
+      "id": "mcu",
+      "label": "The MCU",
+      "color": "#ef5350",
+      "cta": "Assemble",
+      "prompt": "Who said it?",
+      "blurb": "The Infinity Saga's most quoted lines. Name who said it.",
+      "tags": [
+        "movies",
+        "superhero",
+        "action"
+      ],
+      "quoteCount": 14,
+      "loreCount": 10
+    },
+    {
+      "id": "rdr",
+      "label": "Red Dead Redemption",
+      "color": "#a63a2a",
+      "cta": "Ride out",
+      "prompt": "Who said it?",
+      "blurb": "The dying West of the Van der Linde gang. Name who said it, cowpoke.",
+      "tags": [
+        "games",
+        "action",
+        "western"
+      ],
+      "quoteCount": 8,
+      "loreCount": 9
+    },
+    {
+      "id": "scp",
+      "label": "SCP Foundation",
+      "color": "#8a939e",
+      "cta": "Request clearance",
+      "prompt": "Who (or what) said it?",
+      "blurb": "Secure. Contain. Protect. A lore-first pack — the archive quizzes you back.",
+      "tags": [
+        "horror",
+        "sci-fi",
+        "web"
+      ],
+      "quoteCount": 6,
+      "loreCount": 12
+    },
+    {
+      "id": "warhammer",
+      "label": "Warhammer 40K",
+      "color": "#c9a227",
+      "cta": "For the Emperor",
+      "prompt": "Who (or what) said it?",
+      "blurb": "The grim darkness of the far future. Name the speaker — heresy will be noted.",
+      "tags": [
+        "tabletop",
+        "sci-fi"
+      ],
+      "quoteCount": 8,
+      "loreCount": 10
     },
     {
       "id": "witcher",

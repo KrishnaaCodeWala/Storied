@@ -1,0 +1,245 @@
+{
+  "id": "gta",
+  "tags": [
+    "games",
+    "action"
+  ],
+  "label": "Grand Theft Auto",
+  "color": "#66b04b",
+  "cta": "Start the mission",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "San Andreas to Liberty City. Name who said it — no cheat codes.",
+  "roster": [
+    "CJ",
+    "Big Smoke",
+    "Officer Tenpenny",
+    "Niko Bellic",
+    "Roman Bellic",
+    "Michael De Santa",
+    "Trevor Philips",
+    "Franklin Clinton",
+    "Tommy Vercetti",
+    "Lamar Davis",
+    "Claude",
+    "Lester Crest"
+  ],
+  "motifs": [
+    "city",
+    "cuffs",
+    "radio"
+  ],
+  "quotes": [
+    {
+      "q": "Grove Street. Home.",
+      "a": "CJ",
+      "alt": [
+        "Carl Johnson",
+        "Carl"
+      ],
+      "hint": "Coming back to the cul-de-sac after five years away"
+    },
+    {
+      "q": "Here we go again.",
+      "a": "CJ",
+      "alt": [
+        "Carl Johnson",
+        "Carl"
+      ],
+      "hint": "The meme, minus the swear — same scene"
+    },
+    {
+      "q": "All you had to do was follow the damn train, CJ!",
+      "a": "Big Smoke",
+      "alt": [
+        "Smoke",
+        "Melvin Harris"
+      ],
+      "hint": "Two decades of mission-failed frustration in one line"
+    },
+    {
+      "q": "I'll have two number 9s, a number 9 large…",
+      "a": "Big Smoke",
+      "alt": [
+        "Smoke",
+        "Melvin Harris"
+      ],
+      "hint": "The drive-thru order that never ends"
+    },
+    {
+      "q": "You forget a thousand things every day. Make sure this is one of them.",
+      "a": "Officer Tenpenny",
+      "alt": [
+        "Tenpenny",
+        "Frank Tenpenny"
+      ],
+      "hint": "Corrupt advice from the back seat of a cop car"
+    },
+    {
+      "q": "Perhaps here, things will be different.",
+      "a": "Niko Bellic",
+      "alt": [
+        "Niko"
+      ],
+      "hint": "Stepping off the boat into Liberty City"
+    },
+    {
+      "q": "Cousin! Let's go bowling!",
+      "a": "Roman Bellic",
+      "alt": [
+        "Roman"
+      ],
+      "hint": "The phone call players learned to dread"
+    },
+    {
+      "q": "Why did I move here? I guess it was the weather.",
+      "a": "Michael De Santa",
+      "alt": [
+        "Michael",
+        "Michael Townley"
+      ],
+      "hint": "Poolside ennui, straight from the first trailer"
+    }
+  ],
+  "lore": [
+    {
+      "question": "Which real city inspires the sprawl beneath the Vinewood sign?",
+      "a": "Los Angeles",
+      "alt": [
+        "LA",
+        "L.A."
+      ],
+      "pool": [
+        "Las Vegas",
+        "San Francisco",
+        "Miami",
+        "New York",
+        "San Diego"
+      ],
+      "hint": "Vinewood sign included"
+    },
+    {
+      "question": "Liberty City is modeled on which real city?",
+      "a": "New York",
+      "alt": [
+        "New York City",
+        "NYC"
+      ],
+      "pool": [
+        "Chicago",
+        "Boston",
+        "Philadelphia",
+        "Detroit",
+        "Baltimore"
+      ],
+      "hint": "Statue of Happiness in the harbor"
+    },
+    {
+      "question": "Vice City takes place in which year?",
+      "a": "1986",
+      "alt": [
+        "'86"
+      ],
+      "pool": [
+        "1984",
+        "1989",
+        "1992",
+        "1980",
+        "1979"
+      ],
+      "hint": "Neon, pastel suits, and a radio full of synth"
+    },
+    {
+      "question": "What color flies over Grove Street?",
+      "a": "Green",
+      "alt": [],
+      "pool": [
+        "Purple",
+        "Blue",
+        "Red",
+        "Yellow",
+        "Orange"
+      ],
+      "hint": "Families colors — Ballas wear the other one"
+    },
+    {
+      "question": "How many playable protagonists does GTA V have?",
+      "a": "Three",
+      "alt": [
+        "3"
+      ],
+      "pool": [
+        "One",
+        "Two",
+        "Four",
+        "Five",
+        "Six"
+      ],
+      "hint": "A retiree, a repo man, and a menace"
+    },
+    {
+      "question": "Which entry was the series' first fully 3D game?",
+      "a": "GTA III",
+      "alt": [
+        "GTA 3",
+        "Grand Theft Auto III"
+      ],
+      "pool": [
+        "Vice City",
+        "San Andreas",
+        "GTA IV",
+        "GTA 2",
+        "GTA V"
+      ],
+      "hint": "2001, silent protagonist, changed everything"
+    },
+    {
+      "question": "What business does Roman run in Liberty City?",
+      "a": "A taxi depot",
+      "alt": [
+        "Taxi depot",
+        "A cab company",
+        "Taxi company"
+      ],
+      "pool": [
+        "A bowling alley",
+        "A pawn shop",
+        "A car wash",
+        "A diner",
+        "An internet café"
+      ],
+      "hint": "His American dream, frequently on fire"
+    },
+    {
+      "question": "Which mountain looms over San Andreas with a mystery mural?",
+      "a": "Mount Chiliad",
+      "alt": [
+        "Chiliad"
+      ],
+      "pool": [
+        "Mount Gordo",
+        "Mount Josiah",
+        "Vinewood Hills",
+        "El Burro Heights",
+        "Raton Canyon"
+      ],
+      "hint": "Cable car up, jetpack rumors all the way down"
+    },
+    {
+      "question": "What is the name of CJ's gang?",
+      "a": "Grove Street Families",
+      "alt": [
+        "The Families",
+        "GSF"
+      ],
+      "pool": [
+        "The Ballas",
+        "Los Santos Vagos",
+        "The Aztecas",
+        "The Triads",
+        "Da Nang Boys"
+      ],
+      "hint": "Home turf is a cul-de-sac"
+    }
+  ]
+}

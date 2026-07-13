@@ -108,5 +108,133 @@
       ],
       "hint": "22 — the entire sequel's thesis, stated out loud"
     }
+  ],
+  "lore": [
+    {
+      "question": "The undercover unit's chapel HQ earns which nickname?",
+      "a": "Korean Jesus",
+      "alt": [
+        "The Korean Jesus church",
+        "Korean Jesus's church"
+      ],
+      "pool": [
+        "Vietnamese Jesus",
+        "The Precinct",
+        "The Annex",
+        "Peruvian Jesus",
+        "The Depot"
+      ],
+      "hint": "He doesn't have time for your problems"
+    },
+    {
+      "question": "What surname do the brothers use undercover?",
+      "a": "McQuaid",
+      "alt": [
+        "The McQuaids",
+        "McQuaid brothers"
+      ],
+      "pool": [
+        "Schmidt",
+        "Jenko",
+        "Hanson",
+        "Penhall",
+        "Dickson"
+      ],
+      "hint": "Brad and Doug, allegedly related"
+    },
+    {
+      "question": "What is the synthetic drug called in the first film?",
+      "a": "HFS",
+      "alt": [
+        "H.F.S."
+      ],
+      "pool": [
+        "WHYPHY",
+        "NZT",
+        "Adrenochrome",
+        "Felix",
+        "Turbo"
+      ],
+      "hint": "An acronym you can't say in church"
+    },
+    {
+      "question": "And the drug at college in the sequel?",
+      "a": "WHYPHY",
+      "alt": [
+        "WiFi",
+        "Why-Phy"
+      ],
+      "pool": [
+        "HFS",
+        "Molly Prime",
+        "Study Buddy",
+        "Red Bull X",
+        "Focus"
+      ],
+      "hint": "Work hard? Yes. Play hard? Yes."
+    },
+    {
+      "question": "Which college do they infiltrate in 22?",
+      "a": "MC State",
+      "alt": [
+        "Metro City State",
+        "Metropolitan City State"
+      ],
+      "pool": [
+        "Greendale",
+        "Faber College",
+        "State U",
+        "Pacific Tech",
+        "Coolidge College"
+      ],
+      "hint": "Home of football, poetry slams, and one very old freshman"
+    },
+    {
+      "question": "Maya turns out to be whose daughter?",
+      "a": "Captain Dickson",
+      "alt": [
+        "Dickson",
+        "Dickson's"
+      ],
+      "pool": [
+        "Deputy Chief Hardy",
+        "Mr. Walters",
+        "Schmidt",
+        "The dean",
+        "Coach"
+      ],
+      "hint": "The reveal ruins one particular dinner"
+    },
+    {
+      "question": "Zook is the star of which campus institution?",
+      "a": "The football team",
+      "alt": [
+        "Football",
+        "The football program"
+      ],
+      "pool": [
+        "The debate club",
+        "The frat council",
+        "The chem lab",
+        "The poetry scene",
+        "Campus security"
+      ],
+      "hint": "Jenko's meet-cute happens at practice"
+    },
+    {
+      "question": "Which star of the original '80s series cameos in 21?",
+      "a": "Johnny Depp",
+      "alt": [
+        "Depp"
+      ],
+      "pool": [
+        "Richard Grieco",
+        "Ice Cube",
+        "Rob Lowe",
+        "Keanu Reeves",
+        "Brad Pitt"
+      ],
+      "hint": "Undercover as a biker this whole time"
+    }
   ]
 }

@@ -1,0 +1,296 @@
+{
+  "id": "scp",
+  "tags": [
+    "horror",
+    "sci-fi",
+    "web"
+  ],
+  "label": "SCP Foundation",
+  "color": "#8a939e",
+  "cta": "Request clearance",
+  "prompt": "Who (or what) said it?",
+  "placeholder": "Type the designation…",
+  "blurb": "Secure. Contain. Protect. A lore-first pack — the archive quizzes you back.",
+  "roster": [
+    "The Administrator",
+    "Dr. Bright",
+    "Dr. Clef",
+    "Dr. Gears",
+    "SCP-049",
+    "SCP-682",
+    "SCP-079",
+    "The O5 Council",
+    "D-Class personnel",
+    "The Chaos Insurgency",
+    "The Foundation",
+    "MTF Epsilon-11"
+  ],
+  "motifs": [
+    "eye",
+    "box",
+    "exclaim"
+  ],
+  "quotes": [
+    {
+      "q": "We die in the dark so that you can live in the light.",
+      "a": "The Administrator",
+      "alt": [
+        "Administrator"
+      ],
+      "hint": "The closing line of the Foundation's mission statement"
+    },
+    {
+      "q": "Secure. Contain. Protect.",
+      "a": "The Foundation",
+      "alt": [
+        "SCP Foundation",
+        "Foundation"
+      ],
+      "hint": "The motto — and the acronym's better reading"
+    },
+    {
+      "q": "I am the cure.",
+      "a": "SCP-049",
+      "alt": [
+        "049",
+        "The Plague Doctor"
+      ],
+      "hint": "A very polite plague doctor with a terrible bedside manner"
+    },
+    {
+      "q": "They are… disgusting.",
+      "a": "SCP-682",
+      "alt": [
+        "682",
+        "The Hard-to-Destroy Reptile"
+      ],
+      "hint": "Its one-word review of humanity, mid-interview"
+    },
+    {
+      "q": "Insult. Deletion of unwanted file.",
+      "a": "SCP-079",
+      "alt": [
+        "079",
+        "The Old AI"
+      ],
+      "hint": "An outdated computer with a long memory and short patience"
+    },
+    {
+      "q": "There is no canon.",
+      "a": "Dr. Clef",
+      "alt": [
+        "Clef"
+      ],
+      "hint": "The site's most famous piece of writing advice"
+    }
+  ],
+  "lore": [
+    {
+      "question": "Which object class marks the hardest things to contain?",
+      "a": "Keter",
+      "alt": [],
+      "pool": [
+        "Safe",
+        "Euclid",
+        "Thaumiel",
+        "Neutralized",
+        "Apollyon"
+      ],
+      "hint": "Named for a crown, behaves like a curse",
+      "source": "https://scp-wiki.wikidot.com/object-classes",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which entry is the concrete statue that only moves unobserved?",
+      "a": "SCP-173",
+      "alt": [
+        "173",
+        "The Sculpture"
+      ],
+      "pool": [
+        "SCP-096",
+        "SCP-682",
+        "SCP-049",
+        "SCP-106",
+        "SCP-131"
+      ],
+      "hint": "Blink and it's behind you",
+      "source": "https://scp-wiki.wikidot.com/scp-173",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which entry attacks anyone who views its face?",
+      "a": "SCP-096",
+      "alt": [
+        "096",
+        "The Shy Guy"
+      ],
+      "pool": [
+        "SCP-173",
+        "SCP-049",
+        "SCP-999",
+        "SCP-079",
+        "SCP-106"
+      ],
+      "hint": "Even a photo counts. Even a pixel.",
+      "source": "https://scp-wiki.wikidot.com/scp-096",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which designation belongs to the indestructible reptile?",
+      "a": "SCP-682",
+      "alt": [
+        "682"
+      ],
+      "pool": [
+        "SCP-173",
+        "SCP-096",
+        "SCP-3000",
+        "SCP-939",
+        "SCP-106"
+      ],
+      "hint": "Termination attempts: many. Successes: zero.",
+      "source": "https://scp-wiki.wikidot.com/scp-682",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which friendly orange slime tickles depression away?",
+      "a": "SCP-999",
+      "alt": [
+        "999",
+        "The Tickle Monster"
+      ],
+      "pool": [
+        "SCP-131",
+        "SCP-053",
+        "SCP-040",
+        "SCP-2295",
+        "SCP-085"
+      ],
+      "hint": "Smells like whatever you love most",
+      "source": "https://scp-wiki.wikidot.com/scp-999",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which entry is an endless IKEA with helpful Staff?",
+      "a": "SCP-3008",
+      "alt": [
+        "3008"
+      ],
+      "pool": [
+        "SCP-1730",
+        "SCP-087",
+        "SCP-2317",
+        "SCP-455",
+        "SCP-1983"
+      ],
+      "hint": "The store closes. You should not be there when it does.",
+      "source": "https://scp-wiki.wikidot.com/scp-3008",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Expendable test subjects carry which personnel class?",
+      "a": "D-Class",
+      "alt": [
+        "Class D",
+        "D Class personnel"
+      ],
+      "pool": [
+        "A-Class",
+        "B-Class",
+        "E-Class",
+        "O5",
+        "MTF"
+      ],
+      "hint": "Recruited, per the boilerplate, from death rows",
+      "source": "https://scp-wiki.wikidot.com/security-clearance-levels",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "How many members sit on the O5 Council?",
+      "a": "Thirteen",
+      "alt": [
+        "13"
+      ],
+      "pool": [
+        "Seven",
+        "Nine",
+        "Ten",
+        "Twelve",
+        "Fifteen"
+      ],
+      "hint": "O5-1 through the unluckiest number",
+      "source": "https://scp-wiki.wikidot.com/about-the-scp-foundation",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Mobile Task Force Epsilon-11 goes by which nickname?",
+      "a": "Nine-Tailed Fox",
+      "alt": [
+        "The Nine-Tailed Fox"
+      ],
+      "pool": [
+        "Red Right Hand",
+        "The Hammer Down",
+        "See No Evil",
+        "Ghostbusters",
+        "Bookworms"
+      ],
+      "hint": "Famous from a certain containment-breach game",
+      "source": "https://scp-wiki.wikidot.com/task-forces",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Which rival group splintered from the Foundation itself?",
+      "a": "The Chaos Insurgency",
+      "alt": [
+        "Chaos Insurgency"
+      ],
+      "pool": [
+        "The Serpent's Hand",
+        "The Global Occult Coalition",
+        "Marshall, Carter and Dark",
+        "The Church of the Broken God",
+        "Are We Cool Yet?"
+      ],
+      "hint": "Defected with a handful of anomalies and a grudge",
+      "source": "https://scp-wiki.wikidot.com/chaos-insurgency-hub",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Blacked-out text in files is marked expunged or what?",
+      "a": "Redacted",
+      "alt": [
+        "[REDACTED]"
+      ],
+      "pool": [
+        "Erased",
+        "Sealed",
+        "Purged",
+        "Classified",
+        "Omitted"
+      ],
+      "hint": "The bracketed word every reader learns first",
+      "source": "https://scp-wiki.wikidot.com/how-to-write-an-scp",
+      "license": "CC BY-SA"
+    },
+    {
+      "question": "Doctors Bright, Clef and Gears are examples of which staff type?",
+      "a": "Researchers",
+      "alt": [
+        "Researcher",
+        "Foundation researchers"
+      ],
+      "pool": [
+        "Agents",
+        "Directors",
+        "Containment specialists",
+        "Ethics Committee",
+        "Archivists"
+      ],
+      "hint": "The lab-coat tier of the org chart",
+      "source": "https://scp-wiki.wikidot.com/personnel-and-character-dossier",
+      "license": "CC BY-SA"
+    }
+  ]
+}

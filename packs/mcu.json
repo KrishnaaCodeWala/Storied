@@ -1,0 +1,304 @@
+{
+  "id": "mcu",
+  "tags": [
+    "movies",
+    "superhero",
+    "action"
+  ],
+  "label": "The MCU",
+  "color": "#ef5350",
+  "cta": "Assemble",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "The Infinity Saga's most quoted lines. Name who said it.",
+  "roster": [
+    "Tony Stark",
+    "Steve Rogers",
+    "Thor",
+    "Bruce Banner",
+    "Natasha Romanoff",
+    "Nick Fury",
+    "Loki",
+    "Thanos",
+    "Peter Parker",
+    "Doctor Strange",
+    "T'Challa",
+    "Groot",
+    "Rocket",
+    "Wanda Maximoff",
+    "Morgan Stark",
+    "Carol Danvers"
+  ],
+  "motifs": [
+    "star",
+    "bolt",
+    "shield"
+  ],
+  "quotes": [
+    {
+      "q": "I am Iron Man.",
+      "a": "Tony Stark",
+      "alt": [
+        "Tony",
+        "Iron Man"
+      ],
+      "hint": "The press conference that started it — and the snap that ended it"
+    },
+    {
+      "q": "I can do this all day.",
+      "a": "Steve Rogers",
+      "alt": [
+        "Steve",
+        "Captain America",
+        "Cap"
+      ],
+      "hint": "Brooklyn alleys, and one awkward fight with himself"
+    },
+    {
+      "q": "That's my secret, Cap. I'm always angry.",
+      "a": "Bruce Banner",
+      "alt": [
+        "Bruce",
+        "The Hulk",
+        "Hulk"
+      ],
+      "hint": "Turning around on a New York street, 2012"
+    },
+    {
+      "q": "I am Groot.",
+      "a": "Groot",
+      "alt": [],
+      "hint": "The complete vocabulary"
+    },
+    {
+      "q": "Avengers… assemble.",
+      "a": "Steve Rogers",
+      "alt": [
+        "Steve",
+        "Captain America",
+        "Cap"
+      ],
+      "hint": "Eleven years of movies waiting for two words"
+    },
+    {
+      "q": "I am inevitable.",
+      "a": "Thanos",
+      "alt": [
+        "The Mad Titan"
+      ],
+      "hint": "Said just before the wrong fingers snapped"
+    },
+    {
+      "q": "Perfectly balanced, as all things should be.",
+      "a": "Thanos",
+      "alt": [
+        "The Mad Titan"
+      ],
+      "hint": "A farmer's philosophy, applied to the universe"
+    },
+    {
+      "q": "Wakanda forever!",
+      "a": "T'Challa",
+      "alt": [
+        "Black Panther"
+      ],
+      "hint": "Arms crossed, army charging"
+    },
+    {
+      "q": "Mr. Stark, I don't feel so good.",
+      "a": "Peter Parker",
+      "alt": [
+        "Peter",
+        "Spider-Man"
+      ],
+      "hint": "On Titan, right as the dust began"
+    },
+    {
+      "q": "I am burdened with glorious purpose.",
+      "a": "Loki",
+      "alt": [],
+      "hint": "Fresh through a portal, scepter in hand"
+    },
+    {
+      "q": "Dormammu, I've come to bargain.",
+      "a": "Doctor Strange",
+      "alt": [
+        "Strange",
+        "Stephen Strange"
+      ],
+      "hint": "Said on a literal infinite loop"
+    },
+    {
+      "q": "There was an idea to bring together a group of remarkable people.",
+      "a": "Nick Fury",
+      "alt": [
+        "Fury"
+      ],
+      "hint": "The Avengers Initiative, pitched"
+    },
+    {
+      "q": "I love you 3000.",
+      "a": "Morgan Stark",
+      "alt": [
+        "Morgan"
+      ],
+      "hint": "Bedtime math from a five-year-old"
+    },
+    {
+      "q": "We have a Hulk.",
+      "a": "Tony Stark",
+      "alt": [
+        "Tony",
+        "Iron Man"
+      ],
+      "hint": "Countering an alien army with one sentence"
+    }
+  ],
+  "lore": [
+    {
+      "question": "How many Infinity Stones are there?",
+      "a": "Six",
+      "alt": [
+        "6"
+      ],
+      "pool": [
+        "Four",
+        "Five",
+        "Seven",
+        "Eight",
+        "Nine"
+      ],
+      "hint": "Space, Mind, Reality, Power, Time, Soul"
+    },
+    {
+      "question": "Only the worthy can lift what?",
+      "a": "Mjölnir",
+      "alt": [
+        "Mjolnir",
+        "Thor's hammer"
+      ],
+      "pool": [
+        "Stormbreaker",
+        "The gauntlet",
+        "Gungnir",
+        "The Bifrost",
+        "Cap's shield"
+      ],
+      "hint": "An elevator, notably, qualifies"
+    },
+    {
+      "question": "Cap's shield is made of which metal?",
+      "a": "Vibranium",
+      "alt": [],
+      "pool": [
+        "Adamantium",
+        "Uru",
+        "Titanium",
+        "Palladium",
+        "Carbonadium"
+      ],
+      "hint": "Howard Stark had exactly one batch"
+    },
+    {
+      "question": "Which 2008 film launched the franchise?",
+      "a": "Iron Man",
+      "alt": [],
+      "pool": [
+        "The Incredible Hulk",
+        "Thor",
+        "The Avengers",
+        "Captain America",
+        "Spider-Man"
+      ],
+      "hint": "A cave. A box of scraps."
+    },
+    {
+      "question": "What is Thanos' home world?",
+      "a": "Titan",
+      "alt": [],
+      "pool": [
+        "Xandar",
+        "Vormir",
+        "Sakaar",
+        "Knowhere",
+        "Hala"
+      ],
+      "hint": "A dead moon he treats as a cautionary tale"
+    },
+    {
+      "question": "How many years pass between the Snap and the time heist?",
+      "a": "Five",
+      "alt": [
+        "5"
+      ],
+      "pool": [
+        "One",
+        "Two",
+        "Three",
+        "Seven",
+        "Ten"
+      ],
+      "hint": "Long enough for a very different Thor"
+    },
+    {
+      "question": "Which android is born from JARVIS and the Mind Stone?",
+      "a": "Vision",
+      "alt": [
+        "The Vision"
+      ],
+      "pool": [
+        "Ultron",
+        "FRIDAY",
+        "EDITH",
+        "Jocasta",
+        "MODOK"
+      ],
+      "hint": "Also worthy, incidentally"
+    },
+    {
+      "question": "Stormbreaker is forged at which dying star?",
+      "a": "Nidavellir",
+      "alt": [],
+      "pool": [
+        "Svartalfheim",
+        "Asgard",
+        "Vanaheim",
+        "Muspelheim",
+        "Jotunheim"
+      ],
+      "hint": "Home of Eitri, the giant dwarf"
+    },
+    {
+      "question": "Which agreement splits the team in Civil War?",
+      "a": "The Sokovia Accords",
+      "alt": [
+        "Sokovia Accords"
+      ],
+      "pool": [
+        "The Geneva Accords",
+        "The Vienna Protocols",
+        "The Lagos Treaty",
+        "The Stark Act",
+        "The Raft Mandate"
+      ],
+      "hint": "Named for the city Ultron lifted"
+    },
+    {
+      "question": "Fury lost his eye to what?",
+      "a": "A Flerken",
+      "alt": [
+        "Flerken",
+        "Goose",
+        "Goose the cat"
+      ],
+      "pool": [
+        "A Skrull",
+        "A Kree soldier",
+        "Shrapnel",
+        "A Chitauri",
+        "Loki"
+      ],
+      "hint": "It looked exactly like a house cat"
+    }
+  ]
+}

@@ -262,11 +262,93 @@ const Studio = {
     this.open();
   },
 
+  /* ---------------- bulk add + example ---------------- */
+
+  /** Parse "quote | who | hint" lines. Returns {added, errors[]}. */
+  bulkAddQuotes(text) {
+    const errors = [];
+    let added = 0;
+    text.split("\n").map((l) => l.trim()).filter(Boolean).forEach((line, n) => {
+      const parts = line.split("|").map((p) => p.trim());
+      if (parts.length < 3 || !parts[0] || !parts[1] || !parts[2]) {
+        errors.push("Line " + (n + 1) + ": needs quote | who | hint");
+        return;
+      }
+      if (wordCount(parts[0]) >= 15) {
+        errors.push("Line " + (n + 1) + ": quote is " + wordCount(parts[0]) + " words (max 14)");
+        return;
+      }
+      this.current.quotes.push({ q: parts[0], a: parts[1], alt: [], hint: parts[2] });
+      added++;
+    });
+    this.paintEntries();
+    this.validateLive();
+    return { added, errors };
+  },
+
+  /** Parse "question | answer | wrong;wrong;... | hint | source?" lines. */
+  bulkAddLore(text) {
+    const errors = [];
+    let added = 0;
+    text.split("\n").map((l) => l.trim()).filter(Boolean).forEach((line, n) => {
+      const p = line.split("|").map((x) => x.trim());
+      if (p.length < 4 || !p[0] || !p[1] || !p[2] || !p[3]) {
+        errors.push("Line " + (n + 1) + ": needs question | answer | wrongs | hint");
+        return;
+      }
+      const pool = p[2].split(";").map((x) => x.trim()).filter(Boolean);
+      if (pool.length < 5) { errors.push("Line " + (n + 1) + ": give 5 wrong answers, ;-separated"); return; }
+      if (pool.includes(p[1])) { errors.push("Line " + (n + 1) + ": the answer is in the wrong list"); return; }
+      if (wordCount(p[0]) >= 20) { errors.push("Line " + (n + 1) + ": question too long (max 19 words)"); return; }
+      const leak = nameTokens(p[1]).find((t) => new RegExp("\\b" + t + "\\b", "i").test(p[0]));
+      if (leak) { errors.push("Line " + (n + 1) + ": \u201C" + leak + "\u201D gives it away"); return; }
+      const entry = { question: p[0], a: p[1], alt: [], pool, hint: p[3] };
+      if (p[4]) { entry.source = p[4]; entry.license = "CC BY-SA"; }
+      this.current.lore.push(entry);
+      added++;
+    });
+    this.paintEntries();
+    this.validateLive();
+    return { added, errors };
+  },
+
+  loadExample() {
+    this.current = this.blank();
+    this.current.label = "My Favorite Show";
+    this.current.blurb = "An example pack \u2014 replace everything with your fandom.";
+    this.current.roster = ["Hero", "Sidekick", "Mentor", "Rival", "Villain", "The Bartender"];
+    this.current.motifs = ["star", "bolt", "book"];
+    this.current.quotes = [
+      { q: "We ride at dawn.", a: "Hero", alt: [], hint: "Season one, episode one" },
+      { q: "That's not part of the plan.", a: "Sidekick", alt: [], hint: "Said at least once per episode" }
+    ];
+    this.current.lore = [
+      { question: "Who runs the tavern everyone meets in?", a: "The Bartender", alt: [],
+        pool: ["Hero", "Sidekick", "Mentor", "Rival", "Villain"], hint: "Knows everything, says little" }
+    ];
+    this.$("st-name").value = this.current.label;
+    this.$("st-prompt").value = this.current.prompt;
+    this.$("st-blurb").value = this.current.blurb;
+    this.$("st-roster").value = this.current.roster.join("\n");
+    this.open();
+  },
+
   /* ---------------- wiring ---------------- */
 
   init() {
     this.current = this.blank();
     this.$("st-add-quote").addEventListener("click", () => this.addQuote());
+    this.$("st-example").addEventListener("click", () => this.loadExample());
+    this.$("st-bulk-q-add").addEventListener("click", () => {
+      const res = this.bulkAddQuotes(this.$("st-bulk-q").value);
+      this.$("st-bulk-q-err").textContent = (res.added ? "Added " + res.added + ". " : "") + res.errors.join(" \u00B7 ");
+      if (!res.errors.length) this.$("st-bulk-q").value = "";
+    });
+    this.$("st-bulk-l-add").addEventListener("click", () => {
+      const res = this.bulkAddLore(this.$("st-bulk-l").value);
+      this.$("st-bulk-l-err").textContent = (res.added ? "Added " + res.added + ". " : "") + res.errors.join(" \u00B7 ");
+      if (!res.errors.length) this.$("st-bulk-l").value = "";
+    });
     this.$("st-add-lore").addEventListener("click", () => this.addLore());
     this.$("st-save").addEventListener("click", () => this.saveLocal());
     this.$("st-export").addEventListener("click", () => this.exportFile());

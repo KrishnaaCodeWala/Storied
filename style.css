@@ -1138,7 +1138,7 @@ button:focus-visible {
 
 /* ---------------- pack studio ---------------- */
 
-#panel-studio { display: flex; flex-direction: column; gap: 10px; }
+#panel-studio:not([hidden]) { display: flex; flex-direction: column; gap: 10px; }
 #panel-studio .stats-label { margin-top: 18px; }
 
 .st-color-row { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -1195,3 +1195,10 @@ button:focus-visible {
 }
 
 .disclaimer { margin: 0 0 6px; font-size: 10px; color: var(--ink-dim); opacity: 0.8; }
+
+.mode-panel[hidden] { display: none !important; } /* hidden always wins */
+
+.st-bulk { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: var(--bg-sunken); }
+.st-bulk summary { cursor: pointer; font-size: 11.5px; color: var(--ink-dim); }
+.st-bulk textarea { margin-top: 8px; }
+.st-bulk code { font-size: 10px; color: var(--c-books); }

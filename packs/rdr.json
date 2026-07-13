@@ -1,0 +1,232 @@
+{
+  "id": "rdr",
+  "tags": [
+    "games",
+    "action",
+    "western"
+  ],
+  "label": "Red Dead Redemption",
+  "color": "#a63a2a",
+  "cta": "Ride out",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "The dying West of the Van der Linde gang. Name who said it, cowpoke.",
+  "roster": [
+    "Arthur Morgan",
+    "John Marston",
+    "Dutch van der Linde",
+    "Micah Bell",
+    "Sadie Adler",
+    "Hosea Matthews",
+    "Uncle",
+    "Abigail Roberts",
+    "Charles Smith",
+    "Bill Williamson",
+    "Javier Escuella"
+  ],
+  "motifs": [
+    "wheel",
+    "mountain",
+    "flame"
+  ],
+  "quotes": [
+    {
+      "q": "I gave you all I had.",
+      "a": "Arthur Morgan",
+      "alt": [
+        "Arthur"
+      ],
+      "hint": "On the mountain, at the very end"
+    },
+    {
+      "q": "We're more ghosts than people.",
+      "a": "Arthur Morgan",
+      "alt": [
+        "Arthur"
+      ],
+      "hint": "Rowing across a lake, talking about what they are"
+    },
+    {
+      "q": "When the time comes, you gotta run and don't look back.",
+      "a": "Arthur Morgan",
+      "alt": [
+        "Arthur"
+      ],
+      "hint": "His last instruction to John"
+    },
+    {
+      "q": "Vengeance is an idiot's game.",
+      "a": "Arthur Morgan",
+      "alt": [
+        "Arthur"
+      ],
+      "hint": "Advice given to a widow he kept helping"
+    },
+    {
+      "q": "I'm afraid.",
+      "a": "Arthur Morgan",
+      "alt": [
+        "Arthur"
+      ],
+      "hint": "Two words, to a nun at a train station"
+    },
+    {
+      "q": "I have a plan.",
+      "a": "Dutch van der Linde",
+      "alt": [
+        "Dutch"
+      ],
+      "hint": "The refrain the gang slowly stopped believing"
+    },
+    {
+      "q": "People don't forget. Nothing gets forgiven.",
+      "a": "John Marston",
+      "alt": [
+        "John",
+        "Jim Milton"
+      ],
+      "hint": "The first game's thesis on redemption"
+    },
+    {
+      "q": "Lumbago!",
+      "a": "Uncle",
+      "alt": [],
+      "hint": "The all-purpose excuse for never working"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What gang does Arthur ride with?",
+      "a": "Van der Linde",
+      "alt": [
+        "The Van der Linde gang",
+        "Van der Linde gang",
+        "Dutch's gang"
+      ],
+      "pool": [
+        "The O'Driscoll Boys",
+        "The Del Lobos",
+        "The Skinner Brothers",
+        "The Laramie gang",
+        "The Murfree Brood"
+      ],
+      "hint": "Named for the man with the plans"
+    },
+    {
+      "question": "What illness slowly takes Arthur through the story?",
+      "a": "Tuberculosis",
+      "alt": [
+        "TB",
+        "Consumption"
+      ],
+      "pool": [
+        "Cholera",
+        "Pneumonia",
+        "Typhoid",
+        "Malaria",
+        "Scarlet fever"
+      ],
+      "hint": "Caught collecting a debt from a sick farmer"
+    },
+    {
+      "question": "The gang is on the run after a ferry job went wrong where?",
+      "a": "Blackwater",
+      "alt": [],
+      "pool": [
+        "Saint Denis",
+        "Valentine",
+        "Strawberry",
+        "Rhodes",
+        "Annesburg"
+      ],
+      "hint": "The money is supposedly still buried there"
+    },
+    {
+      "question": "Which tropical paradise does Dutch keep promising?",
+      "a": "Tahiti",
+      "alt": [],
+      "pool": [
+        "Cuba",
+        "Australia",
+        "Mexico",
+        "Hawaii",
+        "Panama"
+      ],
+      "hint": "Mangoes were mentioned"
+    },
+    {
+      "question": "What is the name of John's ranch in the epilogue?",
+      "a": "Beecher's Hope",
+      "alt": [
+        "Beechers Hope"
+      ],
+      "pool": [
+        "Emerald Ranch",
+        "Pronghorn Ranch",
+        "MacFarlane's Ranch",
+        "Painted Sky",
+        "Clemens Point"
+      ],
+      "hint": "Built with a barn-raising and a bank loan"
+    },
+    {
+      "question": "Who is the playable protagonist of the first Redemption?",
+      "a": "John Marston",
+      "alt": [
+        "John"
+      ],
+      "pool": [
+        "Arthur Morgan",
+        "Dutch van der Linde",
+        "Jack Marston",
+        "Red Harlow",
+        "Sadie Adler"
+      ],
+      "hint": "Sent hunting his old gang by federal agents"
+    },
+    {
+      "question": "What of Arthur's does John carry after the mountain?",
+      "a": "His hat",
+      "alt": [
+        "The hat",
+        "Arthur's hat"
+      ],
+      "pool": [
+        "His revolver",
+        "His journal",
+        "His satchel",
+        "His horse",
+        "His boots"
+      ],
+      "hint": "Worn low, ever after"
+    },
+    {
+      "question": "What profession does Sadie take up after the gang falls apart?",
+      "a": "Bounty hunter",
+      "alt": [
+        "Bounty hunting"
+      ],
+      "pool": [
+        "Rancher",
+        "Sheriff",
+        "Gunsmith",
+        "Stagecoach driver",
+        "Saloon owner"
+      ],
+      "hint": "Started with a want for revenge, became a career"
+    },
+    {
+      "question": "On which snowy peak does Micah meet his end?",
+      "a": "Mount Hagen",
+      "alt": [],
+      "pool": [
+        "Mount Shann",
+        "Grizzlies East",
+        "Colter",
+        "Spider Gorge",
+        "Cattail Pond"
+      ],
+      "hint": "Cold place for a rat"
+    }
+  ]
+}

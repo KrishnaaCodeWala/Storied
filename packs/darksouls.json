@@ -1,0 +1,257 @@
+{
+  "id": "darksouls",
+  "tags": [
+    "games",
+    "rpg",
+    "fantasy"
+  ],
+  "label": "Dark Souls",
+  "color": "#e0863a",
+  "cta": "Link the fire",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "Lordran to Lothric. Praise the sun, name the speaker, try not to go hollow.",
+  "roster": [
+    "Solaire of Astora",
+    "Oscar of Astora",
+    "The Fire Keeper",
+    "The Emerald Herald",
+    "Aldia",
+    "Siegmeyer of Catarina",
+    "Patches",
+    "Gwyn",
+    "Ornstein",
+    "Artorias",
+    "Andre of Astora",
+    "Quelana"
+  ],
+  "motifs": [
+    "sun",
+    "sword",
+    "flame"
+  ],
+  "quotes": [
+    {
+      "q": "Praise the sun!",
+      "a": "Solaire of Astora",
+      "alt": [
+        "Solaire"
+      ],
+      "hint": "Arms up, palms open, the pose itself"
+    },
+    {
+      "q": "If only I could be so grossly incandescent!",
+      "a": "Solaire of Astora",
+      "alt": [
+        "Solaire"
+      ],
+      "hint": "Admiring the sun from the Undead Burg"
+    },
+    {
+      "q": "Let us engage in jolly co-operation!",
+      "a": "Solaire of Astora",
+      "alt": [
+        "Solaire"
+      ],
+      "hint": "Handing over his white sign soapstone"
+    },
+    {
+      "q": "The sun is a wondrous body. Like a magnificent father!",
+      "a": "Solaire of Astora",
+      "alt": [
+        "Solaire"
+      ],
+      "hint": "His theology, in full"
+    },
+    {
+      "q": "Thou who art Undead, art chosen.",
+      "a": "Oscar of Astora",
+      "alt": [
+        "Oscar"
+      ],
+      "hint": "The dying knight who hands you your first Estus"
+    },
+    {
+      "q": "Ashen one, hearest thou my voice, still?",
+      "a": "The Fire Keeper",
+      "alt": [
+        "Fire Keeper"
+      ],
+      "hint": "Waiting at Firelink Shrine, third game"
+    },
+    {
+      "q": "Seek souls. Larger, more powerful souls.",
+      "a": "The Emerald Herald",
+      "alt": [
+        "Emerald Herald",
+        "Shanalotte"
+      ],
+      "hint": "Majula's guide, telling you the whole gameplay loop"
+    },
+    {
+      "q": "Seek strength. The rest will follow.",
+      "a": "Aldia",
+      "alt": [
+        "Aldia, Scholar of the First Sin"
+      ],
+      "hint": "The Scholar of the First Sin's parting advice"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What do you rest at to refill your flasks and respawn foes?",
+      "a": "A bonfire",
+      "alt": [
+        "Bonfire",
+        "Bonfires"
+      ],
+      "pool": [
+        "A fountain",
+        "A shrine statue",
+        "A campfire",
+        "A checkpoint stone",
+        "A lantern"
+      ],
+      "hint": "Sword in the coals"
+    },
+    {
+      "question": "What is the healing drink every hollow warrior carries?",
+      "a": "Estus",
+      "alt": [
+        "Estus Flask",
+        "The Estus Flask"
+      ],
+      "pool": [
+        "Blood vials",
+        "Lifegems",
+        "Divine Blessing",
+        "Sunny D",
+        "Moss clumps"
+      ],
+      "hint": "Golden, warm, refilled at rest stops"
+    },
+    {
+      "question": "Which lord linked the First Flame and started the whole mess?",
+      "a": "Gwyn",
+      "alt": [
+        "Lord Gwyn",
+        "Gwyn, Lord of Cinder"
+      ],
+      "pool": [
+        "Aldia",
+        "Artorias",
+        "Ornstein",
+        "Nito",
+        "Seath"
+      ],
+      "hint": "Lord of Sunlight, later of Cinder"
+    },
+    {
+      "question": "Ornstein guards Anor Londo alongside which executioner?",
+      "a": "Smough",
+      "alt": [
+        "Executioner Smough"
+      ],
+      "pool": [
+        "Gough",
+        "Ciaran",
+        "Artorias",
+        "Gwyndolin",
+        "Havel"
+      ],
+      "hint": "The most infamous boss duo in the series"
+    },
+    {
+      "question": "Which covenant do sun-praising jolly co-operators join?",
+      "a": "Warrior of Sunlight",
+      "alt": [
+        "Warriors of Sunlight",
+        "Sunlight Warriors",
+        "Sunbros"
+      ],
+      "pool": [
+        "Blade of the Darkmoon",
+        "Chaos Servant",
+        "Forest Hunter",
+        "Way of White",
+        "Gravelord Servant"
+      ],
+      "hint": "Their summon signs glow gold"
+    },
+    {
+      "question": "Which knight was swallowed by the Abyss he fought?",
+      "a": "Artorias",
+      "alt": [
+        "Knight Artorias",
+        "Artorias the Abysswalker"
+      ],
+      "pool": [
+        "Ornstein",
+        "Gough",
+        "Solaire of Astora",
+        "Ciaran",
+        "Gwyn"
+      ],
+      "hint": "His legend credits him with a walk he never finished"
+    },
+    {
+      "question": "What title does the third game give the player?",
+      "a": "Ashen One",
+      "alt": [
+        "The Ashen One"
+      ],
+      "pool": [
+        "Chosen Undead",
+        "Bearer of the Curse",
+        "Tarnished",
+        "Slayer of Demons",
+        "The Hunter"
+      ],
+      "hint": "Unkindled, and rude enough to steal cinders"
+    },
+    {
+      "question": "What do Undead lose, bit by bit, until they go hollow?",
+      "a": "Humanity",
+      "alt": [
+        "Their humanity"
+      ],
+      "pool": [
+        "Souls",
+        "Estus",
+        "Memory",
+        "Faith",
+        "Embers"
+      ],
+      "hint": "Also a sprite-shaped consumable item"
+    },
+    {
+      "question": "In which city of the gods does the sun turn out to be fake?",
+      "a": "Anor Londo",
+      "alt": [],
+      "pool": [
+        "Lordran",
+        "Majula",
+        "Lothric",
+        "New Londo",
+        "Oolacile"
+      ],
+      "hint": "Home of a very tall cathedral and a very unfair archer run"
+    },
+    {
+      "question": "The ending choice: link the fire, or usher in the Age of what?",
+      "a": "Dark",
+      "alt": [
+        "The Dark",
+        "Age of Dark"
+      ],
+      "pool": [
+        "Fire",
+        "Ash",
+        "Grey",
+        "Man",
+        "Dragons"
+      ],
+      "hint": "The Darkstalker's preference"
+    }
+  ]
+}

@@ -36,7 +36,7 @@ The full roadmap + phase prompts live in the owner's
   - Service worker v3.1.0: precaches shell + manifest + core;
     runtime-caches pack JSON on first play.
 
-**Test suite: 644 assertions, all green** (`npm test`, jsdom).
+**Test suite: 1192 assertions, all green** (`npm test`, jsdom).
 `npm run check` builds and boot-tests the standalone file.
 
 ## Hard rules (never break)
@@ -237,6 +237,39 @@ B) Content expansion — run the harvester live on the owner's machine
 C) Phase 7 items that don't need a backend (a11y pass, perf audit,
    malformed-pack resilience, strings extraction).
 
+## v3.1 changes (owner-requested, this session)
+
+- Daily + Study tabs/panels REMOVED from HTML; all code kept dormant
+  and null-guarded (paintDaily/paintDecks/paintDailyBoard early-return;
+  dropzone + btnDaily/btnMakeDeck listeners guarded). Consequences the
+  owner accepted: streak calendar idle, "The Regular" unearnable,
+  Supabase leaderboard UI homeless (Online API still tested). To
+  restore: re-add the panels/tabs in index.html — engine untouched.
+- Tagline is now "One line. Infinite fandoms."
+- STUDIO LEAK BUG fixed: #panel-studio's display:flex was overriding
+  [hidden]. Rule now scoped :not([hidden]) + .mode-panel[hidden]
+  {display:none !important}. Never style panels with bare display.
+- Studio: example-pack loader (st-example) + bulk add (st-bulk-q /
+  st-bulk-l): "quote | who | hint" and
+  "question | answer | w;w;w;w;w | hint | source?" per line,
+  per-line validation incl. the leak rule.
+- SEVEN NEW PACKS (14 total): darksouls, gta, rdr, assassinscreed
+  (through Unity), mcu, scp (lore-first: 6 quotes + 12 CC BY-SA
+  sourced lore), warhammer (entity-style answers: The Orks, A
+  Dreadnought, An Imperial litany).
+- ALL 14 packs now have lore. ST/cyberpunk/bloodborne/jumpstreet
+  gained 8-10 lore each; ST +2 quotes (Hopper, Erica — added to
+  roster), bloodborne +1 (Gilbert).
+- MIN-CONTENT RULE changed in tests: quotes>=8 OR lore>=10 (enables
+  lore-first packs like SCP).
+- Leak rule caught 5 of my own questions this session (Los/gang/
+  finger/Accords/Lab) — always run npm run validate after writing
+  content.
+- MCU color is #ef5350 (original #e23636 failed WCAG AA against both
+  inks — the contrast test caught it).
+- Quote philosophy stands: only high-confidence iconic lines shipped;
+  bulk volume comes from the owner running the harvester live.
+
 ## Session log
 
 - S1: built QUOTED core game → motifs → fandom packs (6) → Android
@@ -251,8 +284,11 @@ C) Phase 7 items that don't need a backend (a11y pass, perf audit,
 - S8: Phase 6 Pack Studio + shared packcheck. 592→617 tests.
 - S9: Phase 7 hardening. 617→644 tests. All deliverables
   refreshed. Every phase buildable in this environment is done.
-- S10 (this): Witcher draft curated into shipped pack #7 (8 verified
+- S10: Witcher draft curated into shipped pack #7 (8 verified
   quotes — web-checked; the bed line is GERALT, not Vesemir) + 12
   lore with aliases. vercel.json added (CSP, nosniff, referrer,
   permissions headers). Test pack counts 6→7. Owner pushing to
   github.com/KrishnaaCodeWala/Storied.
+- S11 (this): v3.1 — owner's 7 changes: tabs removed, studio bulk
+  tools, 7 new packs, lore everywhere, tagline, leak fix. 717→1192
+  tests.

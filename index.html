@@ -20,16 +20,14 @@
     <header class="masthead">
       <div class="masthead-mark" aria-hidden="true">&ldquo;</div>
       <h1>STORIED</h1>
-      <p class="tagline">Every line came from somewhere. Prove you know where.</p>
+      <p class="tagline">One line. Infinite fandoms.</p>
       <button class="btn-ghost stats-link" id="btn-stats">Stats &amp; streaks</button>
     </header>
 
     <nav class="mode-tabs" role="tablist" aria-label="Game mode">
       <button class="mode-tab selected" data-mode="classic" role="tab" aria-selected="true">Classic</button>
-      <button class="mode-tab" data-mode="daily" role="tab" aria-selected="false">Daily</button>
       <button class="mode-tab" data-mode="rush" role="tab" aria-selected="false">Rush</button>
       <button class="mode-tab" data-mode="fandom" role="tab" aria-selected="false">Fandom</button>
-      <button class="mode-tab" data-mode="study" role="tab" aria-selected="false">Study</button>
       <button class="mode-tab" data-mode="studio" role="tab" aria-selected="false">Studio</button>
     </nav>
 
@@ -65,15 +63,7 @@
     </div>
 
     <!-- DAILY -->
-    <div class="setup-panel mode-panel" id="panel-daily" hidden>
-      <h2 class="panel-label">The daily ten</h2>
-      <p class="mode-blurb">Same ten quotes for every player, reshuffled at midnight. Mixed shelves,
-        Buff rules, one score on the board per day.</p>
-      <div class="daily-status" id="daily-status"></div>
-      <div class="daily-board" id="daily-board" hidden></div>
-      <button id="btn-daily-start" class="btn-primary">Play today's ten</button>
-      <p class="setup-note" id="daily-date"></p>
-    </div>
+    
 
     <!-- RUSH -->
     <div class="setup-panel mode-panel" id="panel-rush" hidden>
@@ -113,39 +103,7 @@
     </div>
 
     <!-- STUDY -->
-    <div class="setup-panel mode-panel" id="panel-study" hidden>
-      <h2 class="panel-label">Quiz your own material</h2>
-      <p class="mode-blurb">Drop in lecture notes, an article, a chapter &mdash; anything. QUOTED finds
-        the key names, numbers and terms and turns them into fill-in-the-blank questions with
-        distractors drawn from your own text. Nothing leaves your device.</p>
-
-      <div class="dropzone" id="dropzone" tabindex="0" role="button"
-           aria-label="Upload a text, markdown or HTML file">
-        <span class="dropzone-icon" aria-hidden="true">&#8681;</span>
-        <span>Drop a <strong>.txt / .md / .html</strong> file here or tap to browse</span>
-        <input type="file" id="file-input" accept=".txt,.md,.markdown,.html,.htm,text/plain" hidden>
-      </div>
-
-      <p class="or-rule"><span>or paste text</span></p>
-
-      <textarea id="paste-area" class="paste-area" rows="5"
-        placeholder="Paste study notes, a wiki article, meeting minutes, a short story..."></textarea>
-      <div class="deck-create-row">
-        <input type="text" id="deck-name" class="deck-name-input" maxlength="40" placeholder="Name this deck">
-        <button id="btn-make-deck" class="btn-guess">Build deck</button>
-      </div>
-      <p class="deck-msg" id="deck-msg" role="status"></p>
-
-      <h2 class="panel-label">Your decks</h2>
-      <div class="deck-list" id="deck-list"></div>
-
-      <h2 class="panel-label">Question style</h2>
-      <div class="study-diff" role="radiogroup" aria-label="Study question style">
-        <button class="chip selected" data-studydiff="easy" role="radio" aria-checked="true">4 choices</button>
-        <button class="chip" data-studydiff="medium" role="radio" aria-checked="false">6 choices</button>
-        <button class="chip" data-studydiff="hard" role="radio" aria-checked="false">Type it</button>
-      </div>
-    </div>
+    
 
     <footer class="credits">
       <p class="disclaimer">Unofficial fan trivia &mdash; not affiliated with or endorsed by any franchise.</p>Open <code>quotes.js</code> to add quotes &middot; <code>motifs.js</code> for the art &middot; decks stay on this device.</footer>
@@ -171,6 +129,10 @@
       <h3 class="panel-label stats-label">Cast roster &mdash; one name per line, 6 minimum</h3>
       <textarea id="st-roster" class="pack-search st-area" rows="5" aria-label="Roster"></textarea>
 
+      <div class="acct-row">
+        <button class="btn-ghost st-mini" id="st-example">Load an example pack</button>
+      </div>
+
       <h3 class="panel-label stats-label">Quotes</h3>
       <div class="st-entry-list" id="st-quote-list"></div>
       <input id="st-q" class="pack-search" placeholder="The quote (under 15 words)" aria-label="Quote">
@@ -180,6 +142,13 @@
         <button class="btn-guess" id="st-add-quote">Add</button>
       </div>
       <p class="st-err" id="st-q-err"></p>
+      <details class="st-bulk">
+        <summary>Bulk add quotes (paste many at once)</summary>
+        <p class="acct-note">One per line: <code>quote | who said it | hint</code></p>
+        <textarea id="st-bulk-q" class="pack-search st-area" rows="4" aria-label="Bulk quotes"></textarea>
+        <button class="btn-ghost st-mini" id="st-bulk-q-add">Add all</button>
+        <p class="st-err" id="st-bulk-q-err"></p>
+      </details>
 
       <h3 class="panel-label stats-label">Lore</h3>
       <div class="st-entry-list" id="st-lore-list"></div>
@@ -194,6 +163,13 @@
         <button class="btn-guess" id="st-add-lore">Add</button>
       </div>
       <p class="st-err" id="st-l-err"></p>
+      <details class="st-bulk">
+        <summary>Bulk add lore (paste many at once)</summary>
+        <p class="acct-note">One per line: <code>question | answer | wrong;wrong;wrong;wrong;wrong | hint | source URL (optional)</code></p>
+        <textarea id="st-bulk-l" class="pack-search st-area" rows="4" aria-label="Bulk lore"></textarea>
+        <button class="btn-ghost st-mini" id="st-bulk-l-add">Add all</button>
+        <p class="st-err" id="st-bulk-l-err"></p>
+      </details>
 
       <h3 class="panel-label stats-label">Celebration motifs (up to 5)</h3>
       <div class="st-motif-grid" id="st-motifs"></div>

@@ -1,0 +1,239 @@
+{
+  "id": "assassinscreed",
+  "tags": [
+    "games",
+    "action",
+    "history"
+  ],
+  "label": "Assassin's Creed",
+  "color": "#d9d4c7",
+  "cta": "Take the leap",
+  "prompt": "Who said it?",
+  "placeholder": "Type the character…",
+  "blurb": "Altaïr through Arno — the classic era, up to Unity. Name who said it.",
+  "roster": [
+    "Altaïr",
+    "Ezio Auditore",
+    "Desmond Miles",
+    "Connor",
+    "Edward Kenway",
+    "Haytham Kenway",
+    "Arno Dorian",
+    "Al Mualim",
+    "Leonardo da Vinci",
+    "Rodrigo Borgia",
+    "Shaun Hastings",
+    "Achilles Davenport"
+  ],
+  "motifs": [
+    "bird",
+    "sword",
+    "book"
+  ],
+  "quotes": [
+    {
+      "q": "Requiescat in pace.",
+      "a": "Ezio Auditore",
+      "alt": [
+        "Ezio"
+      ],
+      "hint": "Said over every target he put to rest"
+    },
+    {
+      "q": "It's-a me, Mario!",
+      "a": "Ezio Auditore",
+      "alt": [
+        "Ezio"
+      ],
+      "hint": "Greeting his actual uncle Mario at Monteriggioni"
+    },
+    {
+      "q": "I have lived my life as best I could, not knowing its purpose.",
+      "a": "Ezio Auditore",
+      "alt": [
+        "Ezio"
+      ],
+      "hint": "An old man's letter to Sofia, in Embers"
+    },
+    {
+      "q": "To say that nothing is true…",
+      "a": "Ezio Auditore",
+      "alt": [
+        "Ezio"
+      ],
+      "hint": "Opening his Masyaf speech on what the Creed really means"
+    },
+    {
+      "q": "Nothing is true. Everything is permitted.",
+      "a": "Al Mualim",
+      "alt": [
+        "The Mentor"
+      ],
+      "hint": "The maxim itself, as taught at Masyaf"
+    },
+    {
+      "q": "In a world without gold, we might have been heroes.",
+      "a": "Edward Kenway",
+      "alt": [
+        "Edward"
+      ],
+      "hint": "A pirate's toast to what could have been"
+    },
+    {
+      "q": "Even when your kind appears to triumph, still we rise again.",
+      "a": "Haytham Kenway",
+      "alt": [
+        "Haytham"
+      ],
+      "hint": "A Templar's dying promise to his Assassin son"
+    },
+    {
+      "q": "I am the Prophet!",
+      "a": "Rodrigo Borgia",
+      "alt": [
+        "The Spaniard",
+        "Pope Alexander VI"
+      ],
+      "hint": "Shouted in the Vault beneath the Vatican"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What machine lets Desmond relive ancestral memories?",
+      "a": "The Animus",
+      "alt": [
+        "Animus"
+      ],
+      "pool": [
+        "The Apple",
+        "The Loom",
+        "The Archive",
+        "The Helix",
+        "The Spire"
+      ],
+      "hint": "Abstergo's favorite piece of furniture"
+    },
+    {
+      "question": "The Apple belongs to which family of artifacts?",
+      "a": "Pieces of Eden",
+      "alt": [
+        "The Pieces of Eden"
+      ],
+      "pool": [
+        "Precursor Vaults",
+        "Isu Relics",
+        "First Seals",
+        "Shroud Fragments",
+        "Codex Pages"
+      ],
+      "hint": "Left behind by Those Who Came Before"
+    },
+    {
+      "question": "In the first game, what did initiation cost a new Assassin?",
+      "a": "The ring finger",
+      "alt": [
+        "Ring finger"
+      ],
+      "pool": [
+        "The little finger",
+        "The index finger",
+        "The thumb",
+        "The middle finger",
+        "None at all"
+      ],
+      "hint": "Making room for the hidden blade"
+    },
+    {
+      "question": "In which city is Ezio born?",
+      "a": "Florence",
+      "alt": [
+        "Firenze"
+      ],
+      "pool": [
+        "Venice",
+        "Rome",
+        "Monteriggioni",
+        "Forlì",
+        "Constantinople"
+      ],
+      "hint": "1459, into the Auditore family"
+    },
+    {
+      "question": "The Assassins' eternal enemies are which order?",
+      "a": "The Templars",
+      "alt": [
+        "Templars",
+        "The Templar Order"
+      ],
+      "pool": [
+        "The Borgia family",
+        "The Medici",
+        "The Hessians",
+        "The Jesuits",
+        "The Culper Ring"
+      ],
+      "hint": "Modern cover: a very evil pharmaceutical company"
+    },
+    {
+      "question": "What is the name of Edward's ship?",
+      "a": "The Jackdaw",
+      "alt": [
+        "Jackdaw"
+      ],
+      "pool": [
+        "The Aquila",
+        "The Morrigan",
+        "The Queen Anne's Revenge",
+        "The Adventure Galley",
+        "The Ranger"
+      ],
+      "hint": "A stolen brig with an excellent shanty playlist"
+    },
+    {
+      "question": "Unity unfolds during which upheaval?",
+      "a": "The French Revolution",
+      "alt": [
+        "French Revolution"
+      ],
+      "pool": [
+        "The American Revolution",
+        "The Renaissance",
+        "The Third Crusade",
+        "The Golden Age of Piracy",
+        "The Seven Years' War"
+      ],
+      "hint": "Paris, guillotines, very large crowds"
+    },
+    {
+      "question": "What is Connor's Mohawk birth name?",
+      "a": "Ratonhnhaké:ton",
+      "alt": [
+        "Ratonhnhaketon"
+      ],
+      "pool": [
+        "Kanen'tó:kon",
+        "Teiowisonte",
+        "Oiá:ner",
+        "Ganadogon",
+        "Kesegowaase"
+      ],
+      "hint": "Haytham couldn't pronounce it either"
+    },
+    {
+      "question": "Which Renaissance polymath builds Ezio's gear?",
+      "a": "Leonardo da Vinci",
+      "alt": [
+        "Leonardo",
+        "Da Vinci"
+      ],
+      "pool": [
+        "Machiavelli",
+        "La Volpe",
+        "Bartolomeo d'Alviano",
+        "Paola",
+        "Antonio"
+      ],
+      "hint": "Hugs first, codex decoding second"
+    }
+  ]
+}

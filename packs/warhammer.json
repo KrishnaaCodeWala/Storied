@@ -1,0 +1,259 @@
+{
+  "id": "warhammer",
+  "tags": [
+    "tabletop",
+    "sci-fi"
+  ],
+  "label": "Warhammer 40K",
+  "color": "#c9a227",
+  "cta": "For the Emperor",
+  "prompt": "Who (or what) said it?",
+  "placeholder": "Type the answer…",
+  "blurb": "The grim darkness of the far future. Name the speaker — heresy will be noted.",
+  "roster": [
+    "The Emperor of Mankind",
+    "Ciaphas Cain",
+    "The Orks",
+    "Khorne's followers",
+    "A Dreadnought",
+    "The Blood Ravens",
+    "An Imperial litany",
+    "Roboute Guilliman",
+    "Horus",
+    "Leman Russ",
+    "The Adeptus Mechanicus",
+    "Commissar Yarrick"
+  ],
+  "motifs": [
+    "flame",
+    "sword",
+    "rune"
+  ],
+  "quotes": [
+    {
+      "q": "WAAAGH!",
+      "a": "The Orks",
+      "alt": [
+        "Orks",
+        "Da Orks",
+        "Da Boyz"
+      ],
+      "hint": "Battle cry, religion, and physics engine, all at once"
+    },
+    {
+      "q": "Blood for the Blood God! Skulls for the Skull Throne!",
+      "a": "Khorne's followers",
+      "alt": [
+        "Khorne",
+        "Khorne Berzerkers",
+        "The World Eaters"
+      ],
+      "hint": "The chant of a very specific demographic"
+    },
+    {
+      "q": "Even in death, I still serve.",
+      "a": "A Dreadnought",
+      "alt": [
+        "Dreadnought",
+        "The Dreadnoughts"
+      ],
+      "hint": "A sarcophagus with legs and a grudge"
+    },
+    {
+      "q": "The Emperor protects.",
+      "a": "Ciaphas Cain",
+      "alt": [
+        "Cain",
+        "Commissar Cain"
+      ],
+      "hint": "The reluctant hero's all-purpose catchphrase, HERO OF THE IMPERIUM"
+    },
+    {
+      "q": "Knowledge is power. Guard it well.",
+      "a": "The Blood Ravens",
+      "alt": [
+        "Blood Ravens"
+      ],
+      "hint": "The chapter motto of Dawn of War's finest borrowers"
+    },
+    {
+      "q": "An open mind is like a fortress with its gates unbarred and unguarded.",
+      "a": "An Imperial litany",
+      "alt": [
+        "Imperial litany",
+        "The litanies",
+        "Imperial proverb"
+      ],
+      "hint": "The Imperium's official position on curiosity"
+    },
+    {
+      "q": "Burn the heretic. Kill the mutant. Purge the unclean.",
+      "a": "An Imperial litany",
+      "alt": [
+        "Imperial litany",
+        "The litanies",
+        "Imperial proverb"
+      ],
+      "hint": "The Imperium's official position on everything else"
+    },
+    {
+      "q": "Heresy grows from idleness.",
+      "a": "An Imperial litany",
+      "alt": [
+        "Imperial litany",
+        "The litanies",
+        "Imperial proverb"
+      ],
+      "hint": "The Imperium's official position on weekends"
+    }
+  ],
+  "lore": [
+    {
+      "question": "Complete the tagline: in the far future, there is only…",
+      "a": "War",
+      "alt": [],
+      "pool": [
+        "Death",
+        "Chaos",
+        "Darkness",
+        "Duty",
+        "Silence"
+      ],
+      "hint": "The grimmest, darkest word available"
+    },
+    {
+      "question": "How many Chaos gods make up the pantheon?",
+      "a": "Four",
+      "alt": [
+        "4"
+      ],
+      "pool": [
+        "Two",
+        "Three",
+        "Five",
+        "Six",
+        "Nine"
+      ],
+      "hint": "Blood, change, decay, excess"
+    },
+    {
+      "question": "What device sustains the Emperor's broken body?",
+      "a": "The Golden Throne",
+      "alt": [
+        "Golden Throne"
+      ],
+      "pool": [
+        "The Astronomican",
+        "The Gellar Field",
+        "The Sarcophagus",
+        "The Eternity Gate",
+        "A Dreadnought"
+      ],
+      "hint": "Ten thousand years and counting"
+    },
+    {
+      "question": "How many Primarchs did the Emperor create?",
+      "a": "Twenty",
+      "alt": [
+        "20"
+      ],
+      "pool": [
+        "Twelve",
+        "Eighteen",
+        "Nine",
+        "Ten",
+        "Thirteen"
+      ],
+      "hint": "Two are never spoken of"
+    },
+    {
+      "question": "Ork technology often works purely because of what?",
+      "a": "Belief",
+      "alt": [
+        "Because they believe it works",
+        "Da Orks believe"
+      ],
+      "pool": [
+        "Fuel",
+        "Sorcery",
+        "Luck",
+        "Scrap quality",
+        "Mek genius"
+      ],
+      "hint": "A gestalt psychic field with a paint-job opinion: red goes fasta"
+    },
+    {
+      "question": "The Adeptus Mechanicus rules from which planet?",
+      "a": "Mars",
+      "alt": [],
+      "pool": [
+        "Terra",
+        "Cadia",
+        "Fenris",
+        "Macragge",
+        "Baal"
+      ],
+      "hint": "The red planet, now with more cog worship"
+    },
+    {
+      "question": "Which galaxy-splitting civil war was named for its arch-traitor?",
+      "a": "The Horus Heresy",
+      "alt": [
+        "Horus Heresy"
+      ],
+      "pool": [
+        "The War of the Beast",
+        "The Age of Apostasy",
+        "The Fall of Cadia",
+        "The Badab War",
+        "The Scouring"
+      ],
+      "hint": "Brother against brother, ten millennia of consequences"
+    },
+    {
+      "question": "Which fortress world famously broke before the Guard did?",
+      "a": "Cadia",
+      "alt": [],
+      "pool": [
+        "Armageddon",
+        "Krieg",
+        "Vraks",
+        "Terra",
+        "Vigilus"
+      ],
+      "hint": "The planet broke. The slogan survived."
+    },
+    {
+      "question": "What implanted organs turn a recruit into a Space Marine?",
+      "a": "Gene-seed",
+      "alt": [
+        "Geneseed",
+        "The gene-seed"
+      ],
+      "pool": [
+        "Black carapace only",
+        "Promethium",
+        "The Emperor's blessing",
+        "Servo-organs",
+        "Ceramite"
+      ],
+      "hint": "Nineteen organs, one very long surgery"
+    },
+    {
+      "question": "What must be sacrificed daily to light the Astronomican?",
+      "a": "Psykers",
+      "alt": [
+        "A thousand psykers",
+        "Psyker souls"
+      ],
+      "pool": [
+        "Servitors",
+        "D-Class",
+        "Promethium",
+        "Prayers",
+        "Machine spirits"
+      ],
+      "hint": "The grimdark lighthouse runs on souls"
+    }
+  ]
+}

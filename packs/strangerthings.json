@@ -26,7 +26,9 @@
     "Robin Buckley",
     "Erica Sinclair",
     "Eddie Munson",
-    "Murray Bauman"
+    "Murray Bauman",
+    "Hopper",
+    "Erica"
   ],
   "motifs": [
     "lights",
@@ -189,6 +191,163 @@
         "potion",
         "star"
       ]
+    },
+    {
+      "q": "Keep the door open three inches.",
+      "a": "Hopper",
+      "alt": [
+        "Jim Hopper",
+        "Chief Hopper"
+      ],
+      "hint": "The house rule from the heart-to-heart speech"
+    },
+    {
+      "q": "Free ice cream for life.",
+      "a": "Erica",
+      "alt": [
+        "Erica Sinclair"
+      ],
+      "hint": "Her price for crawling through the vents"
+    }
+  ],
+  "lore": [
+    {
+      "question": "What do the kids call the dark mirror dimension?",
+      "a": "The Upside Down",
+      "alt": [
+        "Upside Down"
+      ],
+      "pool": [
+        "The Nether",
+        "The Shadowlands",
+        "The Rift",
+        "The Void",
+        "The Under"
+      ],
+      "hint": "Cold, ashy, and directly below the board"
+    },
+    {
+      "question": "Which facility experimented on Eleven?",
+      "a": "Hawkins Lab",
+      "alt": [
+        "Hawkins National Laboratory",
+        "The lab"
+      ],
+      "pool": [
+        "Pennhurst",
+        "Area 51",
+        "Camp Hero",
+        "Starcourt",
+        "Lonnie's garage"
+      ],
+      "hint": "Run by the man she called Papa"
+    },
+    {
+      "question": "The first season's monster is named after which D&D creature?",
+      "a": "The Demogorgon",
+      "alt": [
+        "Demogorgon"
+      ],
+      "pool": [
+        "The Beholder",
+        "The Mind Flayer",
+        "Vecna",
+        "The Lich",
+        "The Owlbear"
+      ],
+      "hint": "Named by the party mid-campaign"
+    },
+    {
+      "question": "Which villain curses Hawkins in season four?",
+      "a": "Vecna",
+      "alt": [
+        "Henry Creel",
+        "One"
+      ],
+      "pool": [
+        "The Mind Flayer",
+        "The Demogorgon",
+        "Dr. Brenner",
+        "The Flayed",
+        "Billy"
+      ],
+      "hint": "Grandfather clocks are involved"
+    },
+    {
+      "question": "Which song shields Max from the curse?",
+      "a": "Running Up That Hill",
+      "alt": [
+        "Running Up That Hill (A Deal with God)"
+      ],
+      "pool": [
+        "Should I Stay or Should I Go",
+        "Time After Time",
+        "Africa",
+        "Take On Me",
+        "Master of Puppets"
+      ],
+      "hint": "Kate Bush, 1985 — and 2022's biggest comeback"
+    },
+    {
+      "question": "Where does Steve scoop ice cream in season three?",
+      "a": "Scoops Ahoy",
+      "alt": [],
+      "pool": [
+        "Starcourt Cinema",
+        "The Palace Arcade",
+        "Melvald's",
+        "Family Video",
+        "Benny's Burgers"
+      ],
+      "hint": "Ahoy! The sailor uniform haunts him"
+    },
+    {
+      "question": "What food does Eleven love most?",
+      "a": "Eggo waffles",
+      "alt": [
+        "Eggos",
+        "Waffles"
+      ],
+      "pool": [
+        "Pizza",
+        "Ice cream",
+        "Burgers",
+        "M&Ms",
+        "Pancakes"
+      ],
+      "hint": "Straight from the freezer aisle, no toaster required"
+    },
+    {
+      "question": "How does Joyce first talk to Will across dimensions?",
+      "a": "Christmas lights",
+      "alt": [
+        "The lights",
+        "An alphabet wall of lights"
+      ],
+      "pool": [
+        "A walkie-talkie",
+        "The telephone",
+        "A Ouija board",
+        "Morse code radio",
+        "Dreams"
+      ],
+      "hint": "One bulb per letter, painted on the wall"
+    },
+    {
+      "question": "What game do the boys play in the very first scene?",
+      "a": "Dungeons & Dragons",
+      "alt": [
+        "D&D",
+        "Dungeons and Dragons"
+      ],
+      "pool": [
+        "Monopoly",
+        "Risk",
+        "Magic: The Gathering",
+        "Chess",
+        "Atari"
+      ],
+      "hint": "A ten-hour campaign, rudely interrupted"
     }
   ]
 }

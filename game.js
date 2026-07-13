@@ -560,6 +560,7 @@
   /* ---------------- daily panel ---------------- */
 
   function paintDaily() {
+    if (!el.btnDaily || !el.dailyStatus) return; // Daily UI removed (dormant)
     const key = todayKey();
     el.dailyDate.textContent = "Deck of " + key + " \u2014 identical for every player.";
     const played = readStore(DAILY_KEY)[key];
@@ -597,6 +598,7 @@
   }
 
   function paintDecks() {
+    if (!el.btnMakeDeck && !document.getElementById("deck-list")) return; // Study UI removed (dormant)
     const decks = DECKS.list();
     el.deckList.innerHTML = "";
     if (!decks.length) {
@@ -629,25 +631,29 @@
     });
   }
 
-  el.dropzone.addEventListener("click", () => el.fileInput.click());
-  el.dropzone.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.fileInput.click(); }
-  });
-  el.fileInput.addEventListener("change", () => {
-    if (el.fileInput.files[0]) readFileToDeck(el.fileInput.files[0]);
-    el.fileInput.value = "";
-  });
-  ["dragover", "dragenter"].forEach((ev) =>
-    el.dropzone.addEventListener(ev, (e) => { e.preventDefault(); el.dropzone.classList.add("over"); })
-  );
-  ["dragleave", "drop"].forEach((ev) =>
-    el.dropzone.addEventListener(ev, (e) => { e.preventDefault(); el.dropzone.classList.remove("over"); })
-  );
-  el.dropzone.addEventListener("drop", (e) => {
-    const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-    if (f) readFileToDeck(f);
-  });
-  el.btnMakeDeck.addEventListener("click", () => {
+  if (el.dropzone && el.fileInput) { // Study UI removed (dormant)
+    el.dropzone.addEventListener("click", () => el.fileInput.click());
+    el.dropzone.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); el.fileInput.click(); }
+    });
+    el.fileInput.addEventListener("change", () => {
+      if (el.fileInput.files[0]) readFileToDeck(el.fileInput.files[0]);
+      el.fileInput.value = "";
+    });
+    ["dragover", "dragenter"].forEach((ev) =>
+      el.dropzone.addEventListener(ev, (e) => { e.preventDefault(); el.dropzone.classList.add("over"); })
+    );
+    ["dragleave", "drop"].forEach((ev) =>
+      el.dropzone.addEventListener(ev, (e) => { e.preventDefault(); el.dropzone.classList.remove("over"); })
+    );
+    el.dropzone.addEventListener("drop", (e) => {
+      const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) readFileToDeck(f);
+    });
+
+  }
+
+  if (el.btnMakeDeck) el.btnMakeDeck.addEventListener("click", () => {
     const text = el.pasteArea.value;
     if (text.trim().length < 200) {
       setDeckMsg("Paste a bit more \u2014 a few solid paragraphs at least.", true);
@@ -1402,6 +1408,7 @@
   }
 
   async function paintDailyBoard() {
+    if (!el.dailyBoard) return; // lived on the Daily panel (dormant)
     const on = Online.available();
     el.dailyBoard.hidden = !on;
     if (!on) return;
@@ -1445,7 +1452,7 @@
   /* ---------------- wiring ---------------- */
 
   el.btnStart.addEventListener("click", () => startGame("classic"));
-  el.btnDaily.addEventListener("click", () => startGame("daily"));
+  if (el.btnDaily) el.btnDaily.addEventListener("click", () => startGame("daily"));
   el.btnRush.addEventListener("click", () => startGame("rush"));
   el.btnFandomStart.addEventListener("click", () => startGame("fandom"));
   el.btnHint.addEventListener("click", useHint);
