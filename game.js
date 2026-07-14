@@ -241,6 +241,11 @@
     accountLabel: $("account-label"),
     accountBox: $("account-box"),
     btnShare: $("btn-share"),
+    lbEntry: $("lb-entry"),
+    lbName: $("lb-name"),
+    lbSubmit: $("lb-submit"),
+    lbNote: $("lb-note"),
+    lbBoard: $("lb-board"),
     btnStats: $("btn-stats"),
     btnStatsBack: $("btn-stats-back"),
     statsTotals: $("stats-totals"),
@@ -1213,7 +1218,7 @@
         daily[todayKey()] = score;
         writeStore(DAILY_KEY, daily);
         newBest = true;
-        Online.submitDaily(todayKey(), score, playerHandle()); // fire-and-forget
+        // (daily mode removed; open leaderboard handles submission below)
       }
     }
     el.endBest.hidden = !newBest;
@@ -1249,9 +1254,74 @@
       el.endAch.hidden = true;
     }
 
-    Online.scheduleSync(ONLINE_IO); // background, debounced, silent
+    Online.scheduleSync(ONLINE_IO); // account sync stays dormant unless used
     paintBests();
+    showLeaderboardEntry(score);
     show("end");
+  }
+
+  /* ---------------- open leaderboard (end screen) ---------------- */
+
+  let lbLastScore = 0, lbPosted = false;
+
+  function showLeaderboardEntry(score) {
+    if (!el.lbEntry || !Leaderboard.available()) {
+      if (el.lbEntry) el.lbEntry.hidden = true;
+      if (el.lbBoard) el.lbBoard.hidden = true;
+      return;
+    }
+    lbLastScore = score;
+    lbPosted = false;
+    el.lbEntry.hidden = false;
+    el.lbNote.textContent = "";
+    el.lbNote.className = "lb-note";
+    el.lbName.value = Leaderboard.lastName();
+    el.lbSubmit.disabled = false;
+    el.lbSubmit.textContent = "Post score";
+    renderLeaderboard(); // show the current board immediately
+  }
+
+  async function submitToLeaderboard() {
+    if (lbPosted) return;
+    const name = el.lbName.value.trim();
+    if (!name) { el.lbNote.className = "lb-note bad"; el.lbNote.textContent = "Enter a name first."; return; }
+    el.lbSubmit.disabled = true;
+    el.lbSubmit.textContent = "Posting\u2026";
+    const packLabel = settings.mode === "fandom" && FANDOM_PACKS[settings.fandomId]
+      ? FANDOM_PACKS[settings.fandomId].label : "";
+    const ok = await Leaderboard.submit(name, lbLastScore, settings.mode, packLabel);
+    if (ok) {
+      lbPosted = true;
+      el.lbNote.className = "lb-note good";
+      el.lbNote.textContent = "You're on the board!";
+      el.lbSubmit.textContent = "Posted";
+      renderLeaderboard();
+    } else {
+      el.lbSubmit.disabled = false;
+      el.lbSubmit.textContent = "Post score";
+      el.lbNote.className = "lb-note bad";
+      el.lbNote.textContent = "Couldn't reach the board \u2014 you're still offline-safe.";
+    }
+  }
+
+  async function renderLeaderboard() {
+    if (!el.lbBoard || !Leaderboard.available()) return;
+    el.lbBoard.hidden = false;
+    if (!el.lbBoard.innerHTML) el.lbBoard.innerHTML = '<p class="lb-title">Loading the board\u2026</p>';
+    const rows = await Leaderboard.top({ limit: 10 });
+    if (!rows) { el.lbBoard.innerHTML = '<p class="lb-title">Global top scores</p><p class="lb-note">Board unreachable right now.</p>'; return; }
+    const myName = Leaderboard.lastName();
+    let html = '<p class="lb-title">Global top scores</p>';
+    if (!rows.length) html += '<p class="lb-note">No scores yet \u2014 be the first!</p>';
+    rows.forEach((r, i) => {
+      const mine = lbPosted && r.handle === myName && r.score === lbLastScore;
+      html += '<div class="lb-row' + (mine ? " me" : "") + '">' +
+        '<span class="lb-rank">' + (i + 1) + '</span>' +
+        '<span class="lb-handle">' + escapeHtml(r.handle) +
+        (r.pack ? ' <span class="lb-pack">' + escapeHtml(r.pack) + '</span>' : '') + '</span>' +
+        '<span class="lb-pts">' + r.score + '</span></div>';
+    });
+    el.lbBoard.innerHTML = html;
   }
 
   let lastGame = null;
@@ -1462,6 +1532,8 @@
   el.btnAgain.addEventListener("click", () => startGame(settings.mode));
   el.btnSettings.addEventListener("click", () => { paintDaily(); show("start"); });
   el.btnShare.addEventListener("click", shareResult);
+  if (el.lbSubmit) el.lbSubmit.addEventListener("click", submitToLeaderboard);
+  if (el.lbName) el.lbName.addEventListener("keydown", (e) => { if (e.key === "Enter") submitToLeaderboard(); });
   el.btnStats.addEventListener("click", () => { renderStats(); paintAccount(); show("stats"); });
   el.btnStatsBack.addEventListener("click", () => show("start"));
 

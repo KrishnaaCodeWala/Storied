@@ -239,6 +239,18 @@
         <div class="end-stat"><span class="hud-label">Hints used</span><span class="hud-value" id="end-hints">0</span></div>
       </div>
       <p class="end-ach" id="end-ach" hidden></p>
+
+      <div class="lb-entry" id="lb-entry" hidden>
+        <p class="lb-prompt">Put your score on the board</p>
+        <div class="acct-row">
+          <input id="lb-name" class="pack-search" maxlength="24" placeholder="Your name" aria-label="Your name for the leaderboard">
+          <button class="btn-guess" id="lb-submit">Post score</button>
+        </div>
+        <p class="lb-note" id="lb-note"></p>
+      </div>
+
+      <div class="lb-board" id="lb-board" hidden></div>
+
       <div class="end-actions">
         <button class="btn-primary" id="btn-again">Play again</button>
         <button class="btn-ghost" id="btn-share">Share result</button>

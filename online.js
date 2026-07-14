@@ -26,9 +26,9 @@
    ============================================================ */
 
 const ONLINE_CONFIG = {
-  enabled: false,   // flip to true after filling in the two values below
-  url: "",          // e.g. "https://abcdefgh.supabase.co"
-  anonKey: ""       // the anon public key (safe in client code; RLS is the lock)
+  enabled: true,    // LIVE
+  url: "https://pbhhbhuwpcxhtwstulra.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiaGhiaHV3cGN4aHR3c3R1bHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5NzE1MDgsImV4cCI6MjA5OTU0NzUwOH0.9j9llzX7zhQrg_eMkAJvd6TUiTLRjsLtKmo2JQVpHVU"
 };
 
 const Online = {
@@ -256,3 +256,77 @@ const Online = {
     return true;
   }
 };
+
+/* ============================================================
+   STORIED — open leaderboard (Option A, no accounts)
+   ------------------------------------------------------------
+   Anyone can post a name + score after any game; anyone can read
+   the board. No sign-in. Uses the same public anon key. This is
+   intentionally open — it's a fun hobby board, not a ranked
+   ladder. The DB still bounds scores (0..5000) and name length.
+
+   Requires the `scores` table + policies (see SQL in the repo /
+   the activation notes). Independent of the account-based sync
+   layer above, which stays dormant.
+   ============================================================ */
+
+const Leaderboard = {
+  cfg: ONLINE_CONFIG,
+  HANDLE_KEY: "quoted.handle.v1",
+
+  available() {
+    return !!(this.cfg.enabled && this.cfg.url && this.cfg.anonKey &&
+      typeof fetch === "function" &&
+      typeof location !== "undefined" && /^https?:$/.test(location.protocol));
+  },
+
+  rememberName(name) {
+    try { localStorage.setItem(this.HANDLE_KEY, JSON.stringify({ h: (name || "").slice(0, 24) })); } catch (e) {}
+  },
+  lastName() {
+    try { return (JSON.parse(localStorage.getItem(this.HANDLE_KEY)) || {}).h || ""; }
+    catch (e) { return ""; }
+  },
+
+  _headers() {
+    return { "apikey": this.cfg.anonKey, "Authorization": "Bearer " + this.cfg.anonKey,
+      "Content-Type": "application/json" };
+  },
+
+  /** Post a score. Fire-and-forget; never throws. Returns bool. */
+  async submit(name, score, mode, pack) {
+    if (!this.available()) return false;
+    const clean = (name || "player").trim().slice(0, 24) || "player";
+    this.rememberName(clean);
+    try {
+      const res = await fetch(this.cfg.url + "/rest/v1/scores", {
+        method: "POST",
+        headers: this._headers(),
+        body: JSON.stringify({
+          handle: clean,
+          score: Math.max(0, Math.min(5000, Math.round(score))),
+          mode: (mode || "classic").slice(0, 16),
+          pack: (pack || "").slice(0, 40)
+        })
+      });
+      return res.ok;
+    } catch (e) { return false; }
+  },
+
+  /** Top scores, optionally filtered to a mode. Returns array or null. */
+  async top(opts) {
+    if (!this.available()) return null;
+    opts = opts || {};
+    let q = "/rest/v1/scores?select=handle,score,mode,pack,created_at" +
+      "&order=score.desc,created_at.asc&limit=" + (opts.limit || 20);
+    if (opts.mode) q += "&mode=eq." + encodeURIComponent(opts.mode);
+    try {
+      const res = await fetch(this.cfg.url + q, { headers: this._headers() });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) { return null; }
+  }
+};
+
+if (typeof window !== "undefined") window.Leaderboard = Leaderboard;
+if (typeof module !== "undefined") module.exports = { Online, Leaderboard };

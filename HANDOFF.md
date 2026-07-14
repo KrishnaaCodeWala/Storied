@@ -36,7 +36,7 @@ The full roadmap + phase prompts live in the owner's
   - Service worker v3.1.0: precaches shell + manifest + core;
     runtime-caches pack JSON on first play.
 
-**Test suite: 1192 assertions, all green** (`npm test`, jsdom).
+**Test suite: 1207 assertions, all green** (`npm test`, jsdom).
 `npm run check` builds and boot-tests the standalone file.
 
 ## Hard rules (never break)
@@ -269,6 +269,30 @@ C) Phase 7 items that don't need a backend (a11y pass, perf audit,
   inks — the contrast test caught it).
 - Quote philosophy stands: only high-confidence iconic lines shipped;
   bulk volume comes from the owner running the harvester live.
+
+## Leaderboard (Option A — live this session)
+
+- Supabase project LIVE: pbhhbhuwpcxhtwstulra.supabase.co. anon key in
+  online.js ONLINE_CONFIG (enabled:true). Anon key is public by design.
+- Model chosen: OPEN leaderboard, NO accounts (owner decision — it's
+  a fun project). Anyone posts name+score at game end; anyone reads.
+  The account-based Online.sync layer stays dormant/untouched.
+- NEW module: Leaderboard (in online.js) — submit(name,score,mode,pack)
+  + top({mode,limit}). Clamps score 0..5000, name 24 chars. Uses the
+  anon key as the bearer (no auth). Remembers last name in
+  quoted.handle.v1.
+- Requires a NEW table `scores` — SQL is in SUPABASE-SCORES.sql.
+  OWNER MUST RUN THIS in Supabase SQL Editor or posting 404s. The
+  earlier daily-only schema (player_state/daily_scores) is NOT used by
+  Option A.
+- End screen: #lb-entry (name input + Post score) + #lb-board (top 10),
+  shown for EVERY mode via showLeaderboardEntry(). Fully hidden when
+  Leaderboard.available() is false (offline/file/standalone) — game
+  ends normally.
+- SANDBOX can't reach supabase.co (egress allowlist), so live POST was
+  verified only via mock; the owner's deployed site is the real test.
+- Supabase Auth Site URL should be set to the Vercel URL (only matters
+  if the account layer is ever turned on).
 
 ## Session log
 

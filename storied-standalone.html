@@ -1215,6 +1215,38 @@ button:focus-visible {
 .st-bulk textarea { margin-top: 8px; }
 .st-bulk code { font-size: 10px; color: var(--c-books); }
 
+
+/* ---------------- open leaderboard (end screen) ---------------- */
+
+.lb-entry {
+  margin: 18px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-sunken);
+  padding: 14px;
+}
+.lb-prompt { margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--c-books); }
+.lb-note { margin: 8px 0 0; font-size: 11px; color: var(--ink-dim); min-height: 14px; }
+.lb-note.good { color: var(--c-correct); }
+.lb-note.bad { color: var(--c-wrong); }
+
+.lb-board {
+  margin: 14px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-sunken);
+  padding: 12px 14px;
+}
+.lb-board .lb-title { margin: 0 0 8px; font-size: 10.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-dim); }
+.lb-row { display: flex; gap: 10px; padding: 4px 0; font-size: 12.5px; align-items: baseline; }
+.lb-row .lb-rank { width: 26px; color: var(--ink-dim); flex: none; }
+.lb-row .lb-handle { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-row .lb-pack { color: var(--ink-dim); font-size: 10px; }
+.lb-row .lb-pts { flex: none; font-weight: 700; }
+.lb-row.me { color: var(--c-books); }
+
 </style>
 </head>
 <body>
@@ -1445,6 +1477,18 @@ button:focus-visible {
         <div class="end-stat"><span class="hud-label">Hints used</span><span class="hud-value" id="end-hints">0</span></div>
       </div>
       <p class="end-ach" id="end-ach" hidden></p>
+
+      <div class="lb-entry" id="lb-entry" hidden>
+        <p class="lb-prompt">Put your score on the board</p>
+        <div class="acct-row">
+          <input id="lb-name" class="pack-search" maxlength="24" placeholder="Your name" aria-label="Your name for the leaderboard">
+          <button class="btn-guess" id="lb-submit">Post score</button>
+        </div>
+        <p class="lb-note" id="lb-note"></p>
+      </div>
+
+      <div class="lb-board" id="lb-board" hidden></div>
+
       <div class="end-actions">
         <button class="btn-primary" id="btn-again">Play again</button>
         <button class="btn-ghost" id="btn-share">Share result</button>
@@ -1977,9 +2021,9 @@ if (typeof window !== "undefined") window.PackStore = PackStore;
    ============================================================ */
 
 const ONLINE_CONFIG = {
-  enabled: false,   // flip to true after filling in the two values below
-  url: "",          // e.g. "https://abcdefgh.supabase.co"
-  anonKey: ""       // the anon public key (safe in client code; RLS is the lock)
+  enabled: true,    // LIVE
+  url: "https://pbhhbhuwpcxhtwstulra.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiaGhiaHV3cGN4aHR3c3R1bHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5NzE1MDgsImV4cCI6MjA5OTU0NzUwOH0.9j9llzX7zhQrg_eMkAJvd6TUiTLRjsLtKmo2JQVpHVU"
 };
 
 const Online = {
@@ -2207,6 +2251,80 @@ const Online = {
     return true;
   }
 };
+
+/* ============================================================
+   STORIED — open leaderboard (Option A, no accounts)
+   ------------------------------------------------------------
+   Anyone can post a name + score after any game; anyone can read
+   the board. No sign-in. Uses the same public anon key. This is
+   intentionally open — it's a fun hobby board, not a ranked
+   ladder. The DB still bounds scores (0..5000) and name length.
+
+   Requires the `scores` table + policies (see SQL in the repo /
+   the activation notes). Independent of the account-based sync
+   layer above, which stays dormant.
+   ============================================================ */
+
+const Leaderboard = {
+  cfg: ONLINE_CONFIG,
+  HANDLE_KEY: "quoted.handle.v1",
+
+  available() {
+    return !!(this.cfg.enabled && this.cfg.url && this.cfg.anonKey &&
+      typeof fetch === "function" &&
+      typeof location !== "undefined" && /^https?:$/.test(location.protocol));
+  },
+
+  rememberName(name) {
+    try { localStorage.setItem(this.HANDLE_KEY, JSON.stringify({ h: (name || "").slice(0, 24) })); } catch (e) {}
+  },
+  lastName() {
+    try { return (JSON.parse(localStorage.getItem(this.HANDLE_KEY)) || {}).h || ""; }
+    catch (e) { return ""; }
+  },
+
+  _headers() {
+    return { "apikey": this.cfg.anonKey, "Authorization": "Bearer " + this.cfg.anonKey,
+      "Content-Type": "application/json" };
+  },
+
+  /** Post a score. Fire-and-forget; never throws. Returns bool. */
+  async submit(name, score, mode, pack) {
+    if (!this.available()) return false;
+    const clean = (name || "player").trim().slice(0, 24) || "player";
+    this.rememberName(clean);
+    try {
+      const res = await fetch(this.cfg.url + "/rest/v1/scores", {
+        method: "POST",
+        headers: this._headers(),
+        body: JSON.stringify({
+          handle: clean,
+          score: Math.max(0, Math.min(5000, Math.round(score))),
+          mode: (mode || "classic").slice(0, 16),
+          pack: (pack || "").slice(0, 40)
+        })
+      });
+      return res.ok;
+    } catch (e) { return false; }
+  },
+
+  /** Top scores, optionally filtered to a mode. Returns array or null. */
+  async top(opts) {
+    if (!this.available()) return null;
+    opts = opts || {};
+    let q = "/rest/v1/scores?select=handle,score,mode,pack,created_at" +
+      "&order=score.desc,created_at.asc&limit=" + (opts.limit || 20);
+    if (opts.mode) q += "&mode=eq." + encodeURIComponent(opts.mode);
+    try {
+      const res = await fetch(this.cfg.url + q, { headers: this._headers() });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) { return null; }
+  }
+};
+
+if (typeof window !== "undefined") window.Leaderboard = Leaderboard;
+if (typeof module !== "undefined") module.exports = { Online, Leaderboard };
 
 </script>
 <script>
@@ -3096,6 +3214,11 @@ if (typeof window !== "undefined") window.Studio = Studio;
     accountLabel: $("account-label"),
     accountBox: $("account-box"),
     btnShare: $("btn-share"),
+    lbEntry: $("lb-entry"),
+    lbName: $("lb-name"),
+    lbSubmit: $("lb-submit"),
+    lbNote: $("lb-note"),
+    lbBoard: $("lb-board"),
     btnStats: $("btn-stats"),
     btnStatsBack: $("btn-stats-back"),
     statsTotals: $("stats-totals"),
@@ -4068,7 +4191,7 @@ if (typeof window !== "undefined") window.Studio = Studio;
         daily[todayKey()] = score;
         writeStore(DAILY_KEY, daily);
         newBest = true;
-        Online.submitDaily(todayKey(), score, playerHandle()); // fire-and-forget
+        // (daily mode removed; open leaderboard handles submission below)
       }
     }
     el.endBest.hidden = !newBest;
@@ -4104,9 +4227,74 @@ if (typeof window !== "undefined") window.Studio = Studio;
       el.endAch.hidden = true;
     }
 
-    Online.scheduleSync(ONLINE_IO); // background, debounced, silent
+    Online.scheduleSync(ONLINE_IO); // account sync stays dormant unless used
     paintBests();
+    showLeaderboardEntry(score);
     show("end");
+  }
+
+  /* ---------------- open leaderboard (end screen) ---------------- */
+
+  let lbLastScore = 0, lbPosted = false;
+
+  function showLeaderboardEntry(score) {
+    if (!el.lbEntry || !Leaderboard.available()) {
+      if (el.lbEntry) el.lbEntry.hidden = true;
+      if (el.lbBoard) el.lbBoard.hidden = true;
+      return;
+    }
+    lbLastScore = score;
+    lbPosted = false;
+    el.lbEntry.hidden = false;
+    el.lbNote.textContent = "";
+    el.lbNote.className = "lb-note";
+    el.lbName.value = Leaderboard.lastName();
+    el.lbSubmit.disabled = false;
+    el.lbSubmit.textContent = "Post score";
+    renderLeaderboard(); // show the current board immediately
+  }
+
+  async function submitToLeaderboard() {
+    if (lbPosted) return;
+    const name = el.lbName.value.trim();
+    if (!name) { el.lbNote.className = "lb-note bad"; el.lbNote.textContent = "Enter a name first."; return; }
+    el.lbSubmit.disabled = true;
+    el.lbSubmit.textContent = "Posting\u2026";
+    const packLabel = settings.mode === "fandom" && FANDOM_PACKS[settings.fandomId]
+      ? FANDOM_PACKS[settings.fandomId].label : "";
+    const ok = await Leaderboard.submit(name, lbLastScore, settings.mode, packLabel);
+    if (ok) {
+      lbPosted = true;
+      el.lbNote.className = "lb-note good";
+      el.lbNote.textContent = "You're on the board!";
+      el.lbSubmit.textContent = "Posted";
+      renderLeaderboard();
+    } else {
+      el.lbSubmit.disabled = false;
+      el.lbSubmit.textContent = "Post score";
+      el.lbNote.className = "lb-note bad";
+      el.lbNote.textContent = "Couldn't reach the board \u2014 you're still offline-safe.";
+    }
+  }
+
+  async function renderLeaderboard() {
+    if (!el.lbBoard || !Leaderboard.available()) return;
+    el.lbBoard.hidden = false;
+    if (!el.lbBoard.innerHTML) el.lbBoard.innerHTML = '<p class="lb-title">Loading the board\u2026</p>';
+    const rows = await Leaderboard.top({ limit: 10 });
+    if (!rows) { el.lbBoard.innerHTML = '<p class="lb-title">Global top scores</p><p class="lb-note">Board unreachable right now.</p>'; return; }
+    const myName = Leaderboard.lastName();
+    let html = '<p class="lb-title">Global top scores</p>';
+    if (!rows.length) html += '<p class="lb-note">No scores yet \u2014 be the first!</p>';
+    rows.forEach((r, i) => {
+      const mine = lbPosted && r.handle === myName && r.score === lbLastScore;
+      html += '<div class="lb-row' + (mine ? " me" : "") + '">' +
+        '<span class="lb-rank">' + (i + 1) + '</span>' +
+        '<span class="lb-handle">' + escapeHtml(r.handle) +
+        (r.pack ? ' <span class="lb-pack">' + escapeHtml(r.pack) + '</span>' : '') + '</span>' +
+        '<span class="lb-pts">' + r.score + '</span></div>';
+    });
+    el.lbBoard.innerHTML = html;
   }
 
   let lastGame = null;
@@ -4317,6 +4505,8 @@ if (typeof window !== "undefined") window.Studio = Studio;
   el.btnAgain.addEventListener("click", () => startGame(settings.mode));
   el.btnSettings.addEventListener("click", () => { paintDaily(); show("start"); });
   el.btnShare.addEventListener("click", shareResult);
+  if (el.lbSubmit) el.lbSubmit.addEventListener("click", submitToLeaderboard);
+  if (el.lbName) el.lbName.addEventListener("keydown", (e) => { if (e.key === "Enter") submitToLeaderboard(); });
   el.btnStats.addEventListener("click", () => { renderStats(); paintAccount(); show("stats"); });
   el.btnStatsBack.addEventListener("click", () => show("start"));
 

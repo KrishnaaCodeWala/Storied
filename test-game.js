@@ -459,6 +459,76 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     assert(gz + core < 100 * 1024, "perf: shell + core deck under the 100KB budget (" + ((gz + core) / 1024).toFixed(1) + "KB)");
   }
 
+  /* ---------- open leaderboard (Option A, no accounts) ---------- */
+  {
+    const dom = new JSDOM(html, { runScripts: "outside-only", pretendToBeVisual: true, url: "https://storied.local/" });
+    const w = dom.window;
+    w.matchMedia = () => ({ matches: false, addListener() {}, removeListener() {} });
+    const posted = [];
+    w.fetch = (url, opts) => {
+      if (/\/rest\/v1\/scores$/.test(url) && opts && opts.method === "POST") {
+        posted.push(JSON.parse(opts.body));
+        return Promise.resolve({ ok: true, status: 201 });
+      }
+      if (/\/rest\/v1\/scores\?/.test(url)) {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(
+          [{ handle: "Alice", score: 3000, mode: "classic", pack: "" }]
+            .concat(posted).sort((a, b) => b.score - a.score)) });
+      }
+      return Promise.resolve({ ok: true, json: () => Promise.resolve([]) });
+    };
+    const combined = ["strings.js", "motifs.js", "packs-bundle.js", "packcheck.js", "packstore.js",
+      "online.js", "achievements.js", "decks.js", "studio.js", "game.js"]
+      .map((f) => fs.readFileSync(path.join(dir, f), "utf8")).join("\n;\n");
+    w.eval(combined);
+    await w.StoriedReady;
+    const d = w.document;
+
+    assert(w.Leaderboard.available() === true, "lb: available when configured");
+
+    // score submission is bounded/clamped
+    d.getElementById("btn-start").click();
+    for (let r = 0; r < 10; r++) { d.querySelector(".option-btn").click(); d.getElementById("btn-next").click(); }
+    assert(!d.getElementById("lb-entry").hidden, "lb: name prompt appears at game end (any mode)");
+
+    d.getElementById("lb-name").value = "Krishna";
+    d.getElementById("lb-submit").click();
+    await new Promise((r) => setTimeout(r, 20));
+    assert(posted.length === 1 && posted[0].handle === "Krishna", "lb: submit posts the entered name");
+    assert(posted[0].mode === "classic", "lb: submit records the mode");
+    assert(/on the board/i.test(d.getElementById("lb-note").textContent), "lb: success confirmed to player");
+    assert(d.querySelectorAll("#lb-board .lb-row").length === 2, "lb: board renders after posting");
+
+    // name is remembered for next time
+    const w2combined = combined;
+    assert(w.Leaderboard.lastName() === "Krishna", "lb: name remembered for next game");
+
+    // clamping: absurd scores are bounded by the client too
+    await w.Leaderboard.submit("Cheater", 999999, "classic", "");
+    assert(posted[posted.length - 1].score === 5000, "lb: client clamps scores to 5000");
+    await w.Leaderboard.submit("", 100, "classic", "");
+    assert(posted[posted.length - 1].handle === "player", "lb: blank name defaults to 'player'");
+
+    // graceful failure: server down => false, never throws, game unaffected
+    w.fetch = () => Promise.reject(new Error("down"));
+    assert(await w.Leaderboard.submit("X", 100, "classic", "") === false, "lb: submit degrades to false");
+    assert(await w.Leaderboard.top({}) === null, "lb: board read degrades to null");
+  }
+
+  /* ---------- leaderboard: fully dormant when not configured ---------- */
+  {
+    const w = await boot(); // boot() uses the bundle path; config is live but fetch is undefined in jsdom base
+    // simulate not-configured
+    w.Leaderboard.cfg = { enabled: false, url: "", anonKey: "" };
+    assert(w.Leaderboard.available() === false, "lb: unavailable when disabled");
+    const d = w.document;
+    d.getElementById("btn-start").click();
+    for (let r = 0; r < 10; r++) { d.querySelector(".option-btn").click(); d.getElementById("btn-next").click(); }
+    assert(d.getElementById("lb-entry").hidden, "lb: no name prompt when leaderboard is off");
+    assert(d.getElementById("lb-board").hidden, "lb: no board when off");
+    assert(d.getElementById("screen-end").classList.contains("active"), "lb: game ends normally regardless");
+  }
+
   /* ---------- v3.1 changes: tabs, tagline, studio containment, bulk add ---------- */
   {
     const w = await boot();
