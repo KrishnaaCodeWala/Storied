@@ -43,23 +43,6 @@ hints cost 40 points, correct answers burst confetti and float abstract
 motifs of the work up the screen edges. Keyboard: `1`–`6` pick, `H` hint,
 `Enter` submit.
 
-## Study Mode — quiz your own documents
-
-Drop a `.txt`, `.md` or `.html` file (or paste text) and STORIED builds a
-fill-in-the-blank deck from it, entirely on-device:
-
-1. The text is split into sentences.
-2. Each sentence is scanned for blank-worthy material — **names & places**,
-   **numbers & dates**, and **rare document-specific terms**.
-3. The richest sentences become questions; the key term is blanked, and the
-   wrong options are other candidates *of the same kind from the same
-   document*, so the choices are plausible instead of random.
-
-Decks are saved in your browser, replayable at 4-choice, 6-choice, or
-type-the-answer style, and deletable. Generation is heuristic (no AI, no
-network) — the generator lives in `decks.js` as one documented function, so
-swapping in an API-backed generator later is a one-function change.
-
 ## Making it yours
 
 - **Quotes & categories** — `quotes.js`. Add a quote by copying a line; add
@@ -98,20 +81,6 @@ export. Saved packs live on your device, appear in the pack browser badged
 **LOCAL**, play in every mode and difficulty, and survive deletion of
 nothing but themselves. Export produces a pack JSON anyone can paste into
 their own Studio's import box — sharing packs is copy-paste.
-
-## Going online (optional, off by default)
-
-`online.js` holds a complete accounts + sync + leaderboard layer for
-Supabase, implemented as plain HTTP (no SDK) and **disabled by default**.
-The app is fully playable without it, offline, forever. To activate:
-create a Supabase project, run the Phase 5 SQL schema (tables
-`player_state` and `daily_scores` with the RLS policies), fill in
-`ONLINE_CONFIG` at the top of `online.js`, and set `enabled: true`.
-You get passwordless magic-link sign-in (from the Stats screen),
-background cross-device sync of bests/streaks/achievements (field-wise
-monotonic merge — nothing ever goes backwards), and a global top-100
-daily leaderboard on the Daily panel. Every network failure degrades
-silently to normal offline play.
 
 ## Content policy of the built-in deck
 
